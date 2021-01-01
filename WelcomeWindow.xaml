@@ -1,0 +1,55 @@
+﻿<Window x:Class="Biblioteka.WelcomeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Biblioteka"
+        mc:Ignorable="d"
+        Title="Dobrodosli"
+        Height="500"
+        Width="500"
+        Icon="Resources\favicon.ico"
+        ResizeMode="CanMinimize"
+        WindowStartupLocation="CenterScreen"
+        >
+    <Window.Background>
+        <ImageBrush ImageSource="Resources\welcome.png"></ImageBrush>
+    </Window.Background>
+    <Window.Resources>
+        <!--Button-->
+        <Style TargetType="Button">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Background" Value="Ivory"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Width" Value="100"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="295"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="155"/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="btnBibliotekar" Grid.Column="1" Grid.Row="1" Click="btnBibliotekar_Click">
+            Bibliotekar
+        </Button>
+
+        <Button x:Name="btnAdmin" Grid.Column="3" Grid.Row="1" Click="btnAdmin_Click">
+            Administrator
+        </Button>
+
+    </Grid>
+</Window>

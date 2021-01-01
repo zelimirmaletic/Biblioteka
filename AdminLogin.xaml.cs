@@ -10,21 +10,28 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Biblioteka
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AdminLogin.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AdminLogin : Window
     {
-        public MainWindow()
+        public AdminLogin()
         {
             InitializeComponent();
-            WelcomeWindow welcomeWin = new WelcomeWindow();
-            welcomeWin.Show();
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
