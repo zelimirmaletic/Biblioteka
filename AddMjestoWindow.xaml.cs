@@ -10,22 +10,28 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Biblioteka
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AddMjestoWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AddMjestoWindow : Window
     {
-        public MainWindow()
+        public AddMjestoWindow()
         {
             InitializeComponent();
+        }
 
-            AddKnjigaWindow win2 = new AddKnjigaWindow();
-            win2.ShowDialog();
+        private void btnSacuvaj_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnOtkazi_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
