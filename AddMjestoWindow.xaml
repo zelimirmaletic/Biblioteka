@@ -46,7 +46,7 @@
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
-        <Image Source="Resources\add.ico" Height="25" Width="25" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="15 0 0 0"/>
+        <Image Source="Resources\home.ico" Height="35" Width="35" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="15 0 0 0"/>
 
         <TextBlock x:Name="tbNaziv" Grid.Column="0" Grid.Row="0">
             Naziv

@@ -24,7 +24,7 @@ namespace Biblioteka
         {
             InitializeComponent();
 
-            AddKnjigaWindow win2 = new AddKnjigaWindow();
+            var win2 = new AddMjestoWindow();
             win2.ShowDialog();
         }
     }
