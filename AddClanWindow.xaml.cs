@@ -10,22 +10,28 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Biblioteka
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AddClanWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AddClanWindow : Window
     {
-        public MainWindow()
+        public AddClanWindow()
         {
             InitializeComponent();
+        }
 
-            var win2 = new AddClanWindow();
-            win2.ShowDialog();
+        private void btnSacuvaj_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnOtkazi_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
