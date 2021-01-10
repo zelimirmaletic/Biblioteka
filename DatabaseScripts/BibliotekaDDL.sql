@@ -39,7 +39,7 @@ create table Autor(
     IdMjesto int unsigned not null ,
     Ime varchar(45) not null ,
     Prezime varchar(45) not null ,
-    DatumRodjenja int,
+    DatumRodjenja date,
     -- KEYS
     primary key (IdAutor),
     foreign key (IdMjesto)

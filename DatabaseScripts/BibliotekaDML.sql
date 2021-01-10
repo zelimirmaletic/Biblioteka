@@ -16,15 +16,15 @@ insert into Zanr (Naziv, Opis) VALUES ('klasična književnost','Samo za odabran
 
 -- Autor
 insert into Autor (IdMjesto, Ime, Prezime, DatumRodjenja) VALUES
-    ((select IdMjesto from Mjesto where Naziv = 'Banja Luka'),'Petar', 'Kočić',1877);
+    ((select IdMjesto from Mjesto where Naziv = 'Banja Luka'),'Petar', 'Kočić',"1877-04-09");
 insert into Autor (IdMjesto, Ime, Prezime, DatumRodjenja) VALUES
-    ((select IdMjesto from Mjesto where Naziv = 'Doboj'),'Marko', 'Maran',1975);
+    ((select IdMjesto from Mjesto where Naziv = 'Doboj'),'Marko', 'Maran',"1975-07-05");
 insert into Autor (IdMjesto, Ime, Prezime, DatumRodjenja) VALUES
-    ((select IdMjesto from Mjesto where Naziv = 'Trebinje'),'Zlatko', 'Vukota',1965);
+    ((select IdMjesto from Mjesto where Naziv = 'Trebinje'),'Zlatko', 'Vukota',"1965-05-03");
 insert into Autor (IdMjesto, Ime, Prezime, DatumRodjenja) VALUES
-    ((select IdMjesto from Mjesto where Naziv = 'Bijeljina'),'Ana', 'Ris',1990);
+    ((select IdMjesto from Mjesto where Naziv = 'Bijeljina'),'Ana', 'Ris',"1990-01-02");
 insert into Autor (IdMjesto, Ime, Prezime, DatumRodjenja) VALUES
-    ((select IdMjesto from Mjesto where Naziv = 'Istočno Sarajevo'),'Marija', 'Blažić',1980);
+    ((select IdMjesto from Mjesto where Naziv = 'Istočno Sarajevo'),'Marija', 'Blažić',"1980-04-06");
 
 -- Izdavac
 insert into Izdavac (IdMjesto, Naziv, Adresa) VALUES
