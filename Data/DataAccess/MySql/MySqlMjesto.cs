@@ -11,60 +11,59 @@ namespace Biblioteka.Data.DataAccess.MySql
 {
     class MySqlMjesto
     {
-        private static readonly string SELECT = "SELECT IdZanr, Naziv, Opis FROM `Zanr` ORDER BY Naziv";
-        private static readonly string INSERT = "INSERT INTO `Zanr`(Naziv, Opis) VALUES (@Naziv,@Opis)";
-        private static readonly string UPDATE = "UPDATE `Zanr` SET Naziv=@Naziv WHERE IdZanr=@IdZanr";
-        private static readonly string DELETE = "DELETE FROM `Zanr` WHERE IdZanr=@IdZanr";
+        private static readonly string SELECT = "SELECT IdMjesto, Naziv, PostanskiBroj FROM `Mjesto` ORDER BY Naziv";
+        private static readonly string INSERT = "INSERT INTO `Mjesto` (Naziv, PostanskiBroj) VALUES (@Naziv, @PostanskiBroj)";
+        private static readonly string UPDATE = "UPDATE `Mjesto` SET Naziv=@Naziv, PostanskiBroj=@PostanskiBroj WHERE IdMjesto=@IdMjesto";
+        private static readonly string DELETE = "DELETE FROM `Mjesto` WHERE IdMjesto=@IdMjesto";
 
-
-        private void InsertZanr(Zanr zanr)
+        private void InsertMjesto(Mjesto mjesto)
         {
-            MySqlConnection connection = null;
+            MySqlConnection con = null;
             MySqlCommand cmd;
             try
             {
-                connection = MySqlUtil.GetConnection();
-                cmd = connection.CreateCommand();
+                con = MySql.MySqlUtil.GetConnection();
+                cmd = con.CreateCommand();
                 cmd.CommandText = INSERT;
-                cmd.Parameters.AddWithValue("@Naziv", zanr.Naziv);
-                cmd.Parameters.AddWithValue("@Opis", zanr.Opis);
+                cmd.Parameters.AddWithValue("@Naziv", mjesto.Naziv);
+                cmd.Parameters.AddWithValue("@PostanskiBroj", mjesto.PostanskiBroj);
                 cmd.ExecuteNonQuery();
-                zanr.IdZanr = (int)cmd.LastInsertedId;
-            }
-            catch (Exception ex)
+                mjesto.IdMjesto = (int)cmd.LastInsertedId;
+            } catch(Exception exc)
             {
-                throw new DataAccessException("Exception in MySqlZanr", ex);
+                throw new DataAccessException("Exception in MySqlMjesto",exc);
             }
             finally
             {
-                MySqlUtil.CloseQuietly(connection);
+                MySqlUtil.CloseQuietly(con);
             }
         }
 
-        private void UpdateZanr(Zanr zanr)
+        private void UpdateMjesto(Mjesto mjesto)
         {
-            MySqlConnection conn = null;
+            MySqlConnection con = null;
             MySqlCommand cmd;
             try
             {
-                conn = MySqlUtil.GetConnection();
-                cmd = conn.CreateCommand();
+                con = MySql.MySqlUtil.GetConnection();
+                cmd = con.CreateCommand();
                 cmd.CommandText = UPDATE;
-                cmd.Parameters.AddWithValue("@IdZanr", zanr.IdZanr);
-                cmd.Parameters.AddWithValue("@Naziv", zanr.Naziv);
+                cmd.Parameters.AddWithValue("@IdMjesto", mjesto.IdMjesto);
+                cmd.Parameters.AddWithValue("@Naziv", mjesto.Naziv);
+                cmd.Parameters.AddWithValue("@PostanskiBroj", mjesto.PostanskiBroj);
                 cmd.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (Exception exc)
             {
-                throw new DataAccessException("Exception in MySqlZanr", ex);
+                throw new DataAccessException("Exception in MySqlMjesto",exc);
             }
             finally
             {
-                MySqlUtil.CloseQuietly(conn);
+                MySqlUtil.CloseQuietly(con);
             }
         }
 
-        public void DeleteZanrById(int idZanr)
+        private void DeleteMjestoById(int IdMjesto)
         {
             MySqlConnection conn = null;
             MySqlCommand cmd;
@@ -73,12 +72,12 @@ namespace Biblioteka.Data.DataAccess.MySql
                 conn = MySqlUtil.GetConnection();
                 cmd = conn.CreateCommand();
                 cmd.CommandText = DELETE;
-                cmd.Parameters.AddWithValue("@IdZanr", idZanr);
+                cmd.Parameters.AddWithValue("@IdMjesto", IdMjesto);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                throw new DataAccessException("Exception in MySqlZanr", ex);
+                throw new DataAccessException("Exception in MySqlMjesto", ex);
             }
             finally
             {
@@ -86,9 +85,9 @@ namespace Biblioteka.Data.DataAccess.MySql
             }
         }
 
-        public List<Zanr> GetZanrs()
+        public List<Mjesto> GetAllMjesto()
         {
-            List<Zanr> result = new List<Zanr>();
+            var result = new List<Mjesto>();
             MySqlConnection conn = null;
             MySqlCommand cmd;
             MySqlDataReader reader = null;
@@ -101,17 +100,17 @@ namespace Biblioteka.Data.DataAccess.MySql
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    result.Add(new Zanr()
+                    result.Add(new Mjesto()
                     {
-                        IdZanr = reader.GetInt32(0),
+                        IdMjesto = reader.GetInt32(0),
                         Naziv = reader.GetString(1),
-                        Opis = reader.GetString(2)
+                        PostanskiBroj = reader.GetString(2)
                     });
                 }
             }
             catch (Exception ex)
             {
-                throw new DataAccessException("Exception in MySqlGroup", ex);
+                throw new DataAccessException("Exception in MySqlMjesto", ex);
             }
             finally
             {
@@ -120,5 +119,49 @@ namespace Biblioteka.Data.DataAccess.MySql
             return result;
         }
 
+        public Mjesto GetMjestoByID(int IdMjesto)
+        {
+            var result = new Mjesto();
+            MySqlConnection conn = null;
+            MySqlCommand cmd;
+            MySqlDataReader reader = null;
+
+            try
+            {
+                conn = MySqlUtil.GetConnection();
+                cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT IdMjesto, Naziv, PostanskiBroj FROM `Mjesto` WHERE IdMjesto=@IdMjesto";
+                cmd.Parameters.AddWithValue("@IdMjesto", IdMjesto);
+                reader = cmd.ExecuteReader();
+                reader.Read();
+                result = new Mjesto()
+                {
+                    IdMjesto = reader.GetInt32(0),
+                    Naziv = reader.GetString(1),
+                    PostanskiBroj = reader.GetString(2)
+                };
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException("Exception in MySqlMjesto", ex);
+            }
+            finally
+            {
+                MySqlUtil.CloseQuietly(reader, conn);
+            }
+            return result;
+        }
+
+        public void SaveMjesto(Mjesto mjesto)
+        {
+            if (mjesto.IdMjesto <= 0)
+            {
+                InsertMjesto(mjesto);
+            }
+            else
+            {
+                UpdateMjesto(mjesto);
+            }
+        }
     }
 }

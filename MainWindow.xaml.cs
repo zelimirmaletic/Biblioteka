@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Biblioteka.Data.DataAccess.MySql;
+using Biblioteka.Data.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,8 +26,24 @@ namespace Biblioteka
         {
             InitializeComponent();
 
-            var win2 = new AddClanWindow();
-            win2.ShowDialog();
+            var objekat = new Autor();
+            var query = new MySqlAutor();
+            objekat = query.GetAutorByID(5);
+            tbTest.Text += objekat.ToString();
+
+            /*
+            DateTime date = new DateTime();
+            date = DateTime.Today;
+            string sqlFormattedDate = date.ToString("yyyy-MM-dd");
+            Autor newAutor = new Autor(0, 2, "Jovan", "Deretic", sqlFormattedDate);
+            query.SaveAutor(newAutor);
+            */
+
+            query.DeleteAutorById(7);
+
+
+            
+           
         }
     }
 }

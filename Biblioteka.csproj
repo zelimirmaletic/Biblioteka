@@ -129,8 +129,11 @@
       <DependentUpon>BibliotekarLogin.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\DataAccess\Exceptions\DataAccessException.cs" />
+    <Compile Include="Data\DataAccess\MySql\MySqlAutor.cs" />
+    <Compile Include="Data\DataAccess\MySql\MySqlIzdavac.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlMjesto.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlUtil.cs" />
+    <Compile Include="Data\DataAccess\MySql\MySqlZanr.cs" />
     <Compile Include="Data\Model\Administrator.cs" />
     <Compile Include="Data\Model\Autor.cs" />
     <Compile Include="Data\Model\Bibliotekar.cs" />

@@ -12,6 +12,8 @@
         WindowStartupLocation="CenterScreen"
         >
     <Grid>
-        
+        <TextBlock x:Name="tbTest" Height="20" Width="400">
+            
+        </TextBlock>
     </Grid>
 </Window>

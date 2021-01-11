@@ -9,17 +9,19 @@ namespace Biblioteka.Data.Model
     class Autor
     {
         public int IdAutor { get; set; }
+        public int IdMjesto { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
-        DateTime DatumRodjenja { get; set; }
+        public string DatumRodjenja { get; set; }
 
         public Autor()
         {
         }
 
-        public Autor(int idAutor, string ime, string prezime, DateTime datumRodjenja)
+        public Autor(int idAutor,int idMjesto, string ime, string prezime, string datumRodjenja)
         {
             IdAutor = idAutor;
+            IdMjesto = idMjesto;
             Ime = ime;
             Prezime = prezime;
             DatumRodjenja = datumRodjenja;
