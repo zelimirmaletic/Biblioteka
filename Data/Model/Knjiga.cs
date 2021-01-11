@@ -8,7 +8,7 @@ namespace Biblioteka.Data.Model
 {
     class Knjiga
     {
-        public string IdKnjiga { get; set; }
+        public int IdKnjiga { get; set; }
         public int IdZanr { get; set; }
         public int IdIzdavac { get; set; }
         public string Naslov { get; set; }
