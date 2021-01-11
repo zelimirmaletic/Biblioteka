@@ -13,7 +13,7 @@ namespace Biblioteka.Data.Model
         public int IdKnjiga { get; set; }
         public int IdBibliotekar { get; set; }
         public DateTime DatumPozajmljivanja { get; set; }
-        public bool Razduzena { get; set; }
+        public bool JeRazduzena { get; set; }
         public string Opis { get; set; }
         public Pozajmica()
         {
@@ -26,7 +26,7 @@ namespace Biblioteka.Data.Model
             IdKnjiga = idKnjiga;
             IdBibliotekar = idBibliotekar;
             DatumPozajmljivanja = datumPozajmljivanja;
-            Razduzena = razduzena;
+            JeRazduzena = razduzena;
             Opis = opis;
         }
 

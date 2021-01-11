@@ -135,6 +135,7 @@
     <Compile Include="Data\DataAccess\MySql\MySqlKnjiga.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlKnjiga_ima_autor.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlMjesto.cs" />
+    <Compile Include="Data\DataAccess\MySql\MySqlPozajmica.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlUtil.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlZanr.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlOsoba.cs" />
