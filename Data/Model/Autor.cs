@@ -12,13 +12,13 @@ namespace Biblioteka.Data.Model
         public int IdMjesto { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
-        public string DatumRodjenja { get; set; }
+        public DateTime DatumRodjenja { get; set; }
 
         public Autor()
         {
         }
 
-        public Autor(int idAutor,int idMjesto, string ime, string prezime, string datumRodjenja)
+        public Autor(int idAutor,int idMjesto, string ime, string prezime, DateTime datumRodjenja)
         {
             IdAutor = idAutor;
             IdMjesto = idMjesto;

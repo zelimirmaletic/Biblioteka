@@ -19,12 +19,12 @@ namespace Biblioteka.Data.Model
         public string Jezik { get; set; }
         public string Opis { get; set; }
 
-        public Knjiga(string idKnjiga, int idZanr, int idIzdavac, string Naslov, DateTime datumObjavljivanja, string iSBN, int ukupanBrojKopija, int brojStranica, string jezik, string opis)
+        public Knjiga(int idKnjiga, int idZanr, int idIzdavac, string naslov, DateTime datumObjavljivanja, string iSBN, int ukupanBrojKopija, int brojStranica, string jezik, string opis)
         {
             IdKnjiga = idKnjiga;
             IdZanr = idZanr;
             IdIzdavac = idIzdavac;
-            Naslov = Naslov;
+            Naslov = naslov;
             DatumObjavljivanja = datumObjavljivanja;
             ISBN = iSBN;
             UkupanBrojKopija = ukupanBrojKopija;
@@ -43,17 +43,16 @@ namespace Biblioteka.Data.Model
                    IdKnjiga == knjiga.IdKnjiga;
         }
 
-        public override int GetHashCode()
-        {
-            int hashCode = 522768457;
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(IdKnjiga);
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(ISBN);
-            return hashCode;
-        }
+
 
         public override string ToString()
         {
             return "KNJIGA: " + IdKnjiga + " " + ISBN + " " + Naslov + " " + DatumObjavljivanja;
+        }
+
+        public override int GetHashCode()
+        {
+            return 693581416 + IdKnjiga.GetHashCode();
         }
     }
 }

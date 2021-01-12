@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Biblioteka.Data.DataAccess.Exceptions;
+using Biblioteka.Data.DataAccess.MySql;
+using Biblioteka.Data.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,12 +29,35 @@ namespace Biblioteka
 
         private void btnSacuvaj_Click(object sender, RoutedEventArgs e)
         {
+            if(txbNaziv.Text.Equals(""))
+            {
+                string message = "Molimo vas da unesete vrijednosti u sva polja.";
+                string caption = "Upozorenje";
+                MessageBoxButton buttons = MessageBoxButton.OK;
+                MessageBoxImage icon = MessageBoxImage.Warning;
+                MessageBox.Show(message, caption, buttons, icon);
+                return;
+            }
+            try
+            {
+                //Save Zanr to a database
+                Zanr noviZanr = new Zanr(0,txbNaziv.Text,txbOpis.Text);
+                MySqlZanr mysqlZanr = new MySqlZanr();
+                mysqlZanr.SaveZanr(noviZanr);
+                //Show message of success
+                MessageBox.Show("Uspješno dodan novi žanr!", "Informacija", MessageBoxButton.OK, MessageBoxImage.Information);
+                this.Close();
+            }catch(DataAccessException exc)
+            {
+                MessageBox.Show("Naziv žanra već postoji.", "Greška", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
 
         }
 
         private void btnOtkazi_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }

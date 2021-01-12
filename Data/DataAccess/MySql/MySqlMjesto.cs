@@ -152,6 +152,39 @@ namespace Biblioteka.Data.DataAccess.MySql
             return result;
         }
 
+        public Mjesto GetMjestoByNaziv(string naziv)
+        {
+            var result = new Mjesto();
+            MySqlConnection conn = null;
+            MySqlCommand cmd;
+            MySqlDataReader reader = null;
+
+            try
+            {
+                conn = MySqlUtil.GetConnection();
+                cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT * FROM `Mjesto` WHERE Naziv=@Naziv";
+                cmd.Parameters.AddWithValue("@Naziv", naziv);
+                reader = cmd.ExecuteReader();
+                reader.Read();
+                result = new Mjesto()
+                {
+                    IdMjesto = reader.GetInt32(0),
+                    Naziv = reader.GetString(1),
+                    PostanskiBroj = reader.GetString(2)
+                };
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException("Exception in MySqlMjesto", ex);
+            }
+            finally
+            {
+                MySqlUtil.CloseQuietly(reader, conn);
+            }
+            return result;
+        }
+
         public void SaveMjesto(Mjesto mjesto)
         {
             if (mjesto.IdMjesto <= 0)

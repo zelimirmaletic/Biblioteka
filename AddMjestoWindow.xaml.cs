@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Biblioteka.Data.DataAccess.Exceptions;
+using Biblioteka.Data.DataAccess.MySql;
+using Biblioteka.Data.Model;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Biblioteka
 {
@@ -26,12 +17,33 @@ namespace Biblioteka
 
         private void btnSacuvaj_Click(object sender, RoutedEventArgs e)
         {
-
+            if(txbNaziv.Text.Equals("") || txbPostanskiBroj.Text.Equals(""))
+            {
+                string message = "Molimo vas da unesete vrijednosti u sva polja.";
+                string caption = "Upozorenje";
+                MessageBoxButton buttons = MessageBoxButton.OK;
+                MessageBoxImage icon = MessageBoxImage.Warning;
+                MessageBox.Show(message, caption, buttons, icon);
+                return;
+            }
+            try
+            {
+                Mjesto novoMjesto = new Mjesto(0, txbNaziv.Text, txbPostanskiBroj.Text);
+                //Save Mjesto to database
+                MySqlMjesto mysqlMjesto = new MySqlMjesto();
+                mysqlMjesto.SaveMjesto(novoMjesto);
+                MessageBox.Show("Uspješno dodano novo mjesto!", "Informacija", MessageBoxButton.OK, MessageBoxImage.Information);
+                this.Close();
+            }
+            catch (DataAccessException exc)
+            {
+                MessageBox.Show("Naziv mjesta ili poštanski broj već postoje u bazi!", "Greška", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void btnOtkazi_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }

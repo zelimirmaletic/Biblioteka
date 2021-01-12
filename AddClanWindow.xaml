@@ -67,8 +67,12 @@
         <TextBlock x:Name="tbMjesto" Grid.Column="0" Grid.Row="2">
             Mjesto
         </TextBlock>
-        <ComboBox Name="cbMjesto" Grid.Column="1" Grid.Row="2" Height="22" Width="auto" Grid.ColumnSpan="2" FontWeight="Medium"/>
+        <ComboBox Name="cbMjesto" Grid.Column="1" Grid.Row="2" Height="22" Width="auto" Grid.ColumnSpan="2" FontWeight="Medium" DropDownOpened="cbMjesto_DropDownOpened"/>
 
+        <Button x:Name="addMjesto" Grid.Column="3" Grid.Row="2" Click="addMjesto_Click" >
+            Dodaj
+        </Button>
+        
         <TextBlock x:Name="tbAdresa" Grid.Column="0" Grid.Row="3">
             Adresa
         </TextBlock>

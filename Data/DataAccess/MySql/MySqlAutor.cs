@@ -111,7 +111,7 @@ namespace Biblioteka.Data.DataAccess.MySql
                        IdMjesto = reader.GetInt32(1),
                        Ime = reader.GetString(2),
                        Prezime = reader.GetString(3),
-                       DatumRodjenja = reader.GetDateTime(4).ToString()
+                       DatumRodjenja = reader.GetDateTime(4)
                     });
                 }
             }
@@ -147,7 +147,7 @@ namespace Biblioteka.Data.DataAccess.MySql
                     IdMjesto = reader.GetInt32(1),
                     Ime = reader.GetString(2),
                     Prezime = reader.GetString(3),
-                    DatumRodjenja = reader.GetDateTime(4).ToString()
+                    DatumRodjenja = reader.GetDateTime(4)
                 };
             }
             catch (Exception ex)

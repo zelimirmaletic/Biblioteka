@@ -82,7 +82,7 @@ namespace Biblioteka.Data.DataAccess.MySql
         {
             if (pozajmica.IdPozajmica <= 0)
             {
-                InsertPozajmica(pozajmica;
+                InsertPozajmica(pozajmica);
             }
             else
             {

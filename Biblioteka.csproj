@@ -257,5 +257,17 @@
   <ItemGroup>
     <Resource Include="Resources\home.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\warning.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\error.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\info.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\success.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

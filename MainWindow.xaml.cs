@@ -26,20 +26,8 @@ namespace Biblioteka
         {
             InitializeComponent();
 
-            var objekat = new Autor();
-            var query = new MySqlAutor();
-            objekat = query.GetAutorByID(5);
-            tbTest.Text += objekat.ToString();
-
-            /*
-            DateTime date = new DateTime();
-            date = DateTime.Today;
-            string sqlFormattedDate = date.ToString("yyyy-MM-dd");
-            Autor newAutor = new Autor(0, 2, "Jovan", "Deretic", sqlFormattedDate);
-            query.SaveAutor(newAutor);
-            */
-
-            query.DeleteAutorById(7);
+            var window = new WelcomeWindow();
+            window.ShowDialog();
 
 
             

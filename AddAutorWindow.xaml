@@ -69,7 +69,11 @@
 
         <TextBox x:Name="txbPrezime" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3"/>
 
-        <ComboBox Name="cbMjesto" Grid.Column="1" Grid.Row="2" Height="22" Width="auto" Grid.ColumnSpan="2" FontWeight="Medium"/>
+        <ComboBox Name="cbMjesto" Grid.Column="1" Grid.Row="2" Height="22" Width="auto" Grid.ColumnSpan="2" FontWeight="Medium" DropDownOpened="cbMjesto_DropDownOpened" />
+
+        <Button x:Name="btnAdd" Grid.Column="3" Grid.Row="2" Click="btnAdd_Click">
+            Dodaj
+        </Button>
 
         <DatePicker x:Name="dpDatumRodjenja" Grid.Row="3" Grid.Column="1" Height="auto" Width="auto" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
 
