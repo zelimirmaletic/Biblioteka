@@ -15,10 +15,14 @@ namespace Biblioteka.Data.Model
         public string Adresa { get; set; }
         public string BrojTelefona { get; set; }
 
+        public string Email { get; set; }
+
+        public DateTime DatumRodjenja { get; set; }
+
         public Osoba()
         {
         }
-        public Osoba(int idOsoba, int idMjesto, string ime, string prezime, string adresa, string brojTelefona)
+        public Osoba(int idOsoba, int idMjesto, string ime, string prezime, string adresa, string brojTelefona,string email, DateTime datumRodjenja)
         {
             IdOsoba = idOsoba;
             IdMjesto = idMjesto;
@@ -26,6 +30,8 @@ namespace Biblioteka.Data.Model
             Prezime = prezime;
             Adresa = adresa;
             BrojTelefona = brojTelefona;
+            Email = email;
+            DatumRodjenja = datumRodjenja;
         }
 
         public override bool Equals(object obj)

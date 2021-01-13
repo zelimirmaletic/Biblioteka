@@ -118,6 +118,7 @@ namespace Biblioteka.Data.DataAccess.MySql
             return result;
         }
 
+
         public void SaveKnjiga_ima_Izdavac(Knjiga_ima_Autor rekord, string mod)
         {
             if (mod == "insert")

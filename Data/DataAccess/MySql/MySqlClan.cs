@@ -6,14 +6,18 @@ using System.Collections.Generic;
 
 namespace Biblioteka.Data.DataAccess.MySql
 {
-    class MySqlBibliotekar
+    class MySqlClan
     {
-        private static readonly string SELECT = "SELECT * FROM `Bibliotekar` ";
-        private static readonly string INSERT = "INSERT INTO `Bibliotekar`(IdBibliotekar, KorisnickoIme, Lozinka) VALUES (@IdBibliotekar, @KorisnickoIme, @Lozinka)";
-        private static readonly string UPDATE = "UPDATE `Bibliotekar` SET KorisnickoIme=@KorisnickoIme, Lozinka=@Lozinka WHERE IdBibliotekar=@IdBibliotekar";
-        private static readonly string DELETE = "DELETE FROM `Bibliotekar` WHERE IdBibliotekar=@IdBibliotekar";
+        private static readonly string SELECT = "SELECT * FROM `Clan` ";
 
-        private void InsertBibliotekar(Bibliotekar bibliotekar)
+        private static readonly string INSERT = "INSERT INTO `Clan`(IdClan, DatumUclanjivanja, DatumObnavljanjaClanstva) " +
+                                                            "VALUES (@IdClan, @DatumUclanjivanja, @DatumObnavljanjaClanstva)";
+
+        private static readonly string UPDATE = "UPDATE `Clan` SET DatumObnavljanjaClanstva=@DatumObnavljanjaClanstva WHERE IdClan=@IdClan";
+
+        private static readonly string DELETE = "DELETE FROM `Clan` WHERE IdClan=@IdClan";
+
+        private void InsertClan(Clan clan)
         {
             MySqlConnection con = null;
             MySqlCommand cmd;
@@ -22,14 +26,14 @@ namespace Biblioteka.Data.DataAccess.MySql
                 con = MySql.MySqlUtil.GetConnection();
                 cmd = con.CreateCommand();
                 cmd.CommandText = INSERT;
-                cmd.Parameters.AddWithValue("@IdBibliotekar", bibliotekar.IdBibliotekar);
-                cmd.Parameters.AddWithValue("@KorisnickoIme", bibliotekar.KorisnickoIme);
-                cmd.Parameters.AddWithValue("@Lozinka", bibliotekar.Lozinka);
+                cmd.Parameters.AddWithValue("@IdClan", clan.IdClan);
+                cmd.Parameters.AddWithValue("DatumUclanjivanja", clan.DatumUclanjivanja);
+                cmd.Parameters.AddWithValue("@DatumObnavljanjaClanstva", clan.DatumObnavljanjaClanstva);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception exc)
             {
-                throw new DataAccessException("Exception in MySqlBibliotekar", exc);
+                throw new DataAccessException("Exception in MySqlClan", exc);
             }
             finally
             {
@@ -37,7 +41,7 @@ namespace Biblioteka.Data.DataAccess.MySql
             }
         }
 
-        private void UpdateBibliotekar(Bibliotekar bibliotekar)
+        private void UpdateClan(Clan clan)
         {
             MySqlConnection con = null;
             MySqlCommand cmd;
@@ -46,14 +50,12 @@ namespace Biblioteka.Data.DataAccess.MySql
                 con = MySql.MySqlUtil.GetConnection();
                 cmd = con.CreateCommand();
                 cmd.CommandText = UPDATE;
-                cmd.Parameters.AddWithValue("@IdBibliotekar", bibliotekar.IdBibliotekar);
-                cmd.Parameters.AddWithValue("@KorisnickoIme", bibliotekar.KorisnickoIme);
-                cmd.Parameters.AddWithValue("@Lozinka", bibliotekar.Lozinka);
+                cmd.Parameters.AddWithValue("@DatumObnavljanjaClanstva", clan.DatumObnavljanjaClanstva);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception exc)
             {
-                throw new DataAccessException("Exception in MySqlBibliotekar", exc);
+                throw new DataAccessException("Exception in MySqlClan", exc);
             }
             finally
             {
@@ -61,7 +63,7 @@ namespace Biblioteka.Data.DataAccess.MySql
             }
         }
 
-        public void DeleteBibliotekarById(int IdBibliotekar)
+        public void DeleteClanById(int IdClan)
         {
             MySqlConnection conn = null;
             MySqlCommand cmd;
@@ -70,12 +72,12 @@ namespace Biblioteka.Data.DataAccess.MySql
                 conn = MySqlUtil.GetConnection();
                 cmd = conn.CreateCommand();
                 cmd.CommandText = DELETE;
-                cmd.Parameters.AddWithValue("@IdBibliotekar", IdBibliotekar);
+                cmd.Parameters.AddWithValue("@IdOsoba", IdClan);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                throw new DataAccessException("Exception in MySqlBibliotekar", ex);
+                throw new DataAccessException("Exception in MySqlClan", ex);
             }
             finally
             {
@@ -83,10 +85,9 @@ namespace Biblioteka.Data.DataAccess.MySql
             }
         }
 
-
-        public List<Bibliotekar> GetAllBibliotekar()
+        public List<Clan> GetAllClan()
         {
-            var result = new List<Bibliotekar>();
+            var result = new List<Clan>();
             MySqlConnection conn = null;
             MySqlCommand cmd;
             MySqlDataReader reader = null;
@@ -99,17 +100,18 @@ namespace Biblioteka.Data.DataAccess.MySql
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    result.Add(new Bibliotekar()
+                    result.Add(new Clan()
                     {
-                        IdBibliotekar = reader.GetInt32(0),
-                        KorisnickoIme = reader.GetString(1),
-                        Lozinka = reader.GetString(3),
+                        IdClan = reader.GetInt32(0),
+                        DatumUclanjivanja = reader.GetDateTime(1),
+                        DatumObnavljanjaClanstva = reader.GetDateTime(2)
+                        
                     });
                 }
             }
             catch (Exception ex)
             {
-                throw new DataAccessException("Exception in MySqlBibliotekar", ex);
+                throw new DataAccessException("Exception in MySqlClan", ex);
             }
             finally
             {
@@ -118,9 +120,9 @@ namespace Biblioteka.Data.DataAccess.MySql
             return result;
         }
 
-        public Bibliotekar GetBibliotekarByUsername(string korisnickoIme)
+        public Clan GetClanByID(int IdClan)
         {
-            var result = new Bibliotekar();
+            var result = new Clan();
             MySqlConnection conn = null;
             MySqlCommand cmd;
             MySqlDataReader reader = null;
@@ -129,20 +131,20 @@ namespace Biblioteka.Data.DataAccess.MySql
             {
                 conn = MySqlUtil.GetConnection();
                 cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM `Bibliotekar` WHERE KorisnickoIme=@KorisnickoIme";
-                cmd.Parameters.AddWithValue("@KorisnickoIme", korisnickoIme);
+                cmd.CommandText = "SELECT * FROM `Clan` WHERE IdClan=@IdClan";
+                cmd.Parameters.AddWithValue("@IdOsoba", IdClan);
                 reader = cmd.ExecuteReader();
                 reader.Read();
-                result = new Bibliotekar()
+                result = new Clan()
                 {
-                    IdBibliotekar = reader.GetInt32(0),
-                    KorisnickoIme = reader.GetString(1),
-                    Lozinka = reader.GetString(2)
+                    IdClan= reader.GetInt32(0),
+                    DatumUclanjivanja = reader.GetDateTime(1),
+                    DatumObnavljanjaClanstva = reader.GetDateTime(2)
                 };
             }
             catch (Exception ex)
             {
-                throw new DataAccessException("Exception in MySqlBibliotekar", ex);
+                throw new DataAccessException("Exception in MySqlClan", ex);
             }
             finally
             {
@@ -151,15 +153,15 @@ namespace Biblioteka.Data.DataAccess.MySql
             return result;
         }
 
-        public void SaveBibliotekar(Bibliotekar bibliotekar, string action)
+        public void SaveClan(Clan clan, string action)
         {
             if (action.Equals("insert"))
             {
-                InsertBibliotekar(bibliotekar);
+                InsertClan(clan);
             }
-            else if (action.Equals("update"))
+            else if(action.Equals("update"))
             {
-                UpdateBibliotekar(bibliotekar);
+                UpdateClan(clan);
             }
         }
     }

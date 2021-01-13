@@ -8,6 +8,11 @@ namespace Biblioteka.Data.Model
 {
     class Izdavac
     {
+        public int IdIzdavac { get; set; }
+        public int IdMjesto { get; set; }
+        public string Naziv { get; set; }
+        public string Adresa { get; set; }
+
         public Izdavac()
         {
         }
@@ -19,12 +24,6 @@ namespace Biblioteka.Data.Model
             Naziv = naziv;
             Adresa = adresa;
         }
-
-        public int IdIzdavac {get; set;}
-        public int IdMjesto { get; set; }
-
-        public string Naziv { get; set; }
-        public string Adresa { get; set; }
 
         public override bool Equals(object obj)
         {

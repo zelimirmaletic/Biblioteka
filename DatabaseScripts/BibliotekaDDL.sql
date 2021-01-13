@@ -83,6 +83,8 @@ create table Osoba(
     Prezime varchar(45) not null ,
     Adresa varchar(45) not null ,
     BrojTelefona varchar(15),
+	Email varchar(45),
+	DatumRodjenja date not null,
     -- KYES
     primary key (IdOsoba),
     foreign key (IdMjesto)
@@ -113,7 +115,6 @@ create table Clan(
     IdClan int unsigned not null ,
     DatumUclanjivanja date not null ,
     DatumObnavljanjaClanstva date not null ,
-    Email varchar(45),
     -- KEYS
     primary key (IdClan),
     foreign key (IdClan)

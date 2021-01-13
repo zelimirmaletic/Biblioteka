@@ -26,12 +26,29 @@ namespace Biblioteka
         {
             InitializeComponent();
 
-            var window = new WelcomeWindow();
-            window.ShowDialog();
+            //var window = new WelcomeWindow();
+           // window.ShowDialog();
 
 
             
            
+        }
+
+        private void btnDodajKnjigu_Click(object sender, RoutedEventArgs e)
+        {
+            var newWindow = new AddKnjigaWindow();
+            newWindow.ShowDialog();
+        }
+
+        private void btnDodajClana_Click(object sender, RoutedEventArgs e)
+        {
+            var newWindow = new AddClanWindow();
+            newWindow.ShowDialog();
+        }
+
+        private void btnIznajmiKnjigu_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

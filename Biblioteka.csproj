@@ -129,8 +129,10 @@
       <DependentUpon>BibliotekarLogin.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\DataAccess\Exceptions\DataAccessException.cs" />
+    <Compile Include="Data\DataAccess\MySql\MySqlAdmin.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlAutor.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlBibliotekar.cs" />
+    <Compile Include="Data\DataAccess\MySql\MySqlClan.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlIzdavac.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlKnjiga.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlKnjiga_ima_autor.cs" />
@@ -268,6 +270,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\success.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <SplashScreen Include="Resources\SplashPage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\dashboard.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\addClan.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bookGive.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,15 +5,74 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Biblioteka"
         mc:Ignorable="d"
-        Title="MainWindow"
-        Height="450"
+        Title="Biblioteka"
+        Height="650"
         Width="800"
+        MinHeight="650"
+        MinWidth="800"
         Icon="Resources\favicon.ico"
         WindowStartupLocation="CenterScreen"
+        ResizeMode="CanResize"
         >
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Width" Value="50"/>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <TextBlock x:Name="tbTest" Height="20" Width="400">
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Column="0" Grid.RowSpan="9">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#C5AF7E"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Grid.Column="0" Grid.ColumnSpan="2">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#AF7629"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Button x:Name="btnDodajKnjigu" Grid.Column="0" Grid.Row="1" Margin="0 -15 0 0" Click="btnDodajKnjigu_Click">
+            <StackPanel>
+                <Image Source="Resources\book.ico" />
+            </StackPanel>
+        </Button>
+        <TextBlock Grid.Row="1" Grid.Column="0" FontWeight="Medium" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14">
+            Dodaj knjigu
         </TextBlock>
+
+        <Button x:Name="btnDodajClana" Grid.Column="0" Grid.Row="2" Margin="0 -15 0 0" Click="btnDodajClana_Click">
+            <StackPanel>
+                <Image Source="Resources\addClan.ico" />
+            </StackPanel>
+        </Button>
+        <TextBlock Grid.Row="2" Grid.Column="0" FontWeight="Medium" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14">
+            Dodaj člana
+        </TextBlock>
+
+        <Button x:Name="btnIznajmiKnjigu" Grid.Column="0" Grid.Row="3" Margin="0 -15 0 0" Click="btnIznajmiKnjigu_Click">
+            <StackPanel>
+                <Image Source="Resources\bookGive.ico" />
+            </StackPanel>
+        </Button>
+        <TextBlock Grid.Row="3" Grid.Column="0" FontWeight="Medium" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14">
+            Zaduži
+        </TextBlock>
+
+
     </Grid>
 </Window>

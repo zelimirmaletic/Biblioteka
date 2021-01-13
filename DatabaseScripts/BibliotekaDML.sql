@@ -50,16 +50,16 @@ insert into Knjiga_ima_Autor (IdKnjiga, IdAutor) VALUES (1, 2);
 insert into Knjiga_ima_Autor (IdKnjiga, IdAutor) VALUES (2, 3);
 
 -- Osoba
-insert into Osoba (IdMjesto, Ime, Prezime, Adresa, BrojTelefona) VALUES
-    (1,'Jana','Maran', 'Trg Krajine 5', '065658965');
-insert into Osoba (IdMjesto, Ime, Prezime, Adresa, BrojTelefona) VALUES
-    (1,'Jovan','Marković', 'Trg Krajine 25', '065657775');
-insert into Osoba (IdMjesto, Ime, Prezime, Adresa, BrojTelefona) VALUES
-    (1,'Zagorka','Savić', 'Trg Krajine 36', '065333965');
+insert into Osoba (IdMjesto, Ime, Prezime, Adresa, BrojTelefona, Email, DatumRodjenja) VALUES
+    (1,'Jana','Maran', 'Trg Krajine 5', '065658965','jana@gmail.com','1990-05-07');
+insert into Osoba (IdMjesto, Ime, Prezime, Adresa, BrojTelefona, Email, DatumRodjenja) VALUES
+    (1,'Jovan','Marković', 'Trg Krajine 25', '065657775','jovan@gmail.com','1995-08-08');
+insert into Osoba (IdMjesto, Ime, Prezime, Adresa, BrojTelefona, Email, DatumRodjenja) VALUES
+    (1,'Zagorka','Savić', 'Trg Krajine 36', '065333965', 'zaga@gmail.com','1995-07-07');
 
 -- Clan
-insert into Clan (IdClan, DatumUclanjivanja, DatumObnavljanjaClanstva, Email) VALUES
-    (1,'2010-08-07','2021-08-07','jana.markovic@outlook.com');
+insert into Clan (IdClan, DatumUclanjivanja, DatumObnavljanjaClanstva) VALUES
+    (1,'2010-08-07','2021-08-07');
 
 -- Bibliotekar
 insert into Bibliotekar (IdBibliotekar, KorisnickoIme, Lozinka) VALUES

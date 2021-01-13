@@ -8,7 +8,7 @@
         Title="Dodaj novi nalog za člana"
         Height="360" 
         Width="420"
-        Icon="Resources\addMan.ico"
+        Icon="Resources\addClan.ico"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         >
@@ -50,7 +50,7 @@
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
-        <Image Source="Resources\addMan.ico" Height="35" Width="35" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="15 0 0 0"/>
+        <Image Source="Resources\addClan.ico" Height="35" Width="35" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="15 0 0 0"/>
 
         <TextBlock x:Name="tbIme" Grid.Column="0" Grid.Row="0">
             Ime

@@ -10,10 +10,10 @@ namespace Biblioteka.Data.DataAccess.MySql
     {
         private static readonly string SELECT = "SELECT * FROM `Osoba` ORDER BY Prezime";
 
-        private static readonly string INSERT = "INSERT INTO `Osoba`(IdMjesto, Ime, Prezime, Adresa, BrojTelefona) " +
-                                                            "VALUES (@IdMjesto, @Ime, @Prezime, @Adresa, @BrojTelefona)";
+        private static readonly string INSERT = "INSERT INTO `Osoba`(IdMjesto, Ime, Prezime, Adresa, BrojTelefona, Email, DatumRodjenja) " +
+                                                            "VALUES (@IdMjesto, @Ime, @Prezime, @Adresa, @BrojTelefona, @Email, @DatumRodjenja)";
 
-        private static readonly string UPDATE = "UPDATE `Osoba` SET IdMjesto=@IdMjesto, Ime=@Ime, Prezime=@Prezime, Adresa=@Adresa, BrojTelefona=@BrojTelefona WHERE IdOsoba=@IdOsoba";
+        private static readonly string UPDATE = "UPDATE `Osoba` SET IdMjesto=@IdMjesto, Ime=@Ime, Prezime=@Prezime, Adresa=@Adresa, BrojTelefona=@BrojTelefona, Email=@Email, DatumRodjenja=@DatumRodjenja WHERE IdOsoba=@IdOsoba";
 
         private static readonly string DELETE = "DELETE FROM `Osoba` WHERE IdOsoba=@IdOsoba";
 
@@ -31,6 +31,8 @@ namespace Biblioteka.Data.DataAccess.MySql
                 cmd.Parameters.AddWithValue("@Prezime", osoba.Prezime);
                 cmd.Parameters.AddWithValue("@Adresa", osoba.Adresa);
                 cmd.Parameters.AddWithValue("@BrojTelefona", osoba.BrojTelefona);
+                cmd.Parameters.AddWithValue("@Email", osoba.Email);
+                cmd.Parameters.AddWithValue("@DatumRodjenja", osoba.DatumRodjenja);
                 cmd.ExecuteNonQuery();
                 osoba.IdOsoba = (int)cmd.LastInsertedId;
             }
@@ -58,6 +60,8 @@ namespace Biblioteka.Data.DataAccess.MySql
                 cmd.Parameters.AddWithValue("@Prezime", osoba.Prezime);
                 cmd.Parameters.AddWithValue("@Adresa", osoba.Adresa);
                 cmd.Parameters.AddWithValue("@BrojTelefona", osoba.BrojTelefona);
+                cmd.Parameters.AddWithValue("@Email", osoba.Email);
+                cmd.Parameters.AddWithValue("@DatumRodjenja", osoba.DatumRodjenja);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception exc)
@@ -114,7 +118,9 @@ namespace Biblioteka.Data.DataAccess.MySql
                         Ime = reader.GetString(2),
                         Prezime = reader.GetString(3),
                         Adresa = reader.GetString(4),
-                        BrojTelefona = reader.GetString(5)
+                        BrojTelefona = reader.GetString(5),
+                        Email = reader.GetString(6),
+                        DatumRodjenja = reader.GetDateTime(7)
                     });
                 }
             }
@@ -151,7 +157,9 @@ namespace Biblioteka.Data.DataAccess.MySql
                     Ime = reader.GetString(2),
                     Prezime = reader.GetString(3),
                     Adresa = reader.GetString(4),
-                    BrojTelefona = reader.GetString(5)
+                    BrojTelefona = reader.GetString(5),
+                    Email = reader.GetString(6),
+                    DatumRodjenja = reader.GetDateTime(7)
                 };
             }
             catch (Exception ex)
