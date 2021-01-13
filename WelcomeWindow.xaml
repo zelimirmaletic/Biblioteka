@@ -5,20 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Biblioteka"
         mc:Ignorable="d"
-        Title="Dobrodošli"
-        Height="500"
-        Width="500"
-        Icon="Resources\favicon.ico"
+        Title="Prijava na sistem"
+        Height="400"
+        Width="400"
+        Icon="Resources\Images\logo.ico"
         ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen"
         >
     <Window.Background>
-        <ImageBrush ImageSource="Resources\welcome.png"></ImageBrush>
+        <SolidColorBrush Color="#1261A0"/>
     </Window.Background>
     <Window.Resources>
         <!--Button-->
         <Style TargetType="Button">
             <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="Segoe UI"/>
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="FontWeight" Value="Medium"/>
             <Setter Property="Background" Value="Ivory"/>
@@ -31,25 +32,24 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="140"/>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="140"/>
-            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="295"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="155"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Button x:Name="btnBibliotekar" Grid.Column="1" Grid.Row="1" Click="btnBibliotekar_Click">
-            Bibliotekar
-        </Button>
+        <Image Grid.Column="1" Source="Resources\Images\logo.ico" VerticalAlignment="Top"  Height="80" Width="80" Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="0 5 0 0"/>
 
-        <Button x:Name="btnAdmin" Grid.Column="3" Grid.Row="1" Click="btnAdmin_Click">
-            Administrator
-        </Button>
+        <Frame x:Name="mainFrame" NavigationUIVisibility="Hidden" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="4" Margin="0 15 0 10 "/>
+        
 
     </Grid>
 </Window>

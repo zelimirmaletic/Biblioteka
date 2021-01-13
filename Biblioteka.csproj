@@ -125,8 +125,11 @@
     <Compile Include="AdminLogin.xaml.cs">
       <DependentUpon>AdminLogin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BibliotekarLogin.xaml.cs">
-      <DependentUpon>BibliotekarLogin.xaml</DependentUpon>
+    <Compile Include="AdminLoginPange.xaml.cs">
+      <DependentUpon>AdminLoginPange.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BibliotekarLoginPage.xaml.cs">
+      <DependentUpon>BibliotekarLoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\DataAccess\Exceptions\DataAccessException.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlAdmin.cs" />
@@ -152,6 +155,9 @@
     <Compile Include="Data\Model\Osoba.cs" />
     <Compile Include="Data\Model\Pozajmica.cs" />
     <Compile Include="Data\Model\Zanr.cs" />
+    <Compile Include="PrijavaNaSistem.xaml.cs">
+      <DependentUpon>PrijavaNaSistem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WelcomeWindow.xaml.cs">
       <DependentUpon>WelcomeWindow.xaml</DependentUpon>
     </Compile>
@@ -187,7 +193,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BibliotekarLogin.xaml">
+    <Page Include="AdminLoginPange.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BibliotekarLoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -203,6 +213,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PrijavaNaSistem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WelcomeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -272,9 +286,6 @@
     <Resource Include="Resources\success.ico" />
   </ItemGroup>
   <ItemGroup>
-    <SplashScreen Include="Resources\SplashPage.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\dashboard.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -282,6 +293,19 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\bookGive.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\greenBook.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\search.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\logo.ico" />
+    <SplashScreen Include="Resources\Images\splashScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\back.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

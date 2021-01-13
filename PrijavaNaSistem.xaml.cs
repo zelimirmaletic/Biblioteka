@@ -10,38 +10,30 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Biblioteka
 {
     /// <summary>
-    /// Interaction logic for WelcomeWindow.xaml
+    /// Interaction logic for PrijavaNaSistem.xaml
     /// </summary>
-    public partial class WelcomeWindow : Window
+    public partial class PrijavaNaSistem : Page
     {
-        public WelcomeWindow()
+        public PrijavaNaSistem()
         {
             InitializeComponent();
+        }
 
-            Loaded += PrijavaNaSistem_Loaded;
-        }
-        
-        private void PrijavaNaSistem_Loaded(Object sender, RoutedEventArgs e)
-        {
-            mainFrame.NavigationService.Navigate(new PrijavaNaSistem());
-        }
-        /*
         private void btnBibliotekar_Click(object sender, RoutedEventArgs e)
         {
-            BibliotekarLogin bibLogin = new BibliotekarLogin();
-            bibLogin.Show();
+            this.NavigationService.Navigate(new BibliotekarLoginPage());
         }
 
         private void btnAdmin_Click(object sender, RoutedEventArgs e)
         {
-            AdminLogin adminLogin = new AdminLogin();
-            adminLogin.Show();
+            this.NavigationService.Navigate(new AdminLoginPange());
+
         }
-        */
     }
 }

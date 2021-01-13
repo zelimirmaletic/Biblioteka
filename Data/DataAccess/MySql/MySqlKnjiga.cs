@@ -14,7 +14,7 @@ namespace Biblioteka.Data.DataAccess.MySql
         private static readonly string SELECT = "SELECT * FROM `Knjiga` ORDER BY Naslov";
 
         private static readonly string INSERT = "INSERT INTO `Knjiga`(IdZanr,IdIzdavac,Naslov, DatumObjavljivanja, ISBN, UkupanBrojKopija, BrojStranica, Jezik, Opis)" +
-                                                            "VALUES (@IdZanr,@IdIzdavac,@Naslov, @DatumRodjenja, @ISBN, @UkupanBrojKopija, @BrojStranica, @Jezik, @Opis)";
+                                                            "VALUES (@IdZanr,@IdIzdavac,@Naslov, @DatumObjavljivanja, @ISBN, @UkupanBrojKopija, @BrojStranica, @Jezik, @Opis)";
 
         private static readonly string UPDATE = "UPDATE `Knjiga` SET IdZanr=@IdZanr, IdIzdavac=@IdIzdavac, Naslov=@Naslov, DatumObjavljivanja=@DatumObjavljivanja,ISBN=@ISBN, UkupanBrojKopija=@UkupanBrojKopija," +
                                                 " BrojStranica=@BrojStranica, Jezik=@Jezik, Opis=@Opis WHERE IdKnjiga=@IdKnjiga";

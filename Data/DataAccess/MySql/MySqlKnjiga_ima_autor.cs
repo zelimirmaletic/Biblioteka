@@ -12,7 +12,7 @@ namespace Biblioteka.Data.DataAccess.MySql
     class MySqlKnjiga_ima_autor
     {
         private static readonly string SELECT = "SELECT * FROM `Knjiga_ima_Autor` WHERE IdKnjiga=@IdKnjiga ORDER BY Naziv";
-        private static readonly string INSERT = "INSERT INTO `Knjiga_ima_Autor`(IdKnjiga, IdAutor) VALUES (@IdKnjiga, @Autor)";
+        private static readonly string INSERT = "INSERT INTO `Knjiga_ima_Autor`(IdKnjiga, IdAutor) VALUES (@IdKnjiga, @IdAutor)";
         private static readonly string UPDATE = "UPDATE `Knjiga_ima_Autor` SET IdKnjiga=@IdKnjiga, IdAutor=@IdAutor WHERE IdKnjiga=@IdKnjiga";
         private static readonly string DELETE = "DELETE FROM `Knjiga_ima_Autor` WHERE IdKnjiga=@IdKnjiga";
 
@@ -119,13 +119,13 @@ namespace Biblioteka.Data.DataAccess.MySql
         }
 
 
-        public void SaveKnjiga_ima_Izdavac(Knjiga_ima_Autor rekord, string mod)
+        public void SaveKnjiga_ima_Autor(Knjiga_ima_Autor rekord, string mod)
         {
             if (mod == "insert")
             {
                 InsertKnjiga_ima_Autor(rekord);
             }
-            else
+            else if (mod == "update")
             {
                 UpdateKnjiga_ima_Autor(rekord);
             }

@@ -56,14 +56,12 @@ namespace Biblioteka
 
         private void cbMjesto_DropDownOpened(object sender, EventArgs e)
         {
-            if(cbMjesto.Items.IsEmpty)
-            {
+            cbMjesto.Items.Clear();
                 //Initialize cbMjesto values
                 MySqlMjesto query = new MySqlMjesto();
                 List<Mjesto> mjesta = query.GetAllMjesto();
                 foreach (Mjesto mjesto in mjesta)
                     this.cbMjesto.Items.Add(mjesto.Naziv);
-            }
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)

@@ -10,7 +10,7 @@
         Width="800"
         MinHeight="650"
         MinWidth="800"
-        Icon="Resources\favicon.ico"
+        Icon="Resources\Images\logo.ico"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanResize"
         >
@@ -23,6 +23,9 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -72,6 +75,25 @@
         <TextBlock Grid.Row="3" Grid.Column="0" FontWeight="Medium" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14">
             Zaduži
         </TextBlock>
+
+        <Button x:Name="btnRazduziKnjigu" Grid.Column="0" Grid.Row="4" Margin="0 -15 0 0" Click="btnRazduziKnjigu_Click">
+            <StackPanel>
+                <Image Source="Resources\greenBook.ico" />
+            </StackPanel>
+        </Button>
+        <TextBlock Grid.Row="4" Grid.Column="0" FontWeight="Medium" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14">
+            Razduži/Produži
+        </TextBlock>
+
+        <Button x:Name="btnPretraga" Grid.Column="0" Grid.Row="5" Margin="0 -15 0 0" Click="btnPretraga_Click">
+            <StackPanel>
+                <Image Source="Resources\search.ico" />
+            </StackPanel>
+        </Button>
+        <TextBlock Grid.Row="5" Grid.Column="0" FontWeight="Medium" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14">
+            Pretraga
+        </TextBlock>
+
 
 
     </Grid>

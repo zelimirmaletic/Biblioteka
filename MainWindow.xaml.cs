@@ -26,8 +26,8 @@ namespace Biblioteka
         {
             InitializeComponent();
 
-            //var window = new WelcomeWindow();
-           // window.ShowDialog();
+            var window = new WelcomeWindow();
+            window.ShowDialog();
 
 
             
@@ -47,6 +47,16 @@ namespace Biblioteka
         }
 
         private void btnIznajmiKnjigu_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnRazduziKnjigu_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnPretraga_Click(object sender, RoutedEventArgs e)
         {
 
         }

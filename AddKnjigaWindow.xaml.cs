@@ -85,23 +85,49 @@ namespace Biblioteka
                 return;
             }
             var novaKnjiga = new Knjiga();
+            novaKnjiga.IdKnjiga = 0;
             novaKnjiga.Naslov = txbNaslov.Text;
 
-            var split = cbAutor.SelectedItem.ToString().Split(' ');
+            var split = cbZanr.SelectedItem.ToString().Split(' ');
             novaKnjiga.IdZanr = Int32.Parse(split[0]);
-            
 
+            split = cbIzdavac.SelectedItem.ToString().Split(' ');
+            novaKnjiga.IdIzdavac = Int32.Parse(split[0]);
 
+            novaKnjiga.DatumObjavljivanja = dpDatumObjavljivanja.SelectedDate.Value;
+            novaKnjiga.ISBN = txbISBN.Text;
+            try
+            {
+                novaKnjiga.UkupanBrojKopija = Int32.Parse(txbBrojKopija.Text);
+            }catch(Exception exc)
+            {
+                MessageBox.Show("Broj kopija mora biti cijeli broj", "Greška", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            try
+            {
+                novaKnjiga.BrojStranica = Int32.Parse(txbBrojStranica.Text);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Broj stranica mora biti cijeli broj", "Greška", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            novaKnjiga.Jezik = cbJezik.SelectedItem.ToString();
+            novaKnjiga.Opis = txbOpis.Text;
 
-            //Add Knjiga_has_Autor
+            var mysqlKnjiga = new MySqlKnjiga();
+            mysqlKnjiga.SaveKnjiga(novaKnjiga);
+
+            //Add Knjiga_ima_Autor
             split = cbAutor.SelectedItem.ToString().Split(' ');
-            MessageBox.Show(split[0]);
+            var knjigaImaAutor = new Knjiga_ima_Autor(novaKnjiga.IdKnjiga, Int32.Parse(split[0]));
+            var mysqlKnjiga_ima_Autor = new MySqlKnjiga_ima_autor();
+            mysqlKnjiga_ima_Autor.SaveKnjiga_ima_Autor(knjigaImaAutor,"insert");
 
-            
+            MessageBox.Show("Uspjesno dodana knjiga!", "Informacija", MessageBoxButton.OK, MessageBoxImage.Information);
+            this.Close();
 
-
-            //Get zanr id by naziv
-            //Get Izdavac by naziv
         }
 
         private void btnOtkazi_Click(object sender, RoutedEventArgs e)
