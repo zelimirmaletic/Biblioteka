@@ -161,6 +161,33 @@ namespace Biblioteka.Data.DataAccess.MySql
             return result;
         }
 
+        public int GetBrojAutora()
+        {
+            var result = 0;
+            MySqlConnection conn = null;
+            MySqlCommand cmd;
+            MySqlDataReader reader = null;
+
+            try
+            {
+                conn = MySqlUtil.GetConnection();
+                cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT * FROM `Autor`";
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                    result++;
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException("Exception in MySqlAutor", ex);
+            }
+            finally
+            {
+                MySqlUtil.CloseQuietly(reader, conn);
+            }
+            return result;
+        }
+
         public void SaveAutor(Autor autor)
         {
             if (autor.IdAutor <= 0)

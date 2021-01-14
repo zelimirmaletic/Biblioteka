@@ -14,6 +14,8 @@ namespace Biblioteka.Data.DataAccess.MySql
 
         private static readonly string DELETE = "DELETE FROM `Pozajmica` WHERE IdPozajmica=@IdPozajmica";
 
+        private static readonly int DUZINA_POZAJMICE = 30;
+
         private void InsertPozajmica(Pozajmica  pozajmica)
         {
             MySqlConnection con = null;
@@ -40,6 +42,65 @@ namespace Biblioteka.Data.DataAccess.MySql
             {
                 MySqlUtil.CloseQuietly(con);
             }
+        }
+
+        public int GetUkupanBrojPozajmica()
+        {
+            MySqlConnection conn = null;
+            MySqlCommand cmd;
+            MySqlDataReader reader = null;
+            int numberOfRows = 0;
+            try
+            {
+                conn = MySqlUtil.GetConnection();
+                cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT * FROM `Pozajmica`";
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                    numberOfRows++;
+                    
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException("Exception in MySqlPozajmica", ex);
+            }
+            finally
+            {
+                MySqlUtil.CloseQuietly(reader, conn);
+            }
+            return numberOfRows;
+        }
+
+        public int GetUkupanBrojKasnihPozajmica()
+        {
+            MySqlConnection conn = null;
+            MySqlCommand cmd;
+            MySqlDataReader reader = null;
+            int numberOfRows = 0;
+            try
+            {
+                conn = MySqlUtil.GetConnection();
+                cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT * FROM `Pozajmica`";
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    DateTime datumPozajmljivanja = reader.GetDateTime(4);
+                    datumPozajmljivanja.AddDays(DUZINA_POZAJMICE);
+                    if (datumPozajmljivanja.CompareTo(DateTime.Now) == 1)
+                        numberOfRows++;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException("Exception in MySqlPozajmica", ex);
+            }
+            finally
+            {
+                MySqlUtil.CloseQuietly(reader, conn);
+            }
+            return numberOfRows;
         }
 
         public Pozajmica GetPozajmicaByClanID(int IdClan)

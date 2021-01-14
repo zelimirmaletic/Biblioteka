@@ -186,6 +186,62 @@ namespace Biblioteka.Data.DataAccess.MySql
             return result;
         }
 
+        public int GetBrojNaslova()
+        {
+            var result = 0;
+            MySqlConnection conn = null;
+            MySqlCommand cmd;
+            MySqlDataReader reader = null;
+
+            try
+            {
+                conn = MySqlUtil.GetConnection();
+                cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT * FROM `Knjiga`";
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                    result++;
+                
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException("Exception in MySqlKnjiga", ex);
+            }
+            finally
+            {
+                MySqlUtil.CloseQuietly(reader, conn);
+            }
+            return result;
+        }
+
+        public int GetBrojKopija()
+        {
+            var result = 0;
+            MySqlConnection conn = null;
+            MySqlCommand cmd;
+            MySqlDataReader reader = null;
+
+            try
+            {
+                conn = MySqlUtil.GetConnection();
+                cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT * FROM `Knjiga`";
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                    result+=reader.GetInt32(6);
+
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException("Exception in MySqlKnjiga", ex);
+            }
+            finally
+            {
+                MySqlUtil.CloseQuietly(reader, conn);
+            }
+            return result;
+        }
+
         public void SaveKnjiga(Knjiga knjiga)
         {
             if (knjiga.IdKnjiga <= 0)

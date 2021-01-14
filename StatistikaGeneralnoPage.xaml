@@ -1,0 +1,145 @@
+﻿<Page x:Class="Biblioteka.StatistikaGeneralnoPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Biblioteka"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="800"
+      Title="StatistikaGeneralnoPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        
+        <Rectangle Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="9">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="White"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin=" 10 10 10 10">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#4aab98"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle Grid.Column="2" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin=" 10 10 10 10">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#de8c7f"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        
+        <Rectangle Grid.Column="4" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin=" 10 10 10 10">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#1261a0"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle Grid.Column="0" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin=" 10 10 10 10">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#1261a0"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle Grid.Column="2" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin=" 10 10 10 10">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#de8c7f"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle Grid.Column="4" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin=" 10 10 10 10">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#4aab98"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle Grid.Column="0" Grid.Row="5" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin=" 10 10 10 10">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#4aab98"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle Grid.Column="2" Grid.Row="5" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin=" 10 10 10 10">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#1261a0"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle Grid.Column="4" Grid.Row="5" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin=" 10 10 10 10">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#de8c7f"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="0" Height="80" Width="auto" FontSize="30" FontWeight="Light" Foreground="#1261a0" VerticalAlignment="Bottom" Margin="10 0 0 0" HorizontalAlignment="Left">
+            Generalna statistika
+        </TextBlock>
+        <Separator Grid.Column="0" Grid.Row="0" Background="#1261a0" Grid.ColumnSpan="8" Margin="10 0 15 0"/>
+
+        <TextBlock Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="100" Width="auto" Foreground="White" FontWeight="Medium" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Top" Margin="0 50 0 0">
+            BROJ POZAJMICA
+        </TextBlock>
+        <TextBlock x:Name="txbBrojPozajmica" Grid.Column="0" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2" Height="100" Width="auto" Foreground="White" FontWeight="Medium" FontSize="40" TextWrapping="Wrap" TextAlignment="Center"/>
+
+        <TextBlock Grid.Column="2" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="100" Width="auto" Foreground="White" FontWeight="Medium" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Top" Margin="0 40 0 0" Padding="10 10 10 10">
+            BROJ ZAKAŠNJENJA
+        </TextBlock>
+        <TextBlock x:Name="txbBrojKasnjenja" Grid.Column="2" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2" Height="100" Width="auto" Foreground="White" FontWeight="Medium" FontSize="40" TextWrapping="Wrap" TextAlignment="Center"/>
+
+        <TextBlock Grid.Column="4" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="100" Width="auto" Foreground="White" FontWeight="Medium" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Top" Margin="0 40 0 0" Padding="10 10 10 10">
+            BROJ IZDAVAČA
+        </TextBlock>
+        <TextBlock x:Name="txbBrojIzdavaca" Grid.Column="4" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2" Height="100" Width="auto" Foreground="White" FontWeight="Medium" FontSize="40" TextWrapping="Wrap" TextAlignment="Center"/>
+
+        <TextBlock Grid.Column="0" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="100" Width="auto" Foreground="White" FontWeight="Medium" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Top" Margin="0 50 0 0">
+            BROJ ČLANOVA
+        </TextBlock>
+        <TextBlock x:Name="txbBrojClanova" Grid.Column="0" Grid.Row="3" Grid.RowSpan="3" Grid.ColumnSpan="2" Height="100" Width="auto" Foreground="White" FontWeight="Medium" FontSize="40" TextWrapping="Wrap" TextAlignment="Center"/>
+
+        <TextBlock Grid.Column="2" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="100" Width="auto" Foreground="White" FontWeight="Medium" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Top" Margin="0 40 0 0" Padding="10 10 10 10">
+            BROJ  NASLOVA
+        </TextBlock>
+        <TextBlock x:Name="txbBrojJedinstvenihNaslova" Grid.Column="2" Grid.Row="3" Grid.RowSpan="3" Grid.ColumnSpan="2" Height="100" Width="auto" Foreground="White" FontWeight="Medium" FontSize="40" TextWrapping="Wrap" TextAlignment="Center"/>
+
+        <TextBlock Grid.Column="4" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="100" Width="auto" Foreground="White" FontWeight="Medium" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Top" Margin="0 40 0 0" Padding="10 10 10 10">
+            UKUPAN BROJ KOPIJA
+        </TextBlock>
+        <TextBlock x:Name="txbUkupanBrojKopija" Grid.Column="4" Grid.Row="3" Grid.RowSpan="3" Grid.ColumnSpan="2" Height="100" Width="auto" Foreground="White" FontWeight="Medium" FontSize="40" TextWrapping="Wrap" TextAlignment="Center"/>
+
+        <TextBlock Grid.Column="0" Grid.Row="5" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="100" Width="auto" Foreground="White" FontWeight="Medium" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Top" Margin="0 50 0 0">
+            BROJ ŽANROVA
+        </TextBlock>
+        <TextBlock x:Name="txbBrojZanrova" Grid.Column="0" Grid.Row="5" Grid.RowSpan="3" Grid.ColumnSpan="2" Height="100" Width="auto" Foreground="White" FontWeight="Medium" FontSize="40" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Bottom"/>
+
+        <TextBlock Grid.Column="2" Grid.Row="5" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="100" Width="auto" Foreground="White" FontWeight="Medium" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Top" Margin="0 40 0 0" Padding="10 10 10 10">
+            BROJ AUTORA
+        </TextBlock>
+        <TextBlock x:Name="txbBrojAutora" Grid.Column="2" Grid.Row="5" Grid.RowSpan="3" Grid.ColumnSpan="2" Height="100" Width="auto" Foreground="White" FontWeight="Medium" FontSize="40" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Bottom"/>
+
+        <TextBlock Grid.Column="4" Grid.Row="5" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="100" Width="auto" Foreground="White" FontWeight="Medium" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Top" Margin="0 15 0 0" Padding="10 10 10 10">
+            BROJ DOSTUPNIH KOPIJA
+        </TextBlock>
+        <TextBlock x:Name="txbBrojDostupnihKopija" Grid.Column="4" Grid.Row="5" Grid.RowSpan="5" Grid.ColumnSpan="2" Height="100" Width="auto" Foreground="White" FontWeight="Medium" FontSize="40" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Bottom"/>
+
+    </Grid>
+</Page>

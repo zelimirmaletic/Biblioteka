@@ -131,6 +131,9 @@
     <Compile Include="BibliotekarLoginPage.xaml.cs">
       <DependentUpon>BibliotekarLoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ClanoviSubMenuPage.xaml.cs">
+      <DependentUpon>ClanoviSubMenuPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Data\DataAccess\Exceptions\DataAccessException.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlAdmin.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlAutor.cs" />
@@ -155,8 +158,32 @@
     <Compile Include="Data\Model\Osoba.cs" />
     <Compile Include="Data\Model\Pozajmica.cs" />
     <Compile Include="Data\Model\Zanr.cs" />
+    <Compile Include="IzvjestajSubMenuPage.xaml.cs">
+      <DependentUpon>IzvjestajSubMenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KnjigeSubMenuPage.xaml.cs">
+      <DependentUpon>KnjigeSubMenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenuPage.xaml.cs">
+      <DependentUpon>MainMenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ObavjestenjaSubMenuPage.xaml.cs">
+      <DependentUpon>ObavjestenjaSubMenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PodesavanjaSubMenuPage.xaml.cs">
+      <DependentUpon>PodesavanjaSubMenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PomocSubMenuPage.xaml.cs">
+      <DependentUpon>PomocSubMenuPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PrijavaNaSistem.xaml.cs">
       <DependentUpon>PrijavaNaSistem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StatistikaGeneralnoPage.xaml.cs">
+      <DependentUpon>StatistikaGeneralnoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StatistikaPage.xaml.cs">
+      <DependentUpon>StatistikaPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="WelcomeWindow.xaml.cs">
       <DependentUpon>WelcomeWindow.xaml</DependentUpon>
@@ -201,6 +228,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ClanoviSubMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IzvjestajSubMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KnjigeSubMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -213,7 +256,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ObavjestenjaSubMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PodesavanjaSubMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PomocSubMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PrijavaNaSistem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StatistikaGeneralnoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StatistikaPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -306,6 +369,29 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\back.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\stat.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\book.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\man.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\message.ico" />
+    <Resource Include="Resources\Images\report.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\help.ico" />
+    <Resource Include="Resources\Images\settings.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\logout.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

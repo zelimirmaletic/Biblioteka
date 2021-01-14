@@ -1,19 +1,6 @@
-﻿using Biblioteka.Data.DataAccess.MySql;
-using Biblioteka.Data.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Biblioteka
 {
@@ -26,39 +13,27 @@ namespace Biblioteka
         {
             InitializeComponent();
 
-            var window = new WelcomeWindow();
-            window.ShowDialog();
+            //var window = new WelcomeWindow();
+           // window.ShowDialog();
 
-
-            
-           
-        }
-
-        private void btnDodajKnjigu_Click(object sender, RoutedEventArgs e)
-        {
-            var newWindow = new AddKnjigaWindow();
-            newWindow.ShowDialog();
-        }
-
-        private void btnDodajClana_Click(object sender, RoutedEventArgs e)
-        {
-            var newWindow = new AddClanWindow();
-            newWindow.ShowDialog();
-        }
-
-        private void btnIznajmiKnjigu_Click(object sender, RoutedEventArgs e)
-        {
+            Loaded += MainMenuLoaded;
 
         }
 
-        private void btnRazduziKnjigu_Click(object sender, RoutedEventArgs e)
+        private void MainMenuLoaded(Object sender, RoutedEventArgs e)
         {
-
+            frmMainMenu.NavigationService.Navigate(new MainMenuPage());
+            frmSideMenu.NavigationService.Navigate(new StatistikaPage());
         }
 
-        private void btnPretraga_Click(object sender, RoutedEventArgs e)
+        public void setSubmenuPage(Page page)
         {
+            this.frmSideMenu.NavigationService.Navigate(page);
+        }
 
+        public void setPageArea(Page page)
+        {
+            this.frmPageArea.NavigationService.Navigate(page);
         }
     }
 }

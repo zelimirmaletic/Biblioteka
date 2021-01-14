@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="Biblioteka"
         Height="650"
-        Width="800"
+        Width="1000"
         MinHeight="650"
-        MinWidth="800"
+        MinWidth="1000"
         Icon="Resources\Images\logo.ico"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanResize"
@@ -22,78 +22,32 @@
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="120"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="80"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Rectangle Grid.Column="0" Grid.RowSpan="9">
+
+        <Rectangle Width="200" Height="auto" Grid.Column="0" Grid.Row="0">
             <Rectangle.Fill>
-                <SolidColorBrush Color="#C5AF7E"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle Grid.Column="0" Grid.ColumnSpan="2">
-            <Rectangle.Fill>
-                <SolidColorBrush Color="#AF7629"/>
+                <SolidColorBrush Color="#1261A0"/>
             </Rectangle.Fill>
         </Rectangle>
 
-        <Button x:Name="btnDodajKnjigu" Grid.Column="0" Grid.Row="1" Margin="0 -15 0 0" Click="btnDodajKnjigu_Click">
-            <StackPanel>
-                <Image Source="Resources\book.ico" />
-            </StackPanel>
-        </Button>
-        <TextBlock Grid.Row="1" Grid.Column="0" FontWeight="Medium" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14">
-            Dodaj knjigu
-        </TextBlock>
+        <Rectangle Width="200" Height="auto" Grid.Column="1" Grid.Row="0">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#e3e3e3"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        
 
-        <Button x:Name="btnDodajClana" Grid.Column="0" Grid.Row="2" Margin="0 -15 0 0" Click="btnDodajClana_Click">
-            <StackPanel>
-                <Image Source="Resources\addClan.ico" />
-            </StackPanel>
-        </Button>
-        <TextBlock Grid.Row="2" Grid.Column="0" FontWeight="Medium" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14">
-            Dodaj člana
-        </TextBlock>
+        <Frame x:Name="frmMainMenu" x:FieldModifier="public" Grid.Row="0" Grid.Column="0" Height="auto" Width="auto" NavigationUIVisibility="Hidden"/>
 
-        <Button x:Name="btnIznajmiKnjigu" Grid.Column="0" Grid.Row="3" Margin="0 -15 0 0" Click="btnIznajmiKnjigu_Click">
-            <StackPanel>
-                <Image Source="Resources\bookGive.ico" />
-            </StackPanel>
-        </Button>
-        <TextBlock Grid.Row="3" Grid.Column="0" FontWeight="Medium" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14">
-            Zaduži
-        </TextBlock>
+        <Frame x:Name="frmSideMenu" x:FieldModifier="public" Grid.Row="0" Grid.Column="1" Height="auto" Width="auto" NavigationUIVisibility="Hidden"/>
 
-        <Button x:Name="btnRazduziKnjigu" Grid.Column="0" Grid.Row="4" Margin="0 -15 0 0" Click="btnRazduziKnjigu_Click">
-            <StackPanel>
-                <Image Source="Resources\greenBook.ico" />
-            </StackPanel>
-        </Button>
-        <TextBlock Grid.Row="4" Grid.Column="0" FontWeight="Medium" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14">
-            Razduži/Produži
-        </TextBlock>
-
-        <Button x:Name="btnPretraga" Grid.Column="0" Grid.Row="5" Margin="0 -15 0 0" Click="btnPretraga_Click">
-            <StackPanel>
-                <Image Source="Resources\search.ico" />
-            </StackPanel>
-        </Button>
-        <TextBlock Grid.Row="5" Grid.Column="0" FontWeight="Medium" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14">
-            Pretraga
-        </TextBlock>
-
+        <Frame x:Name="frmPageArea" x:FieldModifier="public" Grid.Row="0" Grid.Column="2" Height="auto" Width="auto" NavigationUIVisibility="Hidden"/>
 
 
     </Grid>

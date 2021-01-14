@@ -157,6 +157,33 @@ namespace Biblioteka.Data.DataAccess.MySql
             return result;
         }
 
+        public int GetBrojIzdavaca()
+        {
+            var result =0;
+            MySqlConnection conn = null;
+            MySqlCommand cmd;
+            MySqlDataReader reader = null;
+
+            try
+            {
+                conn = MySqlUtil.GetConnection();
+                cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT * FROM `Izdavac`";
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                    result++;
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException("Exception in MySqlIzdavac", ex);
+            }
+            finally
+            {
+                MySqlUtil.CloseQuietly(reader, conn);
+            }
+            return result;
+        }
+
         public void SaveIzdavac(Izdavac izdavac)
         {
             if (izdavac.IdIzdavac <= 0)
