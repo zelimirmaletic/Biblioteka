@@ -161,6 +161,9 @@
     <Compile Include="IzvjestajSubMenuPage.xaml.cs">
       <DependentUpon>IzvjestajSubMenuPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="KnjigePage.xaml.cs">
+      <DependentUpon>KnjigePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="KnjigeSubMenuPage.xaml.cs">
       <DependentUpon>KnjigeSubMenuPage.xaml</DependentUpon>
     </Compile>
@@ -233,6 +236,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="IzvjestajSubMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KnjigePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

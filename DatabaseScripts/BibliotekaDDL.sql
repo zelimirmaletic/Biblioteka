@@ -28,7 +28,7 @@ create table Izdavac(
 
 create table Zanr(
     IdZanr int unsigned auto_increment not null ,
-    Naziv varchar(45) not null ,
+    Naziv varchar(45) unique not null ,
     Opis text(250),
     -- KEYS
     primary key (IdZanr)
@@ -127,7 +127,7 @@ create table Pozajmica(
     IdKnjiga int unsigned not null ,
     IdBibliotekar int unsigned not null ,
     DatumPozajmljivanja date not null ,
-    Razduzena tinyint not null ,
+    JeRazduzena tinyint not null ,
     Opis text(150),
     -- KEYS
     primary key (IdPozajmica),

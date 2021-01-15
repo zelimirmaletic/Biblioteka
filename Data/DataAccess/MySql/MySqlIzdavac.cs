@@ -157,9 +157,10 @@ namespace Biblioteka.Data.DataAccess.MySql
             return result;
         }
 
+
         public int GetBrojIzdavaca()
         {
-            var result =0;
+            var result = 0;
             MySqlConnection conn = null;
             MySqlCommand cmd;
             MySqlDataReader reader = null;
@@ -183,6 +184,8 @@ namespace Biblioteka.Data.DataAccess.MySql
             }
             return result;
         }
+
+
 
         public void SaveIzdavac(Izdavac izdavac)
         {

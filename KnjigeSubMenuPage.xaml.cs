@@ -24,5 +24,12 @@ namespace Biblioteka
         {
             InitializeComponent();
         }
+
+        private void btnKnjige_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow parentWindow = Window.GetWindow(this) as MainWindow;
+            parentWindow.setPageArea(new KnjigePage());
+
+        }
     }
 }

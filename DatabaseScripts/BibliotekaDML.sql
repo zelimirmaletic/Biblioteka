@@ -70,7 +70,7 @@ insert into Administrator (IdAdministrator, KorisnickoIme, Lozinka) VALUES
     (3,'zagorka123','zagorka123');
 
 -- Pozajmica
-insert into Pozajmica (IdClan, IdKnjiga, IdBibliotekar, DatumPozajmljivanja, Razduzena, Opis) VALUES
+insert into Pozajmica (IdClan, IdKnjiga, IdBibliotekar, DatumPozajmljivanja, JeRazduzena, Opis) VALUES
     (1,1,2,CURRENT_DATE,false, 'Knjiga je u savršenom stanju i neoštećena');
 
 

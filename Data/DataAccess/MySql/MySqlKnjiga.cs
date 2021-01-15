@@ -146,6 +146,48 @@ namespace Biblioteka.Data.DataAccess.MySql
             return result;
         }
 
+        public List<Knjiga> GetAllKnjigaByNaslov(string naslov)
+        {
+            var result = new List<Knjiga>();
+            MySqlConnection conn = null;
+            MySqlCommand cmd;
+            MySqlDataReader reader = null;
+
+            try
+            {
+                conn = MySqlUtil.GetConnection();
+                cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT * FROM `Knjiga` WHERE Naslov LIKE @Naslov ";
+                cmd.Parameters.AddWithValue("@Naslov", naslov+"%");
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    result.Add(new Knjiga()
+                    {
+                        IdKnjiga = reader.GetInt32(0),
+                        IdZanr = reader.GetInt32(1),
+                        IdIzdavac = reader.GetInt32(2),
+                        Naslov = reader.GetString(3),
+                        DatumObjavljivanja = reader.GetDateTime(4),
+                        ISBN = reader.GetString(5),
+                        UkupanBrojKopija = reader.GetInt32(6),
+                        BrojStranica = reader.GetInt32(7),
+                        Jezik = reader.GetString(8),
+                        Opis = reader.GetString(9)
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException("Exception in MySqlKnjiga", ex);
+            }
+            finally
+            {
+                MySqlUtil.CloseQuietly(reader, conn);
+            }
+            return result;
+        }
+
         public Knjiga GetKnjigaByID(int IdKnjiga)
         {
             var result = new Knjiga();

@@ -65,7 +65,7 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Button x:Name="btnKnjige" Grid.Column="1" Grid.Row="1">
+        <Button x:Name="btnKnjige" Grid.Column="1" Grid.Row="1" Click="btnKnjige_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
                 Knjige
             </TextBlock>
