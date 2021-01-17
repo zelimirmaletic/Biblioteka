@@ -9,8 +9,9 @@ namespace Biblioteka.Data.Model
     class Knjiga
     {
         public int IdKnjiga { get; set; }
-        public int IdZanr { get; set; }
+        public string NazivZanra { get; set; }
         public int IdIzdavac { get; set; }
+        public int IdAutor { get; set; }
         public string Naslov { get; set; }
         public DateTime DatumObjavljivanja { get; set; }
         public string ISBN { get; set; }
@@ -19,10 +20,10 @@ namespace Biblioteka.Data.Model
         public string Jezik { get; set; }
         public string Opis { get; set; }
 
-        public Knjiga(int idKnjiga, int idZanr, int idIzdavac, string naslov, DateTime datumObjavljivanja, string iSBN, int ukupanBrojKopija, int brojStranica, string jezik, string opis)
+        public Knjiga(int idKnjiga, string nazivZanra, int idIzdavac, string naslov, DateTime datumObjavljivanja, string iSBN, int ukupanBrojKopija, int brojStranica, string jezik, string opis)
         {
             IdKnjiga = idKnjiga;
-            IdZanr = idZanr;
+            NazivZanra = nazivZanra;
             IdIzdavac = idIzdavac;
             Naslov = naslov;
             DatumObjavljivanja = datumObjavljivanja;

@@ -155,7 +155,7 @@ namespace Biblioteka.Data.DataAccess.MySql
 
         public int GetBrojClanova()
         {
-            var result = 0;
+            var count = 0;
             MySqlConnection conn = null;
             MySqlCommand cmd;
             MySqlDataReader reader = null;
@@ -164,10 +164,10 @@ namespace Biblioteka.Data.DataAccess.MySql
             {
                 conn = MySqlUtil.GetConnection();
                 cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM `Clan`";
+                cmd.CommandText = "SELECT COUNT(*) FROM `Clan`";
                 reader = cmd.ExecuteReader();
-                while (reader.Read())
-                    result++;
+                reader.Read();
+                count = reader.GetInt32(0);
             }
             catch (Exception ex)
             {
@@ -177,7 +177,7 @@ namespace Biblioteka.Data.DataAccess.MySql
             {
                 MySqlUtil.CloseQuietly(reader, conn);
             }
-            return result;
+            return count;
         }
 
         public void SaveClan(Clan clan, string action)

@@ -8,7 +8,6 @@ namespace Biblioteka.Data.Model
 {
     class Zanr
     {
-        public int IdZanr { get; set; }
         public string Naziv { get; set; }
         public string Opis { get; set; }
 
@@ -16,9 +15,8 @@ namespace Biblioteka.Data.Model
         {
         }
 
-        public Zanr(int idZanr, string naziv, string opis)
+        public Zanr(string naziv, string opis)
         {
-            IdZanr = idZanr;
             Naziv = naziv;
             Opis = opis;
         }
@@ -26,17 +24,17 @@ namespace Biblioteka.Data.Model
         public override bool Equals(object obj)
         {
             return obj is Zanr zanr &&
-                   IdZanr == zanr.IdZanr;
+                   Naziv == zanr.Naziv;
         }
 
         public override int GetHashCode()
         {
-            return -841901431 + IdZanr.GetHashCode();
+            return -841901431 + Naziv.GetHashCode();
         }
 
         public override string ToString()
         {
-            return "ZANR: " + IdZanr + " " + Naziv + " " + Opis;
+            return "ZANR: " + Naziv + " " + Opis;
         }
     }
 }

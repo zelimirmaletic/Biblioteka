@@ -40,7 +40,7 @@ namespace Biblioteka
             var query = new MySqlZanr();
             List<Zanr> list = query.GetAllZanr();
             foreach (var item in list)
-                cbZanr.Items.Add(item.IdZanr + " " +item.Naziv);
+                cbZanr.Items.Add(item.Naziv);
         }
 
         private void btnDodajZnar_Click(object sender, RoutedEventArgs e)
@@ -89,7 +89,7 @@ namespace Biblioteka
             novaKnjiga.Naslov = txbNaslov.Text;
 
             var split = cbZanr.SelectedItem.ToString().Split(' ');
-            novaKnjiga.IdZanr = Int32.Parse(split[0]);
+            //novaKnjiga.IdZanr = Int32.Parse(split[0]);
 
             split = cbIzdavac.SelectedItem.ToString().Split(' ');
             novaKnjiga.IdIzdavac = Int32.Parse(split[0]);
@@ -121,9 +121,9 @@ namespace Biblioteka
 
             //Add Knjiga_ima_Autor
             split = cbAutor.SelectedItem.ToString().Split(' ');
-            var knjigaImaAutor = new Knjiga_ima_Autor(novaKnjiga.IdKnjiga, Int32.Parse(split[0]));
-            var mysqlKnjiga_ima_Autor = new MySqlKnjiga_ima_autor();
-            mysqlKnjiga_ima_Autor.SaveKnjiga_ima_Autor(knjigaImaAutor,"insert");
+            //var knjigaImaAutor = new Knjiga_ima_Autor(novaKnjiga.IdKnjiga, Int32.Parse(split[0]));
+            //var mysqlKnjiga_ima_Autor = new MySqlKnjiga_ima_autor();
+            //mysqlKnjiga_ima_Autor.SaveKnjiga_ima_Autor(knjigaImaAutor,"insert");
 
             MessageBox.Show("Uspjesno dodana knjiga!", "Informacija", MessageBoxButton.OK, MessageBoxImage.Information);
             this.Close();

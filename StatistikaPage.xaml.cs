@@ -31,10 +31,5 @@ namespace Biblioteka
             parentWindow.setPageArea(new StatistikaGeneralnoPage());
 
         }
-
-        private void btnMojaStatistika_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

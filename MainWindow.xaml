@@ -6,10 +6,10 @@
         xmlns:local="clr-namespace:Biblioteka"
         mc:Ignorable="d"
         Title="Biblioteka"
-        Height="650"
-        Width="1000"
-        MinHeight="650"
-        MinWidth="1000"
+        Height="700"
+        Width="1100"
+        MinHeight="700"
+        MinWidth="1100"
         Icon="Resources\Images\logo.ico"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanResize"
@@ -47,7 +47,7 @@
 
         <Frame x:Name="frmSideMenu" x:FieldModifier="public" Grid.Row="0" Grid.Column="1" Height="auto" Width="auto" NavigationUIVisibility="Hidden"/>
 
-        <Frame x:Name="frmPageArea" x:FieldModifier="public" Grid.Row="0" Grid.Column="2" Height="auto" Width="auto" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="frmPageArea" x:FieldModifier="public" Grid.Row="0" Grid.Column="2" Height="auto" Width="auto" NavigationUIVisibility="Hidden" ScrollViewer.CanContentScroll="True"/>
 
 
     </Grid>

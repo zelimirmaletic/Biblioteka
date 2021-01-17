@@ -6,6 +6,8 @@ insert into Mjesto (Naziv, PostanskiBroj) VALUES ('Doboj','78200');
 insert into Mjesto (Naziv, PostanskiBroj) VALUES ('Trebinje', '78900');
 insert into Mjesto (Naziv, PostanskiBroj) VALUES ('Bijeljina','78500');
 insert into Mjesto (Naziv, PostanskiBroj) VALUES ('Istočno Sarajevo','78100');
+insert into Mjesto (Naziv, PostanskiBroj) VALUES ('Moskva','36857');
+insert into Mjesto (Naziv, PostanskiBroj) VALUES ('Beograd','25875');
 
 -- Zanr
 insert into Zanr (Naziv, Opis) VALUES ('horor','Samo za one sa jakim srcem...');
@@ -16,15 +18,19 @@ insert into Zanr (Naziv, Opis) VALUES ('klasična književnost','Samo za odabran
 
 -- Autor
 insert into Autor (IdMjesto, Ime, Prezime, DatumRodjenja) VALUES
-    ((select IdMjesto from Mjesto where Naziv = 'Banja Luka'),'Petar', 'Kočić',"1877-04-09");
+    ((select IdMjesto from Mjesto where Naziv = 'Banja Luka'),'Petar', 'Kočić','1877-04-09');
 insert into Autor (IdMjesto, Ime, Prezime, DatumRodjenja) VALUES
-    ((select IdMjesto from Mjesto where Naziv = 'Doboj'),'Marko', 'Maran',"1975-07-05");
+    ((select IdMjesto from Mjesto where Naziv = 'Doboj'),'Marko', 'Maran','1975-07-05');
 insert into Autor (IdMjesto, Ime, Prezime, DatumRodjenja) VALUES
-    ((select IdMjesto from Mjesto where Naziv = 'Trebinje'),'Zlatko', 'Vukota',"1965-05-03");
+    ((select IdMjesto from Mjesto where Naziv = 'Trebinje'),'Zlatko', 'Vukota','1965-05-03');
 insert into Autor (IdMjesto, Ime, Prezime, DatumRodjenja) VALUES
-    ((select IdMjesto from Mjesto where Naziv = 'Bijeljina'),'Ana', 'Ris',"1990-01-02");
+    ((select IdMjesto from Mjesto where Naziv = 'Bijeljina'),'Ana', 'Ris','1990-01-02');
 insert into Autor (IdMjesto, Ime, Prezime, DatumRodjenja) VALUES
-    ((select IdMjesto from Mjesto where Naziv = 'Istočno Sarajevo'),'Marija', 'Blažić',"1980-04-06");
+    ((select IdMjesto from Mjesto where Naziv = 'Istočno Sarajevo'),'Marija', 'Blažić','1980-04-06');
+insert into Autor (IdMjesto, Ime, Prezime, DatumRodjenja) VALUES
+    ((select IdMjesto from Mjesto where Naziv = 'Moskva'),'Fjodor', 'M. Dostojevski','1870-04-06');
+insert into Autor (IdMjesto, Ime, Prezime, DatumRodjenja) VALUES
+    ((select IdMjesto from Mjesto where Naziv = 'Beograd'),'Desanka', 'Maksimović','1910-04-06');
 
 -- Izdavac
 insert into Izdavac (IdMjesto, Naziv, Adresa) VALUES
@@ -39,15 +45,14 @@ insert into Izdavac (IdMjesto, Naziv, Adresa) VALUES
     ((select IdMjesto from Mjesto where Naziv = 'Istočno Sarajevo'),'Jovanić Print','Ane Marić 68');
 
 -- Knjiga
-insert into Knjiga (IdZanr, IdIzdavac, Naslov, DatumObjavljivanja, ISBN, UkupanBrojKopija, BrojStranica, Jezik, Opis) VALUES
-    (3, 1,'Jazavac pred sudom', '2000-05-07','546512321548456548754565452154', 100, 80, 'srpski', 'Jazavac pred sudom je...');
-insert into Knjiga (IdZanr, IdIzdavac, Naslov, DatumObjavljivanja, ISBN, UkupanBrojKopija, BrojStranica, Jezik, Opis) VALUES
-    (1,2,'Smrt u Veneciji', '2010-08-07','546512321548456548754561252154', 80, 300, 'srpski', 'Smrt u Veneciji je...');
-
-
--- Knjiga_ima_Autor
-insert into Knjiga_ima_Autor (IdKnjiga, IdAutor) VALUES (1, 2);
-insert into Knjiga_ima_Autor (IdKnjiga, IdAutor) VALUES (2, 3);
+insert into Knjiga (NazivZanra,IdAutor, IdIzdavac, Naslov, DatumObjavljivanja, ISBN, UkupanBrojKopija, BrojStranica, Jezik, Opis) VALUES
+    ('klasična književnost',1 , 1,'Jazavac pred sudom', '1870-05-07','546512321548456548754565452154', 100, 80, 'srpski', 'Jazavac pred sudom je...');
+insert into Knjiga (NazivZanra,IdAutor, IdIzdavac, Naslov, DatumObjavljivanja, ISBN, UkupanBrojKopija, BrojStranica, Jezik, Opis) VALUES
+    ('horor',2,2,'Smrt u Veneciji', '2010-08-07','546512321548456548754561252154', 80, 300, 'srpski', 'Smrt u Veneciji je...');
+insert into Knjiga (NazivZanra,IdAutor, IdIzdavac, Naslov, DatumObjavljivanja, ISBN, UkupanBrojKopija, BrojStranica, Jezik, Opis) VALUES
+    ('klasična književnost',6,3,'Braća Karamazovi', '1850-08-07','546512321548456888754561252154', 250, 1300, 'srpski', 'Kapitalno djelo slavnog pisca...');
+insert into Knjiga (NazivZanra,IdAutor, IdIzdavac, Naslov, DatumObjavljivanja, ISBN, UkupanBrojKopija, BrojStranica, Jezik, Opis) VALUES
+    ('poezija',7,4,'Tražim pomilovanje', '1955-08-07','546512321333456548754561252154', 350, 150, 'srpski', 'Djelo protkano...');
 
 -- Osoba
 insert into Osoba (IdMjesto, Ime, Prezime, Adresa, BrojTelefona, Email, DatumRodjenja) VALUES
@@ -67,10 +72,12 @@ insert into Bibliotekar (IdBibliotekar, KorisnickoIme, Lozinka) VALUES
 
 -- Administrator
 insert into Administrator (IdAdministrator, KorisnickoIme, Lozinka) VALUES
-    (3,'zagorka123','zagorka123');
+    (3,'admin','admin');
 
 -- Pozajmica
 insert into Pozajmica (IdClan, IdKnjiga, IdBibliotekar, DatumPozajmljivanja, JeRazduzena, Opis) VALUES
-    (1,1,2,CURRENT_DATE,false, 'Knjiga je u savršenom stanju i neoštećena');
+    (1,1,2,'2021-01-01',false, 'Knjiga je u savršenom stanju i neoštećena');
+
+
 
 

@@ -24,6 +24,7 @@ namespace Biblioteka
         {
             frmMainMenu.NavigationService.Navigate(new MainMenuPage());
             frmSideMenu.NavigationService.Navigate(new StatistikaPage());
+            frmPageArea.NavigationService.Navigate(new StatistikaGeneralnoPage());
         }
 
         public void setSubmenuPage(Page page)

@@ -11,7 +11,7 @@ namespace Biblioteka.Data.DataAccess.MySql
 {
     class MySqlAdmin
     {
-        public Administrator GetBibliotekarByUsername(string korisnickoIme)
+        public Administrator GetAdminrByUsername(string korisnickoIme)
         {
             var result = new Administrator();
             MySqlConnection conn = null;

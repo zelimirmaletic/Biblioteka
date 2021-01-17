@@ -31,5 +31,19 @@ namespace Biblioteka
             parentWindow.setPageArea(new KnjigePage());
 
         }
+
+        private void btnDodajKnjigu_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow parentWindow = Window.GetWindow(this) as MainWindow;
+            parentWindow.setPageArea(new DodajKnjiguPage());
+
+        }
+
+        private void btnZaduziKnjigu_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow parentWindow = Window.GetWindow(this) as MainWindow;
+            parentWindow.setPageArea(new ZaduzivanjePage());
+
+        }
     }
 }

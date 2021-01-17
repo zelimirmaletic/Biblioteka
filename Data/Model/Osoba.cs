@@ -15,9 +15,9 @@ namespace Biblioteka.Data.Model
         public string Adresa { get; set; }
         public string BrojTelefona { get; set; }
 
-        public string Email { get; set; }
-
         public DateTime DatumRodjenja { get; set; }
+
+        public string Email { get; set; }
 
         public Osoba()
         {

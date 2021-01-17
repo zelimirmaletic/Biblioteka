@@ -3,6 +3,7 @@ using Biblioteka.Data.Model;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace Biblioteka.Data.DataAccess.MySql
     {
         private static readonly string SELECT = "SELECT * FROM `Knjiga` ORDER BY Naslov";
 
-        private static readonly string INSERT = "INSERT INTO `Knjiga`(IdZanr,IdIzdavac,Naslov, DatumObjavljivanja, ISBN, UkupanBrojKopija, BrojStranica, Jezik, Opis)" +
-                                                            "VALUES (@IdZanr,@IdIzdavac,@Naslov, @DatumObjavljivanja, @ISBN, @UkupanBrojKopija, @BrojStranica, @Jezik, @Opis)";
+        private static readonly string INSERT = "INSERT INTO `Knjiga`(NazivZanra,IdIzdavac,IdAutor,Naslov, DatumObjavljivanja, ISBN, UkupanBrojKopija, BrojStranica, Jezik, Opis)" +
+                                                            "VALUES (@NazivZanra,@IdIzdavac,@IdAutor,@Naslov, @DatumObjavljivanja, @ISBN, @UkupanBrojKopija, @BrojStranica, @Jezik, @Opis)";
 
-        private static readonly string UPDATE = "UPDATE `Knjiga` SET IdZanr=@IdZanr, IdIzdavac=@IdIzdavac, Naslov=@Naslov, DatumObjavljivanja=@DatumObjavljivanja,ISBN=@ISBN, UkupanBrojKopija=@UkupanBrojKopija," +
+        private static readonly string UPDATE = "UPDATE `Knjiga` SET NazivZanra=@NazivZanra, IdIzdavac=@IdIzdavac, IdAutor=@IdAutor, Naslov=@Naslov, DatumObjavljivanja=@DatumObjavljivanja,ISBN=@ISBN, UkupanBrojKopija=@UkupanBrojKopija," +
                                                 " BrojStranica=@BrojStranica, Jezik=@Jezik, Opis=@Opis WHERE IdKnjiga=@IdKnjiga";
 
         private static readonly string DELETE = "DELETE FROM `Knjiga` WHERE IdKnjiga=@IdKnjiga";
@@ -30,8 +31,9 @@ namespace Biblioteka.Data.DataAccess.MySql
                 con = MySql.MySqlUtil.GetConnection();
                 cmd = con.CreateCommand();
                 cmd.CommandText = INSERT;
-                cmd.Parameters.AddWithValue("@IdZanr",knjiga.IdZanr);
+                cmd.Parameters.AddWithValue("@NazivZanra",knjiga.NazivZanra);
                 cmd.Parameters.AddWithValue("@IdIzdavac",knjiga.IdIzdavac);
+                cmd.Parameters.AddWithValue("@IdAutor", knjiga.IdAutor);
                 cmd.Parameters.AddWithValue("@Naslov",knjiga.Naslov);
                 cmd.Parameters.AddWithValue("@DatumObjavljivanja",knjiga.DatumObjavljivanja);
                 cmd.Parameters.AddWithValue("@ISBN",knjiga.ISBN);
@@ -62,8 +64,9 @@ namespace Biblioteka.Data.DataAccess.MySql
                 cmd = con.CreateCommand();
                 cmd.CommandText = UPDATE;
                 cmd.Parameters.AddWithValue("@IdKnjiga", knjiga.IdKnjiga);
-                cmd.Parameters.AddWithValue("@IdZanr", knjiga.IdZanr);
+                cmd.Parameters.AddWithValue("@NazivZanra", knjiga.NazivZanra);
                 cmd.Parameters.AddWithValue("@IdIzdavac", knjiga.IdIzdavac);
+                cmd.Parameters.AddWithValue("@IdAutor", knjiga.IdAutor);
                 cmd.Parameters.AddWithValue("@Naslov", knjiga.Naslov);
                 cmd.Parameters.AddWithValue("@DatumObjavljivanja", knjiga.DatumObjavljivanja);
                 cmd.Parameters.AddWithValue("@ISBN", knjiga.ISBN);
@@ -123,15 +126,16 @@ namespace Biblioteka.Data.DataAccess.MySql
                     result.Add(new Knjiga()
                     {
                         IdKnjiga = reader.GetInt32(0),
-                        IdZanr = reader.GetInt32(1),
+                        NazivZanra = reader.GetString(1),
                         IdIzdavac = reader.GetInt32(2),
-                        Naslov = reader.GetString(3),
-                        DatumObjavljivanja = reader.GetDateTime(4),
-                        ISBN = reader.GetString(5),
-                        UkupanBrojKopija = reader.GetInt32(6),
-                        BrojStranica = reader.GetInt32(7),
-                        Jezik = reader.GetString(8),
-                        Opis = reader.GetString(9)
+                        IdAutor = reader.GetInt32(3),
+                        Naslov = reader.GetString(4),
+                        DatumObjavljivanja = reader.GetDateTime(5),
+                        ISBN = reader.GetString(6),
+                        UkupanBrojKopija = reader.GetInt32(7),
+                        BrojStranica = reader.GetInt32(8),
+                        Jezik = reader.GetString(9),
+                        Opis = reader.GetString(10)
                     });
                 }
             }
@@ -144,6 +148,78 @@ namespace Biblioteka.Data.DataAccess.MySql
                 MySqlUtil.CloseQuietly(reader, conn);
             }
             return result;
+        }
+
+        public DataTable GetKnjigaAutorZanrIzdavacJoin(string naslov, string zanr, string izdavac, string autor)
+        {
+            var table = new DataTable();
+            //Define columns
+            var IdKnjiga = new DataColumn("Šifra", typeof(int));
+            var Naslov = new DataColumn("Naslov", typeof(string));
+            var NazivZanra = new DataColumn("Žanr", typeof(string));
+            var Izdavac = new DataColumn("Izdavač", typeof(string));
+            var ImeAutora = new DataColumn("Ime autora", typeof(string));
+            var PrezimeAutora = new DataColumn("Prezime autora", typeof(string));
+            var DatumObjavljivanja = new DataColumn("Datum objavljivanja", typeof(string));
+            var ISBN = new DataColumn("ISBN", typeof(string));
+            var BrojKopija = new DataColumn("Broj kopija", typeof(int));
+            var BrojStranica = new DataColumn("Broj stranica", typeof(int));
+            var Jezik = new DataColumn("Jezik", typeof(string));
+            //Add columns to a table
+            table.Columns.Add(IdKnjiga);
+            table.Columns.Add(Naslov);
+            table.Columns.Add(NazivZanra);
+            table.Columns.Add(Izdavac);
+            table.Columns.Add(ImeAutora);
+            table.Columns.Add(PrezimeAutora);
+            table.Columns.Add(DatumObjavljivanja);
+            table.Columns.Add(ISBN);
+            table.Columns.Add(BrojKopija);
+            table.Columns.Add(BrojStranica);
+            table.Columns.Add(Jezik);
+
+            MySqlConnection conn = null;
+            MySqlCommand cmd;
+            MySqlDataReader reader = null;
+
+            try
+            {
+                conn = MySqlUtil.GetConnection();
+                cmd = conn.CreateCommand();
+                string query = "SELECT IdKnjiga AS Sifra, Naslov,NazivZanra,Izdavac.Naziv AS Izdavac,Autor.Ime AS Ime_autora,Autor.Prezime AS Prezime_autora,DatumObjavljivanja,ISBN,UkupanBrojKopija,BrojStranica,Jezik " +
+                "FROM Knjiga INNER JOIN Izdavac ON Izdavac.IdIzdavac = Knjiga.IdIzdavac INNER JOIN Autor ON Autor.IdAutor = Knjiga.IdAutor WHERE Naslov LIKE @Naslov AND NazivZanra LIKE @Naziv AND Izdavac.Naziv LIKE @Izdavac AND Autor.Prezime LIKE @Autor";
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@Naslov", naslov + "%");
+                cmd.Parameters.AddWithValue("@Naziv", zanr + "%");
+                cmd.Parameters.AddWithValue("@Izdavac", izdavac + "%");
+                cmd.Parameters.AddWithValue("@Autor", autor + "%");
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    var row = table.NewRow();
+                    row[0] = reader.GetInt32(0);
+                    row[1] = reader.GetString(1);
+                    row[2] = reader.GetString(2);
+                    row[3] = reader.GetString(3);
+                    row[4] = reader.GetString(4);
+                    row[5] = reader.GetString(5);
+                    row[6] = reader.GetDateTime(6).ToShortDateString();
+                    row[7] = reader.GetString(7);
+                    row[8] = reader.GetInt16(8);
+                    row[9] = reader.GetInt16(9);
+                    row[10] = reader.GetString(10);
+                    table.Rows.Add(row);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException("Exception in MySqlKnjiga", ex);
+            }
+            finally
+            {
+                MySqlUtil.CloseQuietly(reader, conn);
+            }
+            return table;
         }
 
         public List<Knjiga> GetAllKnjigaByNaslov(string naslov)
@@ -165,7 +241,7 @@ namespace Biblioteka.Data.DataAccess.MySql
                     result.Add(new Knjiga()
                     {
                         IdKnjiga = reader.GetInt32(0),
-                        IdZanr = reader.GetInt32(1),
+                        NazivZanra = reader.GetString(1),
                         IdIzdavac = reader.GetInt32(2),
                         Naslov = reader.GetString(3),
                         DatumObjavljivanja = reader.GetDateTime(4),
@@ -206,7 +282,7 @@ namespace Biblioteka.Data.DataAccess.MySql
                 result = new Knjiga()
                 {
                     IdKnjiga = reader.GetInt32(0),
-                    IdZanr = reader.GetInt32(1),
+                    NazivZanra = reader.GetString(1),
                     IdIzdavac = reader.GetInt32(2),
                     Naslov = reader.GetString(3),
                     DatumObjavljivanja = reader.GetDateTime(4),
@@ -230,7 +306,7 @@ namespace Biblioteka.Data.DataAccess.MySql
 
         public int GetBrojNaslova()
         {
-            var result = 0;
+            var count = 0;
             MySqlConnection conn = null;
             MySqlCommand cmd;
             MySqlDataReader reader = null;
@@ -239,10 +315,10 @@ namespace Biblioteka.Data.DataAccess.MySql
             {
                 conn = MySqlUtil.GetConnection();
                 cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM `Knjiga`";
+                cmd.CommandText = "SELECT COUNT(*) FROM `Knjiga`";
                 reader = cmd.ExecuteReader();
-                while (reader.Read())
-                    result++;
+                reader.Read();
+                count = reader.GetInt32(0);
                 
             }
             catch (Exception ex)
@@ -253,12 +329,12 @@ namespace Biblioteka.Data.DataAccess.MySql
             {
                 MySqlUtil.CloseQuietly(reader, conn);
             }
-            return result;
+            return count;
         }
 
         public int GetBrojKopija()
         {
-            var result = 0;
+            var count = 0;
             MySqlConnection conn = null;
             MySqlCommand cmd;
             MySqlDataReader reader = null;
@@ -267,10 +343,10 @@ namespace Biblioteka.Data.DataAccess.MySql
             {
                 conn = MySqlUtil.GetConnection();
                 cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM `Knjiga`";
+                cmd.CommandText = "SELECT SUM(UkupanBrojKopija) FROM `Knjiga`";
                 reader = cmd.ExecuteReader();
-                while (reader.Read())
-                    result+=reader.GetInt32(6);
+                reader.Read();
+                count = reader.GetInt32(0);
 
             }
             catch (Exception ex)
@@ -281,7 +357,7 @@ namespace Biblioteka.Data.DataAccess.MySql
             {
                 MySqlUtil.CloseQuietly(reader, conn);
             }
-            return result;
+            return count;
         }
 
         public void SaveKnjiga(Knjiga knjiga)

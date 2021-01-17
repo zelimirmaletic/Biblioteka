@@ -49,16 +49,15 @@ namespace Biblioteka.Data.DataAccess.MySql
             MySqlConnection conn = null;
             MySqlCommand cmd;
             MySqlDataReader reader = null;
-            int numberOfRows = 0;
+            int count = 0;
             try
             {
                 conn = MySqlUtil.GetConnection();
                 cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM `Pozajmica`";
+                cmd.CommandText = "SELECT COUNT(*) FROM `Pozajmica`";
                 reader = cmd.ExecuteReader();
-                while (reader.Read())
-                    numberOfRows++;
-                    
+                reader.Read();
+                count = reader.GetInt32(0);      
             }
             catch (Exception ex)
             {
@@ -68,7 +67,34 @@ namespace Biblioteka.Data.DataAccess.MySql
             {
                 MySqlUtil.CloseQuietly(reader, conn);
             }
-            return numberOfRows;
+            return count;
+        }
+
+        public int GetUkupanBrojPozajmicaByKnjigaId(int IdKnjiga)
+        {
+            MySqlConnection conn = null;
+            MySqlCommand cmd;
+            MySqlDataReader reader = null;
+            int count = 0;
+            try
+            {
+                conn = MySqlUtil.GetConnection();
+                cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT COUNT(*) FROM `Pozajmica` WHERE IdKnjiga=@IdKnjiga";
+                cmd.Parameters.AddWithValue("@IdKnjiga", IdKnjiga);
+                reader = cmd.ExecuteReader();
+                reader.Read();
+                count = reader.GetInt32(0);
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException("Exception in MySqlPozajmica", ex);
+            }
+            finally
+            {
+                MySqlUtil.CloseQuietly(reader, conn);
+            }
+            return count;
         }
 
         public int GetUkupanBrojKasnihPozajmica()
@@ -76,20 +102,16 @@ namespace Biblioteka.Data.DataAccess.MySql
             MySqlConnection conn = null;
             MySqlCommand cmd;
             MySqlDataReader reader = null;
-            int numberOfRows = 0;
+            int count = 0;
             try
             {
                 conn = MySqlUtil.GetConnection();
                 cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM `Pozajmica`";
+                cmd.CommandText = "SELECT COUNT(*) FROM `Pozajmica` WHERE DATE_ADD(DatumPozajmljivanja, INTERVAL @NumberOfDays DAY) > CURDATE()";
+                cmd.Parameters.AddWithValue("@NumberOfDays", DUZINA_POZAJMICE);
                 reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    DateTime datumPozajmljivanja = reader.GetDateTime(4);
-                    datumPozajmljivanja.AddDays(DUZINA_POZAJMICE);
-                    if (datumPozajmljivanja.CompareTo(DateTime.Now) == 1)
-                        numberOfRows++;
-                }
+                reader.Read();
+                count = reader.GetInt32(0);
 
             }
             catch (Exception ex)
@@ -100,7 +122,7 @@ namespace Biblioteka.Data.DataAccess.MySql
             {
                 MySqlUtil.CloseQuietly(reader, conn);
             }
-            return numberOfRows;
+            return count;
         }
 
         public Pozajmica GetPozajmicaByClanID(int IdClan)

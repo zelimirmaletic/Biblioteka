@@ -8,7 +8,7 @@
         Title="Dodaj autora" 
         Height="240" 
         Width="420"
-        Icon="Resources\addMan.ico"
+        Icon="Resources\Images\add.ico"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         >
@@ -47,7 +47,7 @@
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
-        <Image Source="Resources\addMan.ico" Height="35" Width="35" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="15 0 0 0"/>
+        <Image Source="Resources\Images\addPerson.ico" Height="35" Width="35" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="15 0 0 0"/>
 
         <TextBlock x:Name="tbIme" Grid.Column="0" Grid.Row="0">
             Ime
@@ -65,9 +65,9 @@
             Datum rođenja
         </TextBlock>
 
-        <TextBox x:Name="txbIme" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="txbIme" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" MaxLength="45"/>
 
-        <TextBox x:Name="txbPrezime" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="txbPrezime" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" MaxLength="45"/>
 
         <ComboBox Name="cbMjesto" Grid.Column="1" Grid.Row="2" Height="22" Width="auto" Grid.ColumnSpan="2" FontWeight="Medium" DropDownOpened="cbMjesto_DropDownOpened" />
 

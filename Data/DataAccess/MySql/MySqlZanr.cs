@@ -11,10 +11,10 @@ namespace Biblioteka.Data.DataAccess.MySql
 {
     class MySqlZanr
     {
-        private static readonly string SELECT = "SELECT IdZanr, Naziv, Opis FROM `Zanr` ORDER BY Naziv";
+        private static readonly string SELECT = "SELECT Naziv, Opis FROM `Zanr` ORDER BY Naziv";
         private static readonly string INSERT = "INSERT INTO `Zanr`(Naziv, Opis) VALUES (@Naziv,@Opis)";
-        private static readonly string UPDATE = "UPDATE `Zanr` SET Naziv=@Naziv, Opis=@Opis WHERE IdZanr=@IdZanr";
-        private static readonly string DELETE = "DELETE FROM `Zanr` WHERE IdZanr=@IdZanr";
+        private static readonly string UPDATE = "UPDATE `Zanr` SET Naziv=@Naziv, Opis=@Opis WHERE Naziv=@Naziv";
+        private static readonly string DELETE = "DELETE FROM `Zanr` WHERE Naziv=@Naziv";
 
 
         private void InsertZanr(Zanr zanr)
@@ -29,7 +29,6 @@ namespace Biblioteka.Data.DataAccess.MySql
                 cmd.Parameters.AddWithValue("@Naziv", zanr.Naziv);
                 cmd.Parameters.AddWithValue("@Opis", zanr.Opis);
                 cmd.ExecuteNonQuery();
-                zanr.IdZanr = (int)cmd.LastInsertedId;
             }
             catch (Exception ex)
             {
@@ -50,7 +49,6 @@ namespace Biblioteka.Data.DataAccess.MySql
                 conn = MySqlUtil.GetConnection();
                 cmd = conn.CreateCommand();
                 cmd.CommandText = UPDATE;
-                cmd.Parameters.AddWithValue("@IdZanr", zanr.IdZanr);
                 cmd.Parameters.AddWithValue("@Naziv", zanr.Naziv);
                 cmd.Parameters.AddWithValue("@Opis", zanr.Opis);
                 cmd.ExecuteNonQuery();
@@ -65,7 +63,7 @@ namespace Biblioteka.Data.DataAccess.MySql
             }
         }
 
-        public void DeleteZanrById(int idZanr)
+        public void DeleteZanrById(string naziv)
         {
             MySqlConnection conn = null;
             MySqlCommand cmd;
@@ -74,7 +72,7 @@ namespace Biblioteka.Data.DataAccess.MySql
                 conn = MySqlUtil.GetConnection();
                 cmd = conn.CreateCommand();
                 cmd.CommandText = DELETE;
-                cmd.Parameters.AddWithValue("@IdZanr", idZanr);
+                cmd.Parameters.AddWithValue("@Naziv", naziv);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -104,9 +102,8 @@ namespace Biblioteka.Data.DataAccess.MySql
                 {
                     result.Add(new Zanr()
                     {
-                        IdZanr = reader.GetInt32(0),
-                        Naziv = reader.GetString(1),
-                        Opis = reader.GetString(2)
+                        Naziv = reader.GetString(0),
+                        Opis = reader.GetString(1)
                     });
                 }
             }
@@ -121,43 +118,9 @@ namespace Biblioteka.Data.DataAccess.MySql
             return result;
         }
 
-
-        public Zanr GetZanrByID(int IdZanr)
-        {
-            var result = new Zanr();
-            MySqlConnection conn = null;
-            MySqlCommand cmd;
-            MySqlDataReader reader = null;
-
-            try
-            {
-                conn = MySqlUtil.GetConnection();
-                cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM `Zanr` WHERE IdZanr=@IdZanr";
-                cmd.Parameters.AddWithValue("@IdZanr", IdZanr);
-                reader = cmd.ExecuteReader();
-                reader.Read();
-                result = new Zanr()
-                {
-                    IdZanr = reader.GetInt32(0),
-                    Naziv = reader.GetString(1),
-                    Opis = reader.GetString(2)
-                };
-            }
-            catch (Exception ex)
-            {
-                throw new DataAccessException("Exception in MySqlMjesto", ex);
-            }
-            finally
-            {
-                MySqlUtil.CloseQuietly(reader, conn);
-            }
-            return result;
-        }
-
         public int GetBrojZanrova()
         {
-            var result = 0;
+            var count = 0;
             MySqlConnection conn = null;
             MySqlCommand cmd;
             MySqlDataReader reader = null;
@@ -166,10 +129,10 @@ namespace Biblioteka.Data.DataAccess.MySql
             {
                 conn = MySqlUtil.GetConnection();
                 cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM `Zanr`";
+                cmd.CommandText = "SELECT COUNT(*) FROM `Zanr`";
                 reader = cmd.ExecuteReader();
-                while (reader.Read())
-                    result++;
+                reader.Read();
+                count = reader.GetInt32(0);
             }
             catch (Exception ex)
             {
@@ -179,19 +142,12 @@ namespace Biblioteka.Data.DataAccess.MySql
             {
                 MySqlUtil.CloseQuietly(reader, conn);
             }
-            return result;
+            return count;
         }
 
         public void SaveZanr(Zanr zanr)
         {
-            if (zanr.IdZanr <= 0)
-            {
-                InsertZanr(zanr);
-            }
-            else
-            {
-                UpdateZanr(zanr);
-            }
+
         }
 
     }

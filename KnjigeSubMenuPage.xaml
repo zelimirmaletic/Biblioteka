@@ -67,17 +67,17 @@
 
         <Button x:Name="btnKnjige" Grid.Column="1" Grid.Row="1" Click="btnKnjige_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
-                Knjige
+                Pretraga
             </TextBlock>
         </Button>
 
-        <Button x:Name="btnDodajKnjigu" Grid.Column="1" Grid.Row="2">
+        <Button x:Name="btnDodajKnjigu" Grid.Column="1" Grid.Row="2" Click="btnDodajKnjigu_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
                 Dodaj knjigu
             </TextBlock>
         </Button>
 
-        <Button x:Name="btnZaduziKnjigu" Grid.Column="1" Grid.Row="3">
+        <Button x:Name="btnZaduziKnjigu" Grid.Column="1" Grid.Row="3" Click="btnZaduziKnjigu_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
                 Zaduži knjigu
             </TextBlock>

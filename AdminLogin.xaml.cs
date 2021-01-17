@@ -47,7 +47,7 @@ namespace Biblioteka
             {
                 var admin = new Administrator();
                 var mysqlBibliotekar = new MySqlAdmin();
-                admin = mysqlBibliotekar.GetBibliotekarByUsername(txbKorisnickoIme.Text);
+                //admin = mysqlBibliotekar.GetBibliotekarByUsername(txbKorisnickoIme.Text);
                 if (admin.Lozinka.Equals(txbLozinka.Password.ToString()))
                 {
                     MessageBox.Show("Uspješno ste se prijavili!", "Informacija", MessageBoxButton.OK, MessageBoxImage.Information);

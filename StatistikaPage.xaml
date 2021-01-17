@@ -63,16 +63,10 @@
                 <SolidColorBrush Color="#e3e3e3"/>
             </Rectangle.Fill>
         </Rectangle>
-        
-         <Button x:Name="btnGeneralno" Grid.Column="1" Grid.Row="1" Click="btnGeneralno_Click">
-            <TextBlock Width="120" HorizontalAlignment="Left">
-                Generalno
-            </TextBlock>
-        </Button>
 
-        <Button x:Name="btnMojaStatistika" Grid.Column="1" Grid.Row="2" Click="btnMojaStatistika_Click">
+        <Button x:Name="btnGeneralno" Grid.Column="1" Grid.Row="1" Click="btnGeneralno_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
-                Moja Statistika
+                Generalna
             </TextBlock>
         </Button>
 

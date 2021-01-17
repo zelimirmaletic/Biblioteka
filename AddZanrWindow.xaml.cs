@@ -41,7 +41,7 @@ namespace Biblioteka
             try
             {
                 //Save Zanr to a database
-                Zanr noviZanr = new Zanr(0,txbNaziv.Text,txbOpis.Text);
+                Zanr noviZanr = new Zanr(txbNaziv.Text,txbOpis.Text);
                 MySqlZanr mysqlZanr = new MySqlZanr();
                 mysqlZanr.SaveZanr(noviZanr);
                 //Show message of success

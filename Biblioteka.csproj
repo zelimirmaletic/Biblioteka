@@ -141,7 +141,6 @@
     <Compile Include="Data\DataAccess\MySql\MySqlClan.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlIzdavac.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlKnjiga.cs" />
-    <Compile Include="Data\DataAccess\MySql\MySqlKnjiga_ima_autor.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlMjesto.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlPozajmica.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlUtil.cs" />
@@ -153,11 +152,13 @@
     <Compile Include="Data\Model\Clan.cs" />
     <Compile Include="Data\Model\Izdavac.cs" />
     <Compile Include="Data\Model\Knjiga.cs" />
-    <Compile Include="Data\Model\Knjiga_ima_Autor.cs" />
     <Compile Include="Data\Model\Mjesto.cs" />
     <Compile Include="Data\Model\Osoba.cs" />
     <Compile Include="Data\Model\Pozajmica.cs" />
     <Compile Include="Data\Model\Zanr.cs" />
+    <Compile Include="DodajKnjiguPage.xaml.cs">
+      <DependentUpon>DodajKnjiguPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IzvjestajSubMenuPage.xaml.cs">
       <DependentUpon>IzvjestajSubMenuPage.xaml</DependentUpon>
     </Compile>
@@ -190,6 +191,9 @@
     </Compile>
     <Compile Include="WelcomeWindow.xaml.cs">
       <DependentUpon>WelcomeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZaduzivanjePage.xaml.cs">
+      <DependentUpon>ZaduzivanjePage.xaml</DependentUpon>
     </Compile>
     <Page Include="AddAutorWindow.xaml">
       <SubType>Designer</SubType>
@@ -232,6 +236,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ClanoviSubMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DodajKnjiguPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -288,6 +296,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WelcomeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ZaduzivanjePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -399,6 +411,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\logout.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\addPerson.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\house.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\delete.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
