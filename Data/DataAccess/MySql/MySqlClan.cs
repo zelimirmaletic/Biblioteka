@@ -3,6 +3,7 @@ using Biblioteka.Data.Model;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace Biblioteka.Data.DataAccess.MySql
 {
@@ -132,7 +133,7 @@ namespace Biblioteka.Data.DataAccess.MySql
                 conn = MySqlUtil.GetConnection();
                 cmd = conn.CreateCommand();
                 cmd.CommandText = "SELECT * FROM `Clan` WHERE IdClan=@IdClan";
-                cmd.Parameters.AddWithValue("@IdOsoba", IdClan);
+                cmd.Parameters.AddWithValue("@IdClan", IdClan);
                 reader = cmd.ExecuteReader();
                 reader.Read();
                 result = new Clan()
@@ -152,6 +153,100 @@ namespace Biblioteka.Data.DataAccess.MySql
             }
             return result;
         }
+
+        public DataTable GetClanOsobaJoin(string ime, string prezime)
+        {
+            var table = new DataTable();
+            //Define columns
+            var IdClan = new DataColumn("Šifra", typeof(int));
+            var DatumUclanjivanja = new DataColumn("Datum učlanjivanja", typeof(string));
+            var DatumObnavljanjaČlanstva = new DataColumn("Datum obnavljanja članstva", typeof(string));
+            var Ime = new DataColumn("Ime", typeof(string));
+            var Prezime = new DataColumn("Prezime", typeof(string));
+            var DatumRodjenja = new DataColumn("Datum rođenja", typeof(string));
+            var NazivMjesta = new DataColumn("Mjesto", typeof(string));
+            var Adresa = new DataColumn("Adresa", typeof(string));
+            var BrojTelefona = new DataColumn("Telefon", typeof(string));
+            var Email = new DataColumn("Email", typeof(string));
+            //Add columns to a table
+            table.Columns.Add(IdClan);
+            table.Columns.Add(DatumUclanjivanja);
+            table.Columns.Add(DatumObnavljanjaČlanstva);
+            table.Columns.Add(Ime);
+            table.Columns.Add(Prezime);
+            table.Columns.Add(DatumRodjenja);
+            table.Columns.Add(NazivMjesta);
+            table.Columns.Add(Adresa);
+            table.Columns.Add(BrojTelefona);
+            table.Columns.Add(Email);
+
+            MySqlConnection conn = null;
+            MySqlCommand cmd;
+            MySqlDataReader reader = null;
+
+            try
+            {
+                conn = MySqlUtil.GetConnection();
+                cmd = conn.CreateCommand();
+                string query = "select Clan.IdClan, Clan.DatumUclanjivanja, Clan.DatumObnavljanjaClanstva, Osoba.Ime, Osoba.Prezime,Osoba.DatumRodjenja, Osoba.NazivMjesta, Osoba.Adresa, Osoba.BrojTelefona, Osoba.Email from Clan inner join Osoba on Osoba.IdOsoba=Clan.IdClan " +
+                    " WHERE Ime LIKE @Ime AND Prezime LIKE @Prezime ;";
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@Ime", ime + "%");
+                cmd.Parameters.AddWithValue("@Prezime", prezime + "%");
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    var row = table.NewRow();
+                    row[0] = reader.GetInt32(0);
+                    row[1] = reader.GetDateTime(1).ToString("dd/MM/yyyy");
+                    row[2] = reader.GetDateTime(2).ToString("dd/MM/yyyy");
+                    row[3] = reader.GetString(3);
+                    row[4] = reader.GetString(4);
+                    row[5] = reader.GetDateTime(5).ToString("dd/MM/yyyy");
+                    row[6] = reader.GetString(6);
+                    row[7] = reader.GetString(7);
+                    row[8] = reader.GetString(8);
+                    row[9] = reader.GetString(9);
+                    table.Rows.Add(row);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException("Exception in MySqlKnjiga", ex);
+            }
+            finally
+            {
+                MySqlUtil.CloseQuietly(reader, conn);
+            }
+            return table;
+        }
+
+        public void UpdateClanstvo(int id)
+        {
+            
+            MySqlConnection conn = null;
+            MySqlCommand cmd;
+            MySqlDataReader reader = null;
+
+            try
+            {
+                conn = MySqlUtil.GetConnection();
+                cmd = conn.CreateCommand();
+                cmd.CommandText = "update Clan set DatumObnavljanjaClanstva=DATE_ADD(CURDATE(), INTERVAL 1 YEAR) where IdClan=@IdClan;";
+                cmd.Parameters.AddWithValue("@IdClan",id);
+                reader = cmd.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException("Exception in MySqlClan", ex);
+            }
+            finally
+            {
+                MySqlUtil.CloseQuietly(reader, conn);
+            }
+        }
+
+
 
         public int GetBrojClanova()
         {

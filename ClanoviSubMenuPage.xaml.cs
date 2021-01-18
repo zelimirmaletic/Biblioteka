@@ -24,5 +24,17 @@ namespace Biblioteka
         {
             InitializeComponent();
         }
+
+        private void btnClanovi_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow parentWindow = Window.GetWindow(this) as MainWindow;
+            parentWindow.setPageArea(new ClanoviPage());
+        }
+
+        private void btnDodajClana_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow parentWindow = Window.GetWindow(this) as MainWindow;
+            parentWindow.setPageArea(new DodajClanaPage());
+        }
     }
 }

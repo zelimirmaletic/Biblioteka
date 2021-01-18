@@ -359,6 +359,34 @@ namespace Biblioteka.Data.DataAccess.MySql
             }
             return count;
         }
+        public int GetBrojKopijaById(int id)
+        {
+            var count = 0;
+            MySqlConnection conn = null;
+            MySqlCommand cmd;
+            MySqlDataReader reader = null;
+
+            try
+            {
+                conn = MySqlUtil.GetConnection();
+                cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT SUM(UkupanBrojKopija) FROM `Knjiga` WHERE IdKnjiga=@IdKnjiga";
+                cmd.Parameters.AddWithValue("@IdKnjiga", id);
+                reader = cmd.ExecuteReader();
+                reader.Read();
+                count = reader.GetInt32(0);
+
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException("Exception in MySqlKnjiga", ex);
+            }
+            finally
+            {
+                MySqlUtil.CloseQuietly(reader, conn);
+            }
+            return count;
+        }
 
         public void SaveKnjiga(Knjiga knjiga)
         {

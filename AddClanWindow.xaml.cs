@@ -3,17 +3,7 @@ using Biblioteka.Data.DataAccess.MySql;
 using Biblioteka.Data.Model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Biblioteka
 {
@@ -29,7 +19,7 @@ namespace Biblioteka
 
         private void btnSacuvaj_Click(object sender, RoutedEventArgs e)
         {
-            if (txbIme.Text.Equals("") || txbPrezime.Text.Equals("") || txbEmail.Text.Equals("") || txbBrojTelefona.Text.Equals("") || txbAdresa.Text.Equals("") || cbMjesto.SelectedItem.Equals(null) || dpDatumRodjenja.SelectedDate.Equals(null))
+            if (txbIme.Text.Equals("") || txbPrezime.Text.Equals("") || txbEmail.Text.Equals("") || txbBrojTelefona.Text.Equals("") || txbAdresa.Text.Equals("") || cbMjesto.SelectedItem==null || dpDatumRodjenja.SelectedDate.Equals(null))
             {
                 string message = "Molimo vas da unesete vrijednosti u sva polja.";
                 string caption = "Upozorenje";
@@ -38,28 +28,22 @@ namespace Biblioteka
                 MessageBox.Show(message, caption, buttons, icon);
                 return;
             }
-            try
-            {
-                //Get an ID for chosen value from combobox
-                Mjesto mjesto = new Mjesto();
-                MySqlMjesto mysqlMjesto = new MySqlMjesto();
-                mjesto = mysqlMjesto.GetMjestoByNaziv(cbMjesto.Text);
-                //Create Osoba
-                Osoba novaOsoba = new Osoba(0, mjesto.IdMjesto, txbIme.Text, txbPrezime.Text, txbAdresa.Text, txbBrojTelefona.Text,txbEmail.Text, dpDatumRodjenja.SelectedDate.Value);
-                var mysqlOsoba = new MySqlOsoba();
-                mysqlOsoba.SaveOsoba(novaOsoba);
-                //Create Clan
-                var noviClan = new Clan(novaOsoba.IdOsoba, DateTime.Now, DateTime.Now.AddYears(1));
-                var mysqlClan = new MySqlClan();
-                mysqlClan.SaveClan(noviClan, "insert");
-                //Show message of success
-                MessageBox.Show("Uspješno dodan novi član!", "Informacija", MessageBoxButton.OK, MessageBoxImage.Information);
-                this.Close();
-            }
-            catch (DataAccessException exc)
-            {
-                MessageBox.Show("Došlo je do greške u komunikaciji sa bazom podataka!", "Greška", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            //UPDATE
+            var mysqlOsoba = new MySqlOsoba();
+            var osoba = new Osoba();
+
+            osoba.IdOsoba = Int32.Parse(tbSifra.Text);
+            osoba.Ime = txbIme.Text;
+            osoba.Prezime = txbPrezime.Text;
+            osoba.NazivMjesta = cbMjesto.Text;
+            osoba.Adresa = txbAdresa.Text;
+            osoba.DatumRodjenja = dpDatumRodjenja.SelectedDate.Value;
+            osoba.BrojTelefona = txbBrojTelefona.Text;
+            osoba.Email = txbEmail.Text;
+
+            mysqlOsoba.SaveOsoba(osoba);
+            MessageBox.Show("Podaci o osobi su uspješno ažurirani!", "Informacija", MessageBoxButton.OK, MessageBoxImage.Information);
+            this.Close();
         }
 
         private void btnOtkazi_Click(object sender, RoutedEventArgs e)

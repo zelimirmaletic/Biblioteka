@@ -9,6 +9,7 @@ namespace Biblioteka
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static int IdBibliotekar = 2;
         public MainWindow()
         {
             InitializeComponent();

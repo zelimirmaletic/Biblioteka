@@ -55,12 +55,12 @@ insert into Knjiga (NazivZanra,IdAutor, IdIzdavac, Naslov, DatumObjavljivanja, I
     ('poezija',7,4,'Tražim pomilovanje', '1955-08-07','546512321333456548754561252154', 350, 150, 'srpski', 'Djelo protkano...');
 
 -- Osoba
-insert into Osoba (IdMjesto, Ime, Prezime, Adresa, BrojTelefona, Email, DatumRodjenja) VALUES
-    (1,'Jana','Maran', 'Trg Krajine 5', '065658965','jana@gmail.com','1990-05-07');
-insert into Osoba (IdMjesto, Ime, Prezime, Adresa, BrojTelefona, Email, DatumRodjenja) VALUES
-    (1,'Jovan','Marković', 'Trg Krajine 25', '065657775','jovan@gmail.com','1995-08-08');
-insert into Osoba (IdMjesto, Ime, Prezime, Adresa, BrojTelefona, Email, DatumRodjenja) VALUES
-    (1,'Zagorka','Savić', 'Trg Krajine 36', '065333965', 'zaga@gmail.com','1995-07-07');
+insert into Osoba (NazivMjesta, Ime, Prezime, Adresa, BrojTelefona, Email, DatumRodjenja) VALUES
+    ('Banja Luka','Jana','Maran', 'Trg Krajine 5', '065658965','jana@gmail.com','1990-05-07');
+insert into Osoba (NazivMjesta, Ime, Prezime, Adresa, BrojTelefona, Email, DatumRodjenja) VALUES
+    ('Banja Luka','Jovan','Marković', 'Trg Krajine 25', '065657775','jovan@gmail.com','1995-08-08');
+insert into Osoba (NazivMjesta, Ime, Prezime, Adresa, BrojTelefona, Email, DatumRodjenja) VALUES
+    ('Banja Luka','Zagorka','Savić', 'Trg Krajine 36', '065333965', 'zaga@gmail.com','1995-07-07');
 
 -- Clan
 insert into Clan (IdClan, DatumUclanjivanja, DatumObnavljanjaClanstva) VALUES

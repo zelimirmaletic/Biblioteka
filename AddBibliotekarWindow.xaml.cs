@@ -50,13 +50,13 @@ namespace Biblioteka
                 MySqlMjesto mysqlMjesto = new MySqlMjesto();
                 mjesto = mysqlMjesto.GetMjestoByNaziv(cbMjesto.Text);
                 //Create Osoba
-                Osoba novaOsoba = new Osoba(0, mjesto.IdMjesto, txbIme.Text, txbPrezime.Text, txbAdresa.Text, txbBrojTelefona.Text, txbEmail.Text, dpDatumRodjenja.SelectedDate.Value);
+                //Osoba novaOsoba = new Osoba(0, mjesto.IdMjesto, txbIme.Text, txbPrezime.Text, txbAdresa.Text, txbBrojTelefona.Text, txbEmail.Text, dpDatumRodjenja.SelectedDate.Value);
                 var mysqlOsoba = new MySqlOsoba();
-                mysqlOsoba.SaveOsoba(novaOsoba);
+                //mysqlOsoba.SaveOsoba(novaOsoba);
                 //Create Bibliotekar
-                var noviBibliotekar = new Bibliotekar(novaOsoba.IdOsoba, txbKorisnickoIme.Text, txbLozinka.Text);
+                //var noviBibliotekar = new Bibliotekar(novaOsoba.IdOsoba, txbKorisnickoIme.Text, txbLozinka.Text);
                 var mysqlBibliotekar = new MySqlBibliotekar();
-                mysqlBibliotekar.SaveBibliotekar(noviBibliotekar, "insert");
+                //mysqlBibliotekar.SaveBibliotekar(noviBibliotekar, "insert");
                 //Show message of success
                 MessageBox.Show("Uspješno dodan novi bibliotekar!", "Informacija", MessageBoxButton.OK, MessageBoxImage.Information);
                 this.Close();

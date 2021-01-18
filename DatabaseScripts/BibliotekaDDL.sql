@@ -94,7 +94,7 @@ create unique index Index_Knjiga_NazivKnjige on Knjiga
 
 create table Osoba(
     IdOsoba int unsigned auto_increment,
-    IdMjesto int unsigned not null ,
+    NazivMjesta varchar(45) not null ,
     Ime varchar(45) not null ,
     Prezime varchar(45) not null ,
     Adresa varchar(45) not null ,
@@ -103,8 +103,8 @@ create table Osoba(
 	DatumRodjenja date not null,
     -- KYES
     primary key (IdOsoba),
-    foreign key (IdMjesto)
-        references Mjesto(IdMjesto)
+    foreign key (NazivMjesta)
+        references Mjesto(Naziv)
 	on update cascade on delete restrict
 )engine = InnoDB;
 create index Index_Osoba_Ime_Prezime on Osoba

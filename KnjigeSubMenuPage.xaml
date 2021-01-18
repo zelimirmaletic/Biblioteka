@@ -83,7 +83,7 @@
             </TextBlock>
         </Button>
 
-        <Button x:Name="btnRazduziKnjigu" Grid.Column="1" Grid.Row="4">
+        <Button x:Name="btnRazduziKnjigu" Grid.Column="1" Grid.Row="4" Click="btnRazduziKnjigu_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
                 Razduži knjigu
             </TextBlock>

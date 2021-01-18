@@ -9,7 +9,7 @@ namespace Biblioteka.Data.Model
     public class Osoba
     {
         public int IdOsoba { get; set; }
-        public int IdMjesto { get; set; }
+        public string NazivMjesta { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
         public string Adresa { get; set; }
@@ -22,10 +22,10 @@ namespace Biblioteka.Data.Model
         public Osoba()
         {
         }
-        public Osoba(int idOsoba, int idMjesto, string ime, string prezime, string adresa, string brojTelefona,string email, DateTime datumRodjenja)
+        public Osoba(int idOsoba, string nazivMjesta, string ime, string prezime, string adresa, string brojTelefona,string email, DateTime datumRodjenja)
         {
             IdOsoba = idOsoba;
-            IdMjesto = idMjesto;
+            NazivMjesta = nazivMjesta;
             Ime = ime;
             Prezime = prezime;
             Adresa = adresa;

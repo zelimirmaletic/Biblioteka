@@ -95,7 +95,7 @@
         <TextBlock Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="0" Height="80" Width="auto" FontSize="35" FontWeight="Light" Foreground="#1261a0" Margin="10 15 0 0" HorizontalAlignment="Left">
             Dodaj knjigu
         </TextBlock>
-        <Separator Grid.Column="0" Grid.Row="0" Background="#1261a0" Grid.ColumnSpan="8" Margin="10 30 15 0"/>
+        <Separator Grid.Column="0" Grid.Row="0" Background="#1261a0" Grid.ColumnSpan="8" Margin="10 45 15 0"/>
 
         <TextBlock Grid.Column="0" Grid.Row="1">
             Naslov

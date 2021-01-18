@@ -65,13 +65,13 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Button x:Name="btnUputstvo" Grid.Column="1" Grid.Row="1">
+        <Button x:Name="btnUputstvo" Grid.Column="1" Grid.Row="1" Click="btnUputstvo_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
                 Uputstvo
             </TextBlock>
         </Button>
 
-        <Button x:Name="btnKontakt" Grid.Column="1" Grid.Row="2">
+        <Button x:Name="btnKontakt" Grid.Column="1" Grid.Row="2" Click="btnKontakt_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
                 Kontakt
             </TextBlock>

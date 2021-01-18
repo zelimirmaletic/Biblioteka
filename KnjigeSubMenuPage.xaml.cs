@@ -45,5 +45,12 @@ namespace Biblioteka
             parentWindow.setPageArea(new ZaduzivanjePage());
 
         }
+
+        private void btnRazduziKnjigu_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow parentWindow = Window.GetWindow(this) as MainWindow;
+            parentWindow.setPageArea(new RazduziKnjiguPage());
+
+        }
     }
 }

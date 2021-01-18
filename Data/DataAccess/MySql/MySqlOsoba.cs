@@ -10,10 +10,10 @@ namespace Biblioteka.Data.DataAccess.MySql
     {
         private static readonly string SELECT = "SELECT * FROM `Osoba` ORDER BY Prezime";
 
-        private static readonly string INSERT = "INSERT INTO `Osoba`(IdMjesto, Ime, Prezime, Adresa, BrojTelefona, Email, DatumRodjenja) " +
-                                                            "VALUES (@IdMjesto, @Ime, @Prezime, @Adresa, @BrojTelefona, @Email, @DatumRodjenja)";
+        private static readonly string INSERT = "INSERT INTO `Osoba`(NazivMjesta, Ime, Prezime, Adresa, BrojTelefona, Email, DatumRodjenja) " +
+                                                            "VALUES (@NazivMjesta, @Ime, @Prezime, @Adresa, @BrojTelefona, @Email, @DatumRodjenja)";
 
-        private static readonly string UPDATE = "UPDATE `Osoba` SET IdMjesto=@IdMjesto, Ime=@Ime, Prezime=@Prezime, Adresa=@Adresa, BrojTelefona=@BrojTelefona, Email=@Email, DatumRodjenja=@DatumRodjenja WHERE IdOsoba=@IdOsoba";
+        private static readonly string UPDATE = "UPDATE `Osoba` SET NazivMjesta=@NazivMjesta, Ime=@Ime, Prezime=@Prezime, Adresa=@Adresa, BrojTelefona=@BrojTelefona, Email=@Email, DatumRodjenja=@DatumRodjenja WHERE IdOsoba=@IdOsoba";
 
         private static readonly string DELETE = "DELETE FROM `Osoba` WHERE IdOsoba=@IdOsoba";
 
@@ -26,7 +26,8 @@ namespace Biblioteka.Data.DataAccess.MySql
                 con = MySql.MySqlUtil.GetConnection();
                 cmd = con.CreateCommand();
                 cmd.CommandText = INSERT;
-                cmd.Parameters.AddWithValue("@IdMjesto", osoba.IdMjesto);
+                cmd.Parameters.AddWithValue("@IdOsoba", osoba.IdOsoba);
+                cmd.Parameters.AddWithValue("@NazivMjesta", osoba.NazivMjesta);
                 cmd.Parameters.AddWithValue("@Ime", osoba.Ime);
                 cmd.Parameters.AddWithValue("@Prezime", osoba.Prezime);
                 cmd.Parameters.AddWithValue("@Adresa", osoba.Adresa);
@@ -55,7 +56,8 @@ namespace Biblioteka.Data.DataAccess.MySql
                 con = MySql.MySqlUtil.GetConnection();
                 cmd = con.CreateCommand();
                 cmd.CommandText = UPDATE;
-                cmd.Parameters.AddWithValue("@IdMjesto", osoba.IdMjesto);
+                cmd.Parameters.AddWithValue("@IdOsoba", osoba.IdOsoba);
+                cmd.Parameters.AddWithValue("@NazivMjesta", osoba.NazivMjesta);
                 cmd.Parameters.AddWithValue("@Ime", osoba.Ime);
                 cmd.Parameters.AddWithValue("@Prezime", osoba.Prezime);
                 cmd.Parameters.AddWithValue("@Adresa", osoba.Adresa);
@@ -66,7 +68,7 @@ namespace Biblioteka.Data.DataAccess.MySql
             }
             catch (Exception exc)
             {
-                throw new DataAccessException("Exception in MySqlOsoba", exc);
+                throw new DataAccessException("Exception in MySqlOsoba Update", exc);
             }
             finally
             {
@@ -114,7 +116,7 @@ namespace Biblioteka.Data.DataAccess.MySql
                     result.Add(new Osoba()
                     {
                         IdOsoba = reader.GetInt32(0),
-                        IdMjesto = reader.GetInt32(1),
+                        NazivMjesta = reader.GetString(1),
                         Ime = reader.GetString(2),
                         Prezime = reader.GetString(3),
                         Adresa = reader.GetString(4),
@@ -153,7 +155,7 @@ namespace Biblioteka.Data.DataAccess.MySql
                 result = new Osoba()
                 {
                     IdOsoba = reader.GetInt32(0),
-                    IdMjesto = reader.GetInt32(1),
+                    NazivMjesta = reader.GetString(1),
                     Ime = reader.GetString(2),
                     Prezime = reader.GetString(3),
                     Adresa = reader.GetString(4),

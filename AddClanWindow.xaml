@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Biblioteka"
         mc:Ignorable="d"
-        Title="Dodaj novi nalog za člana"
-        Height="360" 
+        Title="Ažuriraj informacije o članu"
+        Height="400" 
         Width="420"
-        Icon="Resources\addClan.ico"
+        Icon="Resources\Images\editPerson.ico"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         >
@@ -48,53 +48,59 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
-        <Image Source="Resources\addClan.ico" Height="35" Width="35" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="15 0 0 0"/>
+        <Image Source="Resources\Images\editPerson.ico" Height="35" Width="35" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="15 0 0 0"/>
 
-        <TextBlock x:Name="tbIme" Grid.Column="0" Grid.Row="0">
+        <TextBlock x:Name="tbId" Grid.Column="0" Grid.Row="0">
+            Šifra
+        </TextBlock>
+        <TextBox x:Name="tbSifra" Grid.Column="1" Grid.Row="0" FontSize="18" Foreground="#1261a0" FontWeight="Medium" TextAlignment="Left" IsReadOnly="True"/>
+
+        <TextBlock x:Name="tbIme" Grid.Column="0" Grid.Row="1">
             Ime
         </TextBlock>
-        <TextBox x:Name="txbIme" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="txbIme" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"/>
 
 
-        <TextBlock x:Name="tbPrezime" Grid.Column="0" Grid.Row="1">
+        <TextBlock x:Name="tbPrezime" Grid.Column="0" Grid.Row="2">
             Prezime
         </TextBlock>
-        <TextBox x:Name="txbPrezime" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="txbPrezime" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3"/>
 
 
-        <TextBlock x:Name="tbMjesto" Grid.Column="0" Grid.Row="2">
+        <TextBlock x:Name="tbMjesto" Grid.Column="0" Grid.Row="3">
             Mjesto
         </TextBlock>
-        <ComboBox Name="cbMjesto" Grid.Column="1" Grid.Row="2" Height="22" Width="auto" Grid.ColumnSpan="2" FontWeight="Medium" DropDownOpened="cbMjesto_DropDownOpened"/>
+        <ComboBox Name="cbMjesto" Grid.Column="1" Grid.Row="3" Height="22" Width="auto" Grid.ColumnSpan="2" FontWeight="Medium" DropDownOpened="cbMjesto_DropDownOpened"/>
 
-        <Button x:Name="addMjesto" Grid.Column="3" Grid.Row="2" Click="addMjesto_Click" >
+        <Button x:Name="addMjesto" Grid.Column="3" Grid.Row="3" Click="addMjesto_Click" >
             Dodaj
         </Button>
         
-        <TextBlock x:Name="tbAdresa" Grid.Column="0" Grid.Row="3">
+        <TextBlock x:Name="tbAdresa" Grid.Column="0" Grid.Row="4">
             Adresa
         </TextBlock>
-        <TextBox x:Name="txbAdresa" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="txbAdresa" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3"/>
 
-        <TextBlock x:Name="tbDatumRodjenja" Grid.Column="0" Grid.Row="4">
+        <TextBlock x:Name="tbDatumRodjenja" Grid.Column="0" Grid.Row="5">
             Datum rođenja
         </TextBlock>
-        <DatePicker x:Name="dpDatumRodjenja" Grid.Row="4" Grid.Column="1" Height="auto" Width="auto" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+        <DatePicker x:Name="dpDatumRodjenja" Grid.Row="5" Grid.Column="1" Height="auto" Width="auto" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
 
-        <TextBlock x:Name="tbBrojTelefona" Grid.Column="0" Grid.Row="5">
+        <TextBlock x:Name="tbBrojTelefona" Grid.Column="0" Grid.Row="6">
             Broj telefona
         </TextBlock>
-        <TextBox x:Name="txbBrojTelefona" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txbBrojTelefona" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2"/>
 
-        <TextBlock x:Name="tbEmail" Grid.Column="0" Grid.Row="6">
+        <TextBlock x:Name="tbEmail" Grid.Column="0" Grid.Row="7">
             Email adresa
         </TextBlock>
-        <TextBox x:Name="txbEmail" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="txbEmail" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="3"/>
 
         <Button x:Name="btnSacuvaj" Grid.Column="2" Grid.Row="8" Click="btnSacuvaj_Click">
-            Sačuvaj
+            Ažuriraj
         </Button>
 
         <Button x:Name="btnOtkazi" Grid.Column="3" Grid.Row="8" Click="btnOtkazi_Click">

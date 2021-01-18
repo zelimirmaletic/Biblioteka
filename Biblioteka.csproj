@@ -56,6 +56,21 @@
     <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
       <HintPath>packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
     </Reference>
+    <Reference Include="Syncfusion.Compression.Base, Version=18.4460.0.34, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Compression.Base.18.4.0.34\lib\net46\Syncfusion.Compression.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=18.4460.0.34, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Licensing.18.4.0.34\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Pdf.Base, Version=18.4460.0.34, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Pdf.Wpf.18.4.0.34\lib\net46\Syncfusion.Pdf.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.PdfViewer.WPF, Version=18.4460.0.34, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.PdfViewer.WPF.18.4.0.34\lib\net46\Syncfusion.PdfViewer.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.WPF, Version=18.4460.0.34, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Shared.WPF.18.4.0.34\lib\net46\Syncfusion.Shared.WPF.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -113,9 +128,6 @@
     <Compile Include="AddIzdavacWindow.xaml.cs">
       <DependentUpon>AddIzdavacWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AddKnjigaWindow.xaml.cs">
-      <DependentUpon>AddKnjigaWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="AddMjestoWindow.xaml.cs">
       <DependentUpon>AddMjestoWindow.xaml</DependentUpon>
     </Compile>
@@ -130,6 +142,9 @@
     </Compile>
     <Compile Include="BibliotekarLoginPage.xaml.cs">
       <DependentUpon>BibliotekarLoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ClanoviPage.xaml.cs">
+      <DependentUpon>ClanoviPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ClanoviSubMenuPage.xaml.cs">
       <DependentUpon>ClanoviSubMenuPage.xaml</DependentUpon>
@@ -156,6 +171,9 @@
     <Compile Include="Data\Model\Osoba.cs" />
     <Compile Include="Data\Model\Pozajmica.cs" />
     <Compile Include="Data\Model\Zanr.cs" />
+    <Compile Include="DodajClanaPage.xaml.cs">
+      <DependentUpon>DodajClanaPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DodajKnjiguPage.xaml.cs">
       <DependentUpon>DodajKnjiguPage.xaml</DependentUpon>
     </Compile>
@@ -167,6 +185,9 @@
     </Compile>
     <Compile Include="KnjigeSubMenuPage.xaml.cs">
       <DependentUpon>KnjigeSubMenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KontaktPage.xaml.cs">
+      <DependentUpon>KontaktPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainMenuPage.xaml.cs">
       <DependentUpon>MainMenuPage.xaml</DependentUpon>
@@ -183,11 +204,17 @@
     <Compile Include="PrijavaNaSistem.xaml.cs">
       <DependentUpon>PrijavaNaSistem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RazduziKnjiguPage.xaml.cs">
+      <DependentUpon>RazduziKnjiguPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StatistikaGeneralnoPage.xaml.cs">
       <DependentUpon>StatistikaGeneralnoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="StatistikaPage.xaml.cs">
       <DependentUpon>StatistikaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UputstvoPage.xaml.cs">
+      <DependentUpon>UputstvoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="WelcomeWindow.xaml.cs">
       <DependentUpon>WelcomeWindow.xaml</DependentUpon>
@@ -211,10 +238,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AddKnjigaWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="AddMjestoWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -235,7 +258,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ClanoviPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ClanoviSubMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DodajClanaPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -252,6 +283,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="KnjigeSubMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KontaktPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -287,11 +322,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="RazduziKnjiguPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StatistikaGeneralnoPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="StatistikaPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UputstvoPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -327,6 +370,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Resources\Manual\manual.pdf.pdf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -338,6 +382,7 @@
     <Resource Include="Resources\favicon.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\Images\editPerson.ico" />
     <Resource Include="Resources\welcome.png" />
   </ItemGroup>
   <ItemGroup>
@@ -423,6 +468,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\refresh.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\edit.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
