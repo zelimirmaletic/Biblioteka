@@ -65,15 +65,15 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Button x:Name="btnNovaObavjestenja" Grid.Column="1" Grid.Row="1">
+        <Button x:Name="btnNovaObavjestenja" Grid.Column="1" Grid.Row="1" Click="btnNovaObavjestenja_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
                 Nova
             </TextBlock>
         </Button>
 
-        <Button x:Name="btnPrethodnaObavjestenja" Grid.Column="1" Grid.Row="2">
+        <Button x:Name="btnPrethodnaObavjestenja" Grid.Column="1" Grid.Row="2" Click="btnPrethodnaObavjestenja_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
-                Prethodna
+                Arhiva
             </TextBlock>
         </Button>
     </Grid>

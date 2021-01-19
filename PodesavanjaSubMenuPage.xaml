@@ -71,7 +71,7 @@
             </TextBlock>
         </Button>
 
-        <Button x:Name="btnNalog" Grid.Column="1" Grid.Row="2">
+        <Button x:Name="btnNalog" Grid.Column="1" Grid.Row="2" Click="btnNalog_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
                 Nalog
             </TextBlock>

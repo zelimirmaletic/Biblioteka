@@ -157,6 +157,7 @@
     <Compile Include="Data\DataAccess\MySql\MySqlIzdavac.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlKnjiga.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlMjesto.cs" />
+    <Compile Include="Data\DataAccess\MySql\MySqlObavjestenje.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlPozajmica.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlUtil.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlZanr.cs" />
@@ -168,6 +169,7 @@
     <Compile Include="Data\Model\Izdavac.cs" />
     <Compile Include="Data\Model\Knjiga.cs" />
     <Compile Include="Data\Model\Mjesto.cs" />
+    <Compile Include="Data\Model\Obavjestenje.cs" />
     <Compile Include="Data\Model\Osoba.cs" />
     <Compile Include="Data\Model\Pozajmica.cs" />
     <Compile Include="Data\Model\Zanr.cs" />
@@ -176,9 +178,6 @@
     </Compile>
     <Compile Include="DodajKnjiguPage.xaml.cs">
       <DependentUpon>DodajKnjiguPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="IzvjestajSubMenuPage.xaml.cs">
-      <DependentUpon>IzvjestajSubMenuPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="KnjigePage.xaml.cs">
       <DependentUpon>KnjigePage.xaml</DependentUpon>
@@ -192,8 +191,14 @@
     <Compile Include="MainMenuPage.xaml.cs">
       <DependentUpon>MainMenuPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NovaObavjestenjaPage.xaml.cs">
+      <DependentUpon>NovaObavjestenjaPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ObavjestenjaSubMenuPage.xaml.cs">
       <DependentUpon>ObavjestenjaSubMenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PodesavanjaProfilaPage.xaml.cs">
+      <DependentUpon>PodesavanjaProfilaPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PodesavanjaSubMenuPage.xaml.cs">
       <DependentUpon>PodesavanjaSubMenuPage.xaml</DependentUpon>
@@ -206,6 +211,9 @@
     </Compile>
     <Compile Include="RazduziKnjiguPage.xaml.cs">
       <DependentUpon>RazduziKnjiguPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StaraObavjestenjaPage.xaml.cs">
+      <DependentUpon>StaraObavjestenjaPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="StatistikaGeneralnoPage.xaml.cs">
       <DependentUpon>StatistikaGeneralnoPage.xaml</DependentUpon>
@@ -274,10 +282,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IzvjestajSubMenuPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="KnjigePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -306,7 +310,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NovaObavjestenjaPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ObavjestenjaSubMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PodesavanjaProfilaPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -323,6 +335,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RazduziKnjiguPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StaraObavjestenjaPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -24,5 +24,11 @@ namespace Biblioteka
         {
             InitializeComponent();
         }
+
+        private void btnNalog_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow parentWindow = Window.GetWindow(this) as MainWindow;
+            parentWindow.setPageArea(new PodesavanjaProfilaPage());
+        }
     }
 }

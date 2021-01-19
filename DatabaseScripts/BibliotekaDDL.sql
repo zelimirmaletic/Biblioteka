@@ -28,7 +28,7 @@ create table Izdavac(
     primary key (IdIzdavac),
     foreign key (IdMjesto)
         references Mjesto(IdMjesto)
-	on update cascade on delete restrict
+		on update cascade on delete restrict
 )engine = InnoDB;
 create index Index_Izdavac_Naziv on Izdavac
 (
@@ -56,7 +56,7 @@ create table Autor(
     primary key (IdAutor),
     foreign key (IdMjesto)
         references Mjesto(IdMjesto)
-	on update cascade on delete restrict
+		on update cascade on delete restrict
 )engine = InnoDB;
 create index Index_Autor_Prezime_Ime on Autor
 (
@@ -79,13 +79,13 @@ create table Knjiga(
     primary key (IdKnjiga),
     foreign key (NazivZanra)
         references Zanr(Naziv)
-	on update cascade on delete restrict,
+		on update cascade on delete restrict,
     foreign key (IdIzdavac)
         references Izdavac(IdIzdavac)
-	on update cascade on delete restrict,
+		on update cascade on delete restrict,
 	foreign key (IdAutor)
 		references Autor(IdAutor)
-	on update cascade on delete restrict
+		on update cascade on delete restrict
 )engine = InnoDB;
 create unique index Index_Knjiga_NazivKnjige on Knjiga
 (
@@ -105,7 +105,7 @@ create table Osoba(
     primary key (IdOsoba),
     foreign key (NazivMjesta)
         references Mjesto(Naziv)
-	on update cascade on delete restrict
+		on update cascade on delete restrict
 )engine = InnoDB;
 create index Index_Osoba_Ime_Prezime on Osoba
 (
@@ -120,7 +120,7 @@ create table Administrator(
     primary key (IdAdministrator),
     foreign key (IdAdministrator)
         references Osoba(IdOsoba)
-	on update cascade on delete restrict
+		on update cascade on delete restrict
 )engine = InnoDB;
 
 create table Bibliotekar(
@@ -131,7 +131,7 @@ create table Bibliotekar(
     primary key (IdBibliotekar),
     foreign key (IdBibliotekar)
         references Osoba(IdOsoba)
-	on update cascade on delete restrict
+		on update cascade on delete restrict
 )engine = InnoDB;
 
 create table Clan(
@@ -142,8 +142,26 @@ create table Clan(
     primary key (IdClan),
     foreign key (IdClan)
         references Osoba(IdOsoba)
-	on update cascade on delete restrict
+		on update cascade on delete restrict
 )engine = InnoDB;
+
+create table Obavjestenje(
+	IdObavjestenje int unsigned auto_increment,
+    IdAdministrator int unsigned,
+    IdBibliotekar int unsigned,
+    Naslov varchar(45) not null,
+    Datum datetime not null,
+    Tekst text(500),
+    ZaSve tinyint not null,
+    -- KEYS
+    primary key(IdObavjestenje),
+    foreign key (IdAdministrator)
+		references Administrator(IdAdministrator)
+        on update cascade on delete restrict,
+	foreign key (IdBibliotekar)
+		references Bibliotekar(IdBibliotekar)
+        on update cascade on delete restrict
+)engine=InnoDB;
 
 create table Pozajmica(
     IdPozajmica int zerofill unsigned auto_increment ,
@@ -157,13 +175,13 @@ create table Pozajmica(
     primary key (IdPozajmica),
     foreign key (IdClan)
         references Clan(IdClan)
-	on update cascade on delete restrict,
+		on update cascade on delete restrict,
     foreign key (IdKnjiga)
         references Knjiga(IdKnjiga)
-	on update cascade on delete restrict,
+		on update cascade on delete restrict,
     foreign key (IdBibliotekar)
         references Bibliotekar(IdBibliotekar)
-	on update cascade on delete restrict
+		on update cascade on delete restrict
 )engine = InnoDB;
 create index Index_Pozajmica_Datum on Pozajmica
 (

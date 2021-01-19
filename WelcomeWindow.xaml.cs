@@ -22,7 +22,7 @@ namespace Biblioteka
         public WelcomeWindow()
         {
             InitializeComponent();
-
+            Application.Current.MainWindow = this;
             Loaded += PrijavaNaSistem_Loaded;
         }
         

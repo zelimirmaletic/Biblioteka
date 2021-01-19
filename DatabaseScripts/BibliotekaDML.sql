@@ -78,6 +78,10 @@ insert into Administrator (IdAdministrator, KorisnickoIme, Lozinka) VALUES
 insert into Pozajmica (IdClan, IdKnjiga, IdBibliotekar, DatumPozajmljivanja, JeRazduzena, Opis) VALUES
     (1,1,2,'2021-01-01',false, 'Knjiga je u savršenom stanju i neoštećena');
 
-
+-- Obavjestenje
+insert into Obavjestenje (IdAdministrator,IdBibliotekar, Naslov,Datum,Tekst) values
+	(3,3,'Godisnji odmor','2021-01-01','Od 28.03.2021. Pocinje redovni godisnji odmor...',true);
+insert into Obavjestenje (IdAdministrator,IdBibliotekar, Naslov,Datum,Tekst) values
+	(3,2,'Bonus na platu','2021-01-01','Cestitamo vi ste radnik mjeseca, mozete preuzeti vasu nagradu od 150KM u kancelariji broj 15. kao i ...',false);
 
 

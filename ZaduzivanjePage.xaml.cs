@@ -73,6 +73,9 @@ namespace Biblioteka
                     DataRowView selectedRow = (DataRowView)dgKnjige.SelectedItems[i];
                     int IdKnjiga = Int32.Parse(selectedRow.Row.ItemArray[0].ToString());
                     string Naslov = Convert.ToString(selectedRow.Row.ItemArray[1]);
+                    string ime = Convert.ToString(selectedRow.Row.ItemArray[4]);
+                    string prezime = Convert.ToString(selectedRow.Row.ItemArray[5]);
+                    string zanr = Convert.ToString(selectedRow.Row.ItemArray[2]);
                     //Check if there is available number of books
                     var mysqlPozajmica = new MySqlPozajmica();
                     var mysqlKnjiga = new MySqlKnjiga();
@@ -85,8 +88,10 @@ namespace Biblioteka
                         MessageBox.Show("Sve kopije su zaduzene za odabranu knjigu.","Informacija",MessageBoxButton.OK,MessageBoxImage.Information);
                         return;
                     }    
-        
-                    lwOdabranaGradja.Items.Add(IdKnjiga + " " + Naslov);
+                    if(lwOdabranaGradja.Items.Count<4)
+                        lwOdabranaGradja.Items.Add(IdKnjiga + " " + Naslov + " | " +ime + " "+prezime+" | "+zanr);
+                    else
+                        MessageBox.Show("Maksimalan broj knjiga za jedno zauživanje je 4.", "Informacija", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
 

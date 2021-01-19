@@ -96,22 +96,15 @@
             </TextBlock>
         </Button>
 
-        <Image Grid.Column="0" Grid.Row="5" Height="20" Width="20" HorizontalAlignment="Center" Source="Resources\Images\report.ico"/>
-        <Button x:Name="btnIzvjestaji" Grid.Column="1" Grid.Row="5" Click="btnIzvjestaji_Click">
-            <TextBlock Width="120" HorizontalAlignment="Left">
-                Izvještaji
-            </TextBlock>
-        </Button>
-
-        <Image Grid.Column="0" Grid.Row="6" Height="20" Width="20" HorizontalAlignment="Center" Source="Resources\Images\settings.ico"/>
-        <Button x:Name="btnPodesavanja" Grid.Column="1" Grid.Row="6" Click="btnPodesavanja_Click">
+        <Image Grid.Column="0" Grid.Row="5" Height="20" Width="20" HorizontalAlignment="Center" Source="Resources\Images\settings.ico"/>
+        <Button x:Name="btnPodesavanja" Grid.Column="1" Grid.Row="5" Click="btnPodesavanja_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
                 Podešavanja
             </TextBlock>
         </Button>
 
-        <Image Grid.Column="0" Grid.Row="7" Height="20" Width="20" HorizontalAlignment="Center" Source="Resources\Images\help.ico"/>
-        <Button x:Name="btnPomoc" Grid.Column="1" Grid.Row="7" Click="btnPomoc_Click">
+        <Image Grid.Column="0" Grid.Row="6" Height="20" Width="20" HorizontalAlignment="Center" Source="Resources\Images\help.ico"/>
+        <Button x:Name="btnPomoc" Grid.Column="1" Grid.Row="6" Click="btnPomoc_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
                 Pomoć
             </TextBlock>

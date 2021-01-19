@@ -9,15 +9,19 @@ namespace Biblioteka
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static int IdBibliotekar = 2;
+        public static int IdBibliotekar = 0;
         public MainWindow()
         {
-            InitializeComponent();
+            var window = new WelcomeWindow();
+            window.ShowDialog();
 
-            //var window = new WelcomeWindow();
-           // window.ShowDialog();
-
-            Loaded += MainMenuLoaded;
+            if(IdBibliotekar!=0)
+            {
+                InitializeComponent();
+                Loaded += MainMenuLoaded;
+            }
+            else
+                this.Close();
 
         }
 

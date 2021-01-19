@@ -39,9 +39,11 @@ namespace Biblioteka
                 bibliotekar = mysqlBibliotekar.GetBibliotekarByUsername(txbKorisnickoIme.Text);
                 if (bibliotekar.Lozinka.Equals(txbLozinka.Password.ToString()))
                 {
-                    MessageBox.Show("Uspješno ste se prijavili!", "Informacija", MessageBoxButton.OK, MessageBoxImage.Information);
+                    //MessageBox.Show("Uspješno ste se prijavili!", "Informacija", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MainWindow.IdBibliotekar = bibliotekar.IdBibliotekar;
                     //IMPLEMENT WINDOW OPENING!
-                    //this.Close();
+                    Application.Current.MainWindow.Close();
+
                 }
                 else
                 {

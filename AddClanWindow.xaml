@@ -56,7 +56,7 @@
         <TextBlock x:Name="tbId" Grid.Column="0" Grid.Row="0">
             Šifra
         </TextBlock>
-        <TextBox x:Name="tbSifra" Grid.Column="1" Grid.Row="0" FontSize="18" Foreground="#1261a0" FontWeight="Medium" TextAlignment="Left" IsReadOnly="True"/>
+        <TextBox x:Name="tbSifra" Grid.Column="1" Grid.Row="0" FontSize="16" Foreground="#1261a0" FontWeight="Medium" TextAlignment="Left" Height="30" IsReadOnly="True"/>
 
         <TextBlock x:Name="tbIme" Grid.Column="0" Grid.Row="1">
             Ime

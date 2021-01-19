@@ -261,7 +261,10 @@ namespace Biblioteka.Data.DataAccess.MySql
                     row[3] = reader.GetString(3);
                     row[4] = reader.GetString(4);
                     row[5] = reader.GetDateTime(5).ToString("dd/MM/yyyy");
-                    row[6] = reader.GetDateTime(5).AddDays((double)DUZINA_POZAJMICE).ToString("dd/MM/yyyy");
+                    if (reader.GetDateTime(5).CompareTo(DateTime.Today.AddDays(DUZINA_POZAJMICE)) > 1)
+                        row[6] = "POZAJMICA JE ISTEKLA!";
+                    else
+                        row[6] = reader.GetDateTime(5).AddDays((double)DUZINA_POZAJMICE).ToString("dd/MM/yyyy");
                     try
                     {
                         row[7] = reader.GetString(6);

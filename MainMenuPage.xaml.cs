@@ -17,12 +17,14 @@ namespace Biblioteka
         {
             MainWindow parentWindow = Window.GetWindow(this) as MainWindow;
             parentWindow.setSubmenuPage(new StatistikaPage());
+            parentWindow.frmPageArea.NavigationService.Navigate(new StatistikaGeneralnoPage());
         }
 
         private void btnKnjige_Click(object sender, RoutedEventArgs e)
         {
             MainWindow parentWindow = Window.GetWindow(this) as MainWindow;
             parentWindow.setSubmenuPage(new KnjigeSubMenuPage());
+            parentWindow.frmPageArea.NavigationService.Navigate(new KnjigePage());
 
         }
 
@@ -30,6 +32,7 @@ namespace Biblioteka
         {
             MainWindow parentWindow = Window.GetWindow(this) as MainWindow;
             parentWindow.setSubmenuPage(new ClanoviSubMenuPage());
+            parentWindow.frmPageArea.NavigationService.Navigate(new ClanoviPage());
 
         }
 
@@ -37,12 +40,7 @@ namespace Biblioteka
         {
             MainWindow parentWindow = Window.GetWindow(this) as MainWindow;
             parentWindow.setSubmenuPage(new ObavjestenjaSubMenuPage());
-        }
-
-        private void btnIzvjestaji_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow parentWindow = Window.GetWindow(this) as MainWindow;
-            parentWindow.setSubmenuPage(new IzvjestajSubMenuPage());
+            parentWindow.frmPageArea.NavigationService.Navigate(new NovaObavjestenjaPage());
 
         }
 
@@ -57,11 +55,12 @@ namespace Biblioteka
         {
             MainWindow parentWindow = Window.GetWindow(this) as MainWindow;
             parentWindow.setSubmenuPage(new PomocSubMenuPage());
+            parentWindow.frmPageArea.NavigationService.Navigate(new UputstvoPage());
         }
 
         private void btnOdjava_Click(object sender, RoutedEventArgs e)
         {
-
+            MainWindow mainWindow = new MainWindow();
         }
     }
 }

@@ -199,7 +199,11 @@ namespace Biblioteka.Data.DataAccess.MySql
                     var row = table.NewRow();
                     row[0] = reader.GetInt32(0);
                     row[1] = reader.GetDateTime(1).ToString("dd/MM/yyyy");
-                    row[2] = reader.GetDateTime(2).ToString("dd/MM/yyyy");
+                    if (reader.GetDateTime(2).CompareTo(DateTime.Today) < 1)
+                        row[2] = "ČLANSTVO JE ISTEKLO";
+                    else
+                        row[2] = reader.GetDateTime(2).ToString("dd/MM/yyyy");
+
                     row[3] = reader.GetString(3);
                     row[4] = reader.GetString(4);
                     row[5] = reader.GetDateTime(5).ToString("dd/MM/yyyy");

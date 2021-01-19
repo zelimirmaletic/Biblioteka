@@ -4,6 +4,7 @@ using System;
 using System.Data;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace Biblioteka
 {
@@ -22,7 +23,7 @@ namespace Biblioteka
             var mysqlClan = new MySqlClan();
             try
             {
-                dgClanovi.ItemsSource = mysqlClan.GetClanOsobaJoin(txbIme.Text,txbPrezime.Text).DefaultView;
+                dgClanovi.ItemsSource = mysqlClan.GetClanOsobaJoin(txbIme.Text, txbPrezime.Text).DefaultView;
             }
             catch (Exception exc)
             {
