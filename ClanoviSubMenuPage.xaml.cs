@@ -36,5 +36,6 @@ namespace Biblioteka
             MainWindow parentWindow = Window.GetWindow(this) as MainWindow;
             parentWindow.setPageArea(new DodajClanaPage());
         }
+
     }
 }

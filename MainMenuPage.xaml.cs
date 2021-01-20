@@ -49,7 +49,7 @@ namespace Biblioteka
         {
             MainWindow parentWindow = Window.GetWindow(this) as MainWindow;
             parentWindow.setSubmenuPage(new PodesavanjaSubMenuPage());
-
+            parentWindow.frmPageArea.NavigationService.Navigate(new PodesavanjaTemePage());
         }
 
         private void btnPomoc_Click(object sender, RoutedEventArgs e)

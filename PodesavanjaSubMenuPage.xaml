@@ -30,13 +30,13 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Button Style="{StaticResource GreyButton}" x:Name="btnIzgled" Grid.Column="1" Grid.Row="1" Click="btnIzgled_Click">
+        <Button Style="{DynamicResource GreyButton}" x:Name="btnIzgled" Grid.Column="1" Grid.Row="1" Click="btnIzgled_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
                 Teme
             </TextBlock>
         </Button>
 
-        <Button Style="{StaticResource GreyButton}" x:Name="btnNalog" Grid.Column="1" Grid.Row="2" Click="btnNalog_Click">
+        <Button Style="{DynamicResource GreyButton}" x:Name="btnNalog" Grid.Column="1" Grid.Row="2" Click="btnNalog_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
                 Nalog
             </TextBlock>

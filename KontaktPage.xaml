@@ -28,10 +28,10 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <TextBlock Style="{StaticResource ColoredTitle}" Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="0">
+        <TextBlock Style="{DynamicResource ColoredTitle}" Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="0">
             Kontakt
         </TextBlock>
-        <Separator Style="{StaticResource Separator}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8"/>
+        <Separator Style="{DynamicResource Separator}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8"/>
 
         <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2" TextWrapping="Wrap" FontSize="18" FontWeight="Light" Foreground="{StaticResource MainColor}" Margin="10 15 0 0" HorizontalAlignment="Left">
             Ukoliko imate problema pri korištenju programa i ne možete da pronađete odgovore u korisničkom uputstvu, molimo Vas da nas kontaktirate putem

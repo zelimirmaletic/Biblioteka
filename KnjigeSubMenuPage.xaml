@@ -30,25 +30,25 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Button Style="{StaticResource GreyButton}" x:Name="btnKnjige" Grid.Column="1" Grid.Row="1" Click="btnKnjige_Click">
+        <Button Style="{DynamicResource GreyButton}" x:Name="btnKnjige" Grid.Column="1" Grid.Row="1" Click="btnKnjige_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
                 Pretraga
             </TextBlock>
         </Button>
 
-        <Button Style="{StaticResource GreyButton}" x:Name="btnDodajKnjigu" Grid.Column="1" Grid.Row="2" Click="btnDodajKnjigu_Click">
+        <Button Style="{DynamicResource GreyButton}" x:Name="btnDodajKnjigu" Grid.Column="1" Grid.Row="2" Click="btnDodajKnjigu_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
                 Dodaj knjigu
             </TextBlock>
         </Button>
 
-        <Button Style="{StaticResource GreyButton}" x:Name="btnZaduziKnjigu" Grid.Column="1" Grid.Row="3" Click="btnZaduziKnjigu_Click">
+        <Button Style="{DynamicResource GreyButton}" x:Name="btnZaduziKnjigu" Grid.Column="1" Grid.Row="3" Click="btnZaduziKnjigu_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
                 Zaduži knjigu
             </TextBlock>
         </Button>
 
-        <Button Style="{StaticResource GreyButton}" x:Name="btnRazduziKnjigu" Grid.Column="1" Grid.Row="4" Click="btnRazduziKnjigu_Click">
+        <Button Style="{DynamicResource GreyButton}" x:Name="btnRazduziKnjigu" Grid.Column="1" Grid.Row="4" Click="btnRazduziKnjigu_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
                 Razduži knjigu
             </TextBlock>

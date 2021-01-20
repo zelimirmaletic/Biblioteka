@@ -30,13 +30,13 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Button Style="{StaticResource GreyButton}" x:Name="btnUputstvo" Grid.Column="1" Grid.Row="1" Click="btnUputstvo_Click">
+        <Button Style="{DynamicResource GreyButton}" x:Name="btnUputstvo" Grid.Column="1" Grid.Row="1" Click="btnUputstvo_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
                 Uputstvo
             </TextBlock>
         </Button>
 
-        <Button Style="{StaticResource GreyButton}" x:Name="btnKontakt" Grid.Column="1" Grid.Row="2" Click="btnKontakt_Click">
+        <Button Style="{DynamicResource GreyButton}" x:Name="btnKontakt" Grid.Column="1" Grid.Row="2" Click="btnKontakt_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
                 Kontakt
             </TextBlock>

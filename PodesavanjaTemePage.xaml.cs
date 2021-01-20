@@ -22,7 +22,7 @@ namespace Biblioteka
     /// </summary>
     public partial class PodesavanjaTemePage : Page
     {
-        private int boja = 1;
+        private int stil = 1;
         public PodesavanjaTemePage()
         {
             InitializeComponent();
@@ -30,44 +30,95 @@ namespace Biblioteka
             MySqlTema mysqlTema = new MySqlTema();
             Tema tema = new Tema();
             tema = mysqlTema.GetTemaByOsobaId(MainWindow.IdBibliotekar);
-            boja = tema.Boja;
+            stil = tema.Stil;
     }
 
         private void btnBlue_Click(object sender, RoutedEventArgs e)
         {
-            boja = 1;
+            stil = 1;
         }
 
         private void btnGreen_Click(object sender, RoutedEventArgs e)
         {
-            boja = 2;
+            stil = 2;
         }
 
         private void btnPink_Click(object sender, RoutedEventArgs e)
         {
-            boja = 3;
+            stil = 3;
         }
 
         private void btnRed_Click(object sender, RoutedEventArgs e)
         {
-            boja = 4;
+            stil = 4;
         }
 
         private void btnDark_Click(object sender, RoutedEventArgs e)
         {
-            boja = 5;
+            stil = 5;
         }
+
+
+        private void btnBlue1_Click(object sender, RoutedEventArgs e)
+        {
+            stil = 6;
+        }
+
+        private void btnGreen1_Click(object sender, RoutedEventArgs e)
+        {
+            stil = 7;
+        }
+
+        private void btnPink1_Click(object sender, RoutedEventArgs e)
+        {
+            stil = 8;
+        }
+
+        private void btnRed1_Click(object sender, RoutedEventArgs e)
+        {
+            stil = 9;
+        }
+
+        private void btnDark1_Click(object sender, RoutedEventArgs e)
+        {
+            stil = 10;
+        }
+
+        private void btnBlue2_Click(object sender, RoutedEventArgs e)
+        {
+            stil = 11;
+        }
+
+        private void btnPink2_Click(object sender, RoutedEventArgs e)
+        {
+            stil = 13;
+        }
+
+        private void btnGreen2_Click(object sender, RoutedEventArgs e)
+        {
+            stil = 12;
+        }
+
+        private void btnRed2_Click(object sender, RoutedEventArgs e)
+        {
+            stil = 14;
+        }
+
+        private void btnDark2_Click(object sender, RoutedEventArgs e)
+        {
+            stil = 15;
+        }
+
 
         private void btnSacuvaj_Click(object sender, RoutedEventArgs e)
         {
-            ((App)Application.Current).setStyle(boja);
+            ((App)Application.Current).setStyle(stil);
             //Save theme to database
             var mysqlTema = new MySqlTema();
             var tema = new Tema();
             tema.IdTema = 1;//Bitno je da nije <= 0
             tema.IdOsoba = MainWindow.IdBibliotekar;
-            tema.Boja = boja;
-            tema.Font = "";
+            tema.Stil = stil;
             mysqlTema.SaveTema(tema);
 
         }

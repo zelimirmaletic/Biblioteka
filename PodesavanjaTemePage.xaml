@@ -10,12 +10,12 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="180"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="170"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="170"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="170"/>
+            <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
@@ -49,29 +49,85 @@
         </TextBlock>
         <Separator Style="{DynamicResource Separator}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8" />
 
-        <Button x:Name="btnBlue" Style="{StaticResource ColoredButton}" Grid.Column="0" Grid.Row="1" Height="40" Width="100" Click="btnBlue_Click">
+        <TextBlock Style="{DynamicResource ColoredText}" Grid.Column="0" Grid.Row="1">
+            Default font
+        </TextBlock>
+        
+        <Button x:Name="btnBlue" Style="{DynamicResource ColoredButton}" Grid.Column="0" Grid.Row="2" Height="40" Width="100" Click="btnBlue_Click">
             <Image Source="Resources\Images\1.ico" Height="38" Width="98"/>
         </Button>
 
-        <Button x:Name="btnGreen" Style="{DynamicResource ColoredButton}" Grid.Column="0" Grid.Row="3" Height="40" Width="100" Click="btnGreen_Click">
+        <Button x:Name="btnGreen" Style="{DynamicResource ColoredButton}" Grid.Column="0" Grid.Row="4" Height="40" Width="100" Click="btnGreen_Click">
             <Image Source="Resources\Images\2.ico" Height="38" Width="98"/>
         </Button>
 
-        <Button Name="btnPink" Style="{DynamicResource ColoredButton}" Grid.Column="0" Grid.Row="5" Height="40" Width="100" Click="btnPink_Click">
+        <Button Name="btnPink" Style="{DynamicResource ColoredButton}" Grid.Column="0" Grid.Row="6" Height="40" Width="100" Click="btnPink_Click">
             <Image Source="Resources\Images\3.ico" Height="38" Width="98"/>
         </Button>
 
-        <Button x:Name="btnRed" Style="{DynamicResource ColoredButton}" Grid.Column="0" Grid.Row="7" Height="40" Width="100" Click="btnRed_Click">
+        <Button x:Name="btnRed" Style="{DynamicResource ColoredButton}" Grid.Column="0" Grid.Row="8" Height="40" Width="100" Click="btnRed_Click">
             <Image Source="Resources\Images\4.ico" Height="38" Width="98"/>
         </Button>
 
-        <Button x:Name="btnDark" Style="{DynamicResource ColoredButton}" Grid.Column="0" Grid.Row="9" Height="40" Width="100" Click="btnDark_Click">
+        <Button x:Name="btnDark" Style="{DynamicResource ColoredButton}" Grid.Column="0" Grid.Row="10" Height="40" Width="100" Click="btnDark_Click">
+            <Image Source="Resources\Images\5.ico" Height="38" Width="98"/>
+        </Button>
+        
+        
+
+        <TextBlock Style="{DynamicResource ColoredText}" FontFamily="Times New Roman" Grid.Column="2" Grid.Row="1">
+            Times New Roman
+        </TextBlock>
+
+        <Button x:Name="btnBlue1" Style="{DynamicResource ColoredButton}" Grid.Column="2" Grid.Row="2" Height="40" Width="100" Click="btnBlue1_Click">
+            <Image Source="Resources\Images\1.ico" Height="38" Width="98"/>
+        </Button>
+
+        <Button x:Name="btnGreen1" Style="{DynamicResource ColoredButton}" Grid.Column="2" Grid.Row="4" Height="40" Width="100" Click="btnGreen1_Click" >
+            <Image Source="Resources\Images\2.ico" Height="38" Width="98"/>
+        </Button>
+
+        <Button Name="btnPink1" Style="{DynamicResource ColoredButton}" Grid.Column="2" Grid.Row="6" Height="40" Width="100" Click="btnPink1_Click">
+            <Image Source="Resources\Images\3.ico" Height="38" Width="98"/>
+        </Button>
+
+        <Button x:Name="btnRed1" Style="{DynamicResource ColoredButton}" Grid.Column="2" Grid.Row="8" Height="40" Width="100" Click="btnRed1_Click" >
+            <Image Source="Resources\Images\4.ico" Height="38" Width="98"/>
+        </Button>
+
+        <Button x:Name="btnDark1" Style="{DynamicResource ColoredButton}" Grid.Column="2" Grid.Row="10" Height="40" Width="100" Click="btnDark1_Click" >
+            <Image Source="Resources\Images\5.ico" Height="38" Width="98"/>
+        </Button>
+
+
+        <TextBlock Style="{DynamicResource ColoredText}" FontFamily="Arial" Grid.Column="4" Grid.Row="1">
+            Arial
+        </TextBlock>
+
+        <Button x:Name="btnBlue2" Style="{DynamicResource ColoredButton}" Grid.Column="4" Grid.Row="2" Height="40" Width="100" Click="btnBlue2_Click">
+            <Image Source="Resources\Images\1.ico" Height="38" Width="98"/>
+        </Button>
+
+        <Button x:Name="btnGreen2" Style="{DynamicResource ColoredButton}" Grid.Column="4" Grid.Row="4" Height="40" Width="100" Click="btnGreen2_Click" >
+            <Image Source="Resources\Images\2.ico" Height="38" Width="98"/>
+        </Button>
+
+        <Button Name="btnPink2" Style="{DynamicResource ColoredButton}" Grid.Column="4" Grid.Row="6" Height="40" Width="100" Click="btnPink2_Click">
+            <Image Source="Resources\Images\3.ico" Height="38" Width="98"/>
+        </Button>
+
+        <Button x:Name="btnRed2" Style="{DynamicResource ColoredButton}" Grid.Column="4" Grid.Row="8" Height="40" Width="100" Click="btnRed2_Click" >
+            <Image Source="Resources\Images\4.ico" Height="38" Width="98"/>
+        </Button>
+
+        <Button x:Name="btnDark2" Style="{DynamicResource ColoredButton}" Grid.Column="4" Grid.Row="10" Height="40" Width="100" Click="btnDark2_Click" >
             <Image Source="Resources\Images\5.ico" Height="38" Width="98"/>
         </Button>
 
 
 
-        <Button Style="{DynamicResource ColoredButton}" x:Name="btnSacuvaj" Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="1" Height="30" Width="100" Click="btnSacuvaj_Click">
+
+        <Button Style="{DynamicResource ColoredButton}" x:Name="btnSacuvaj" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="1" Height="30" Width="100" Click="btnSacuvaj_Click">
             Sačuvaj
         </Button>
 

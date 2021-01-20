@@ -30,7 +30,7 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Button Style="{StaticResource GreyButton}" x:Name="btnGeneralno" Grid.Column="1" Grid.Row="1" Click="btnGeneralno_Click">
+        <Button Style="{DynamicResource GreyButton}" x:Name="btnGeneralno" Grid.Column="1" Grid.Row="1" Click="btnGeneralno_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
                 Generalna
             </TextBlock>

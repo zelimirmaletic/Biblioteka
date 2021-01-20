@@ -47,7 +47,7 @@
 
         <Frame x:Name="frmSideMenu" x:FieldModifier="public" Grid.Row="0" Grid.Column="1" Height="auto" Width="auto" NavigationUIVisibility="Hidden"/>
 
-        <Frame x:Name="frmPageArea" x:FieldModifier="public" Grid.Row="0" Grid.Column="2" Height="auto" Width="auto" NavigationUIVisibility="Hidden" ScrollViewer.CanContentScroll="True"/>
+        <Frame x:Name="frmPageArea" x:FieldModifier="public" Grid.Row="0" Grid.Column="2" Height="auto" Width="auto" NavigationUIVisibility="Hidden" ScrollViewer.CanContentScroll="True" Margin="5 0 0 0"/>
 
 
     </Grid>

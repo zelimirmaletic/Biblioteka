@@ -351,6 +351,30 @@
       <SubType>Designer</SubType>
       <Generator>ResXFileCodeGenerator</Generator>
     </Page>
+    <Page Include="Resources\Styles\10.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\11.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\12.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\13.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\14.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\15.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\Styles\2.xaml">
       <SubType>Designer</SubType>
       <Generator>ResXFileCodeGenerator</Generator>
@@ -366,6 +390,22 @@
     <Page Include="Resources\Styles\5.xaml">
       <SubType>Designer</SubType>
       <Generator>ResXFileCodeGenerator</Generator>
+    </Page>
+    <Page Include="Resources\Styles\6.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\7.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\8.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\9.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="StaraObavjestenjaPage.xaml">
       <SubType>Designer</SubType>
@@ -421,56 +461,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\administratorLogin.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\favicon.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\Images\editPerson.ico" />
-    <Resource Include="Resources\welcome.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\bibliotekarLogin.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\add.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\addMan.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\book.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\home.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\warning.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\error.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\info.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\success.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\dashboard.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\addClan.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\bookGive.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\greenBook.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\search.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\logo.ico" />

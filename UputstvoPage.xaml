@@ -29,10 +29,10 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <TextBlock Style="{StaticResource ColoredTitle}" Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="0">
+        <TextBlock Style="{DynamicResource ColoredTitle}" Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="0">
             Korisničko uputstvo
         </TextBlock>
-        <Separator Style="{StaticResource Separator}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8" />
+        <Separator Style="{DynamicResource Separator}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8" />
 
         <syncfusion:PdfViewerControl x:Name="PdfViewerControl" Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="1"/>
         

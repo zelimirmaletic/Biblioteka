@@ -30,24 +30,24 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <TextBlock Style="{StaticResource ColoredTitle}" Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="0">
+        <TextBlock Style="{DynamicResource ColoredTitle}" Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="0">
             Rad sa članovima
         </TextBlock>
-        <Separator Style="{StaticResource Separator}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8"/>
+        <Separator Style="{DynamicResource Separator}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8"/>
 
-        <TextBlock Style="{StaticResource ColoredText}" Grid.Column="0" Grid.Row="1">
+        <TextBlock Style="{DynamicResource ColoredText}" Grid.Column="0" Grid.Row="1">
             Ime
         </TextBlock>
-        <TextBox Style="{StaticResource TextBox}" Name="txbIme" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <TextBox Style="{DynamicResource TextBox}" Name="txbIme" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"/>
 
 
-        <TextBlock Style="{StaticResource ColoredText}" Grid.Column="3" Grid.Row="1">
+        <TextBlock Style="{DynamicResource ColoredText}" Grid.Column="3" Grid.Row="1">
             Prezime
         </TextBlock>
-        <TextBox Style="{StaticResource TextBox}" Name="txbPrezime" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <TextBox Style="{DynamicResource TextBox}" Name="txbPrezime" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2"/>
 
 
-        <Button Style="{StaticResource ColoredButton}" x:Name="btnPretraga" Grid.Column="6" Width="150" Height="30" Grid.ColumnSpan="2" Grid.Row="1" Margin="5 5 5 5" Click="btnPretraga_Click">
+        <Button Style="{DynamicResource ColoredButton}" x:Name="btnPretraga" Grid.Column="6" Width="150" Height="30" Grid.ColumnSpan="2" Grid.Row="1" Margin="5 5 5 5" Click="btnPretraga_Click">
             Pretraga
         </Button>
 

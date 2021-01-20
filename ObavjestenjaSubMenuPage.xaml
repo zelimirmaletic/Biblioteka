@@ -30,13 +30,13 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Button Style="{StaticResource GreyButton}" x:Name="btnNovaObavjestenja" Grid.Column="1" Grid.Row="1" Click="btnNovaObavjestenja_Click">
+        <Button Style="{DynamicResource GreyButton}" x:Name="btnNovaObavjestenja" Grid.Column="1" Grid.Row="1" Click="btnNovaObavjestenja_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
                 Nova
             </TextBlock>
         </Button>
 
-        <Button Style="{StaticResource GreyButton}" x:Name="btnPrethodnaObavjestenja" Grid.Column="1" Grid.Row="2" Click="btnPrethodnaObavjestenja_Click">
+        <Button Style="{DynamicResource GreyButton}" x:Name="btnPrethodnaObavjestenja" Grid.Column="1" Grid.Row="2" Click="btnPrethodnaObavjestenja_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
                 Arhiva
             </TextBlock>

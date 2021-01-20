@@ -3,7 +3,7 @@
                 xmlns:local="clr-namespace:Biblioteka">
 
     <SolidColorBrush x:Key="MainColor" Color="#27ae60"/>
-
+    <FontFamily x:Key="MainFont">Times New Roman</FontFamily>
 
     <Style x:Key="ColoredRectangle" TargetType="Rectangle">
         <Setter Property="Fill" Value="{StaticResource ResourceKey=MainColor}"/>
@@ -14,6 +14,7 @@
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="FontWeight" Value="Light"/>
         <Setter Property="Height" Value="45"/>
+        <Setter Property="FontFamily" Value="{DynamicResource MainFont}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -43,8 +44,10 @@
     </Style>
 
     <Style x:Key="GreyButton" TargetType="Button">
-        <Setter Property="Foreground" Value="{StaticResource MainColor}"/>
+        <Setter Property="Foreground" Value="{DynamicResource MainColor}"/>
         <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontFamily" Value="{DynamicResource MainFont}"/>
+
         <Setter Property="FontWeight" Value="Light"/>
         <Setter Property="Height" Value="45"/>
         <Setter Property="Template">
@@ -80,6 +83,7 @@
         <Setter Property="Foreground" Value="{StaticResource ResourceKey=MainColor}"/>
         <Setter Property="FontWeight" Value="Light"/>
         <Setter Property="FontSize" Value="35"/>
+        <Setter Property="FontFamily" Value="{DynamicResource MainFont}"/>
         <Setter Property="Margin" Value="10 15 0 0"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Height" Value="80"/>
@@ -94,6 +98,7 @@
     <Style TargetType="TextBlock" x:Key="ColoredText">
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="{DynamicResource MainFont}"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="Margin" Value="10 0 0 0"/>
         <Setter Property="Foreground" Value="{StaticResource ResourceKey=MainColor}"/>
@@ -101,12 +106,14 @@
 
     <Style TargetType="ComboBox" x:Key="ComboBox">
         <Setter Property="Height" Value="30"/>
+        <Setter Property="FontFamily" Value="{DynamicResource MainFont}"/>
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="Width" Value="auto"/>
     </Style>
 
     <Style TargetType="TextBox" x:Key="TextBox">
         <Setter Property="Height" Value="30"/>
+        <Setter Property="FontFamily" Value="{DynamicResource MainFont}"/>
         <Setter Property="Width" Value="auto"/>
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="Margin" Value="5 0 5 0"/>

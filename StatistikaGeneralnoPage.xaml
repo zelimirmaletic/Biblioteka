@@ -38,13 +38,13 @@
 
         <Rectangle Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin=" 10 10 10 10">
             <Rectangle.Fill>
-                <SolidColorBrush Color="#4aab98"/>
+                <SolidColorBrush Color="#27ae60"/>
             </Rectangle.Fill>
         </Rectangle>
 
         <Rectangle Grid.Column="2" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin=" 10 10 10 10">
             <Rectangle.Fill>
-                <SolidColorBrush Color="#de8c7f"/>
+                <SolidColorBrush Color="#e74c3c"/>
             </Rectangle.Fill>
         </Rectangle>
         
@@ -62,39 +62,39 @@
 
         <Rectangle Grid.Column="2" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin=" 10 10 10 10">
             <Rectangle.Fill>
-                <SolidColorBrush Color="#de8c7f"/>
+                <SolidColorBrush Color="#e67e22"/>
             </Rectangle.Fill>
         </Rectangle>
 
         <Rectangle Grid.Column="4" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin=" 10 10 10 10">
             <Rectangle.Fill>
-                <SolidColorBrush Color="#4aab98"/>
+                <SolidColorBrush Color="#1abc9c"/>
             </Rectangle.Fill>
         </Rectangle>
 
         <Rectangle Grid.Column="0" Grid.Row="5" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin=" 10 10 10 10">
             <Rectangle.Fill>
-                <SolidColorBrush Color="#4aab98"/>
+                <SolidColorBrush Color="#27ae60"/>
             </Rectangle.Fill>
         </Rectangle>
 
         <Rectangle Grid.Column="2" Grid.Row="5" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin=" 10 10 10 10">
             <Rectangle.Fill>
-                <SolidColorBrush Color="#1261a0"/>
+                <SolidColorBrush Color="#34495e"/>
             </Rectangle.Fill>
         </Rectangle>
 
         <Rectangle Grid.Column="4" Grid.Row="5" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin=" 10 10 10 10">
             <Rectangle.Fill>
-                <SolidColorBrush Color="#de8c7f"/>
+                <SolidColorBrush Color="#9b59b6"/>
             </Rectangle.Fill>
         </Rectangle>
 
 
-        <TextBlock Style="{StaticResource ColoredTitle}" Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="0" Height="80" Width="auto" FontSize="35" FontWeight="Light" Margin="10 15 0 0" HorizontalAlignment="Left">
+        <TextBlock Style="{DynamicResource ColoredTitle}" Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="0" Height="80" Width="auto" FontSize="35" FontWeight="Light" Margin="10 15 0 0" HorizontalAlignment="Left">
             Generalna statistika
         </TextBlock>
-        <Separator Style="{StaticResource Separator}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8" Margin="10 30 15 0"/>
+        <Separator Style="{DynamicResource Separator}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8" Margin="10 30 15 0"/>
 
 
         <TextBlock Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="100" Width="auto" Foreground="White" FontWeight="Medium" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Top" Margin="0 50 0 0">

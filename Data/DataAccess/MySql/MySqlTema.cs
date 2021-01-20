@@ -11,8 +11,8 @@ namespace Biblioteka.Data.DataAccess.MySql
 {
     class MySqlTema
     {
-        private static readonly string INSERT = "insert into `Tema` (IdOsoba, Boja, Font) values (@IdOsoba, @Boja, @Font)";
-        private static readonly string UPDATE = "update `Tema` SET Boja=@Boja, Font=@Font WHERE IdOsoba=@IdOsoba";
+        private static readonly string INSERT = "insert into `Tema` (IdOsoba, Stil) values (@IdOsoba, @Stil)";
+        private static readonly string UPDATE = "update `Tema` SET Stil=@Stil WHERE IdOsoba=@IdOsoba";
         private static readonly string SELECT = "select * from `Tema` where IdOsoba = @IdOsoba;";
 
         public void SaveTema(Tema tema)
@@ -37,8 +37,7 @@ namespace Biblioteka.Data.DataAccess.MySql
                 cmd = connection.CreateCommand();
                 cmd.CommandText = INSERT;
                 cmd.Parameters.AddWithValue("@IdOsoba", tema.IdOsoba);
-                cmd.Parameters.AddWithValue("@Boja", tema.Boja);
-                cmd.Parameters.AddWithValue("@Font", tema.Font);
+                cmd.Parameters.AddWithValue("@Stil", tema.Stil);
                 cmd.ExecuteNonQuery();
                 tema.IdTema = (int)cmd.LastInsertedId;
             }
@@ -63,8 +62,7 @@ namespace Biblioteka.Data.DataAccess.MySql
                 cmd = connection.CreateCommand();
                 cmd.CommandText = UPDATE;
                 cmd.Parameters.AddWithValue("@IdOsoba", tema.IdOsoba);
-                cmd.Parameters.AddWithValue("@Boja", tema.Boja);
-                cmd.Parameters.AddWithValue("@Font", tema.Font);
+                cmd.Parameters.AddWithValue("@Stil", tema.Stil);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -95,8 +93,7 @@ namespace Biblioteka.Data.DataAccess.MySql
                 reader.Read();
                 tema.IdTema = reader.GetInt32(0);
                 tema.IdOsoba = reader.GetInt32(1);
-                tema.Boja = reader.GetInt32(2);
-                tema.Font = reader.GetString(3);
+                tema.Stil = reader.GetInt32(2);
             }
             catch (Exception ex)
             {

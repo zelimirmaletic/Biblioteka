@@ -166,8 +166,7 @@ create table Obavjestenje(
 create table Tema (
 	IdTema int unsigned auto_increment,
     IdOsoba int unsigned,
-    Boja int(2) unsigned zerofill default 1 not null,
-    Font varchar(45) not null,
+    Stil int(2) unsigned zerofill default 1 not null,
     -- KEYS
     primary key (IdTema),
     foreign key (IdOsoba)

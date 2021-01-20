@@ -70,7 +70,7 @@ insert into Clan (IdClan, DatumUclanjivanja, DatumObnavljanjaClanstva) VALUES
 insert into Bibliotekar (IdBibliotekar, KorisnickoIme, Lozinka) VALUES
     (2,'jovan123','jovan123');
 -- Tema
-insert into Tema(IdOsoba, Boja, Font) values (2,1,'');
+insert into Tema(IdOsoba, Stil) values (2,1);
 
 -- Administrator
 insert into Administrator (IdAdministrator, KorisnickoIme, Lozinka) VALUES

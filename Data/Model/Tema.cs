@@ -10,19 +10,17 @@ namespace Biblioteka.Data.Model
     {
         public int IdTema { get; set; }
         public int IdOsoba { get; set; }
-        public int Boja { get; set; }
-        public string Font { get; set; }
+        public int Stil { get; set; }
 
         public Tema()
         {
         }
 
-        public Tema(int idTema, int idOsoba, int boja, string font)
+        public Tema(int idTema, int idOsoba, int stil)
         {
             IdTema = idTema;
             IdOsoba = idOsoba;
-            Boja = boja;
-            Font = font;
+            Stil = stil;
         }
 
         public override bool Equals(object obj)

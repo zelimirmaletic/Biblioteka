@@ -30,16 +30,18 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Button Style="{StaticResource GreyButton}" x:Name="btnClanovi" Grid.Column="1" Grid.Row="1" Click="btnClanovi_Click">
+        <Button Style="{DynamicResource GreyButton}" x:Name="btnClanovi" Grid.Column="1" Grid.Row="1" Click="btnClanovi_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
                 Članovi
             </TextBlock>
         </Button>
 
-        <Button Style="{StaticResource GreyButton}" x:Name="btnDodajClana" Grid.Column="1" Grid.Row="2" Click="btnDodajClana_Click">
+        <Button Style="{DynamicResource GreyButton}" x:Name="btnDodajClana" Grid.Column="1" Grid.Row="2" Click="btnDodajClana_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
                 Dodaj člana
             </TextBlock>
         </Button>
+
+
     </Grid>
 </Page>

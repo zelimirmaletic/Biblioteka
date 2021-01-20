@@ -43,50 +43,50 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <TextBlock Style="{StaticResource ColoredTitle}" Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="0">
+        <TextBlock Style="{DynamicResource ColoredTitle}" Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="0">
             Dodaj člana
         </TextBlock>
-        <Separator Style="{StaticResource Separator}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8" />
+        <Separator Style="{DynamicResource Separator}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8" />
 
-        <TextBlock Style="{StaticResource ColoredText}" Grid.Column="0" Grid.Row="1">
+        <TextBlock Style="{DynamicResource ColoredText}" Grid.Column="0" Grid.Row="1">
             Ime
         </TextBlock>
-        <TextBox Style="{StaticResource TextBox}" x:Name="txbIme" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" MaxLength="45"/>
+        <TextBox Style="{DynamicResource TextBox}" x:Name="txbIme" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" MaxLength="45"/>
 
-        <TextBlock Style="{StaticResource ColoredText}" Grid.Column="0" Grid.Row="2">
+        <TextBlock Style="{DynamicResource ColoredText}" Grid.Column="0" Grid.Row="2">
             Prezime
         </TextBlock>
-        <TextBox Style="{StaticResource TextBox}" x:Name="txbPrezime" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" MaxLength="45"/>
+        <TextBox Style="{DynamicResource TextBox}" x:Name="txbPrezime" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" MaxLength="45"/>
 
-        <TextBlock Style="{StaticResource ColoredText}" Grid.Column="0" Grid.Row="3">
+        <TextBlock Style="{DynamicResource ColoredText}" Grid.Column="0" Grid.Row="3">
             Mjesto
         </TextBlock>
-        <ComboBox Style="{StaticResource ComboBox}" Name="cbMjesto" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" DropDownOpened="cbMjesto_DropDownOpened"/>
-        <Button Style="{StaticResource ColoredButton}" x:Name="btnDodajMjesto" Grid.Column="3" Grid.Row="3" Height="30" Width="80" Click="btnDodajMjesto_Click" >
+        <ComboBox Style="{DynamicResource ComboBox}" Name="cbMjesto" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" DropDownOpened="cbMjesto_DropDownOpened"/>
+        <Button Style="{DynamicResource ColoredButton}" x:Name="btnDodajMjesto" Grid.Column="3" Grid.Row="3" Height="30" Width="80" Click="btnDodajMjesto_Click" >
             Dodaj
         </Button>
 
-        <TextBlock Style="{StaticResource ColoredText}" Grid.Column="0" Grid.Row="4">
+        <TextBlock Style="{DynamicResource ColoredText}" Grid.Column="0" Grid.Row="4">
             Adresa
         </TextBlock>
-        <TextBox Style="{StaticResource TextBox}" x:Name="txbAdresa" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" MaxLength="45"/>
+        <TextBox Style="{DynamicResource TextBox}" x:Name="txbAdresa" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" MaxLength="45"/>
 
-        <TextBlock Style="{StaticResource ColoredText}" Grid.Column="0" Grid.Row="5">
+        <TextBlock Style="{DynamicResource ColoredText}" Grid.Column="0" Grid.Row="5">
             Broj telefona
         </TextBlock>
-        <TextBox Style="{StaticResource TextBox}" Name="txbBrojTelefona" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" MaxLength="15"/>
+        <TextBox Style="{DynamicResource TextBox}" Name="txbBrojTelefona" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" MaxLength="15"/>
 
-        <TextBlock Style="{StaticResource ColoredText}" Grid.Column="0" Grid.Row="6">
+        <TextBlock Style="{DynamicResource ColoredText}" Grid.Column="0" Grid.Row="6">
             Datum rođenja
         </TextBlock>
         <DatePicker Name="dpDatumRodjenja" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="6" FontSize="16" Height="30"/>
 
-        <TextBlock Style="{StaticResource ColoredText}" Grid.Column="0" Grid.Row="7">
+        <TextBlock Style="{DynamicResource ColoredText}" Grid.Column="0" Grid.Row="7">
             Email
         </TextBlock>
-        <TextBox Style="{StaticResource TextBox}" x:Name="txbEmail" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="3" MaxLength="45"/>
+        <TextBox Style="{DynamicResource TextBox}" x:Name="txbEmail" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="3" MaxLength="45"/>
 
-        <Button Style="{StaticResource ColoredButton}" x:Name="btnSacuvaj" Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="1" Height="30" Width="100" Click="btnSacuvaj_Click">
+        <Button Style="{DynamicResource ColoredButton}" x:Name="btnSacuvaj" Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="1" Height="30" Width="100" Click="btnSacuvaj_Click">
             Sačuvaj
         </Button>
 

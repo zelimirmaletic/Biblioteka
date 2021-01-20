@@ -4,6 +4,7 @@
 
     <SolidColorBrush x:Key="MainColor" Color="#1261a0"/>
 
+    
 
     <Style x:Key="ColoredRectangle" TargetType="Rectangle">
         <Setter Property="Fill" Value="{StaticResource ResourceKey=MainColor}"/>
@@ -41,7 +42,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-
+    
     <Style x:Key="GreyButton" TargetType="Button">
         <Setter Property="Foreground" Value="{StaticResource MainColor}"/>
         <Setter Property="FontSize" Value="18"/>

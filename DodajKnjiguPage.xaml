@@ -43,71 +43,71 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <TextBlock Style="{StaticResource ColoredTitle}" Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="0">
+        <TextBlock Style="{DynamicResource ColoredTitle}" Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="0">
             Dodaj knjigu
         </TextBlock>
-        <Separator Style="{StaticResource Separator}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8" />
+        <Separator Style="{DynamicResource Separator}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8" />
 
-        <TextBlock Style="{StaticResource ColoredText}" Grid.Column="0" Grid.Row="1">
+        <TextBlock Style="{DynamicResource ColoredText}" Grid.Column="0" Grid.Row="1">
             Naslov
         </TextBlock>
-        <TextBox Style="{StaticResource TextBox}" x:Name="txbNaslov" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" MaxLength="45"/>
+        <TextBox Style="{DynamicResource TextBox}" x:Name="txbNaslov" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" MaxLength="45"/>
 
-        <TextBlock Style="{StaticResource ColoredText}" Grid.Column="0" Grid.Row="2">
+        <TextBlock Style="{DynamicResource ColoredText}" Grid.Column="0" Grid.Row="2">
             Autor
         </TextBlock>
-        <ComboBox Style="{StaticResource ComboBox}" Name="cbAutor" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" DropDownOpened="cbAutor_DropDownOpened"/>
-        <Button Style="{StaticResource ColoredButton}" x:Name="btnDodajAutora" Grid.Column="3" Grid.Row="2" Height="30" Width="80" Click="btnDodajAutora_Click">
+        <ComboBox Style="{DynamicResource ComboBox}" Name="cbAutor" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" DropDownOpened="cbAutor_DropDownOpened"/>
+        <Button Style="{DynamicResource ColoredButton}" x:Name="btnDodajAutora" Grid.Column="3" Grid.Row="2" Height="30" Width="80" Click="btnDodajAutora_Click">
             Dodaj
         </Button>
 
-        <TextBlock Style="{StaticResource ColoredText}" Grid.Column="0" Grid.Row="3">
+        <TextBlock Style="{DynamicResource ColoredText}" Grid.Column="0" Grid.Row="3">
             Žanr
         </TextBlock>
-        <ComboBox Style="{StaticResource ComboBox}" Name="cbZanr" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" DropDownOpened="cbZanr_DropDownOpened"/>
-        <Button Style="{StaticResource ColoredButton}" x:Name="btnDodajZanr" Grid.Column="3" Grid.Row="3" Height="30" Width="80" Click="btnDodajZanr_Click">
+        <ComboBox Style="{DynamicResource ComboBox}" Name="cbZanr" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" DropDownOpened="cbZanr_DropDownOpened"/>
+        <Button Style="{DynamicResource ColoredButton}" x:Name="btnDodajZanr" Grid.Column="3" Grid.Row="3" Height="30" Width="80" Click="btnDodajZanr_Click">
             Dodaj
         </Button>
 
-        <TextBlock Style="{StaticResource ColoredText}" Grid.Column="0" Grid.Row="4">
+        <TextBlock Style="{DynamicResource ColoredText}" Grid.Column="0" Grid.Row="4">
             Izdavač
         </TextBlock>
-        <ComboBox Style="{StaticResource ComboBox}" Name="cbIzdavac" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" DropDownOpened="cbIzdavac_DropDownOpened"/>
-        <Button Style="{StaticResource ColoredButton}" x:Name="btnDodajIzdavaca" Grid.Column="3" Grid.Row="4" Height="30" Width="80" Click="btnDodajIzdavaca_Click">
+        <ComboBox Style="{DynamicResource ComboBox}" Name="cbIzdavac" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" DropDownOpened="cbIzdavac_DropDownOpened"/>
+        <Button Style="{DynamicResource ColoredButton}" x:Name="btnDodajIzdavaca" Grid.Column="3" Grid.Row="4" Height="30" Width="80" Click="btnDodajIzdavaca_Click">
             Dodaj
         </Button>
         
-        <TextBlock Style="{StaticResource ColoredText}" Grid.Column="0" Grid.Row="5">
+        <TextBlock Style="{DynamicResource ColoredText}" Grid.Column="0" Grid.Row="5">
             Datum Objavljivanja
         </TextBlock>
         <DatePicker Name="dpDatumObjavljivanja" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" FontSize="16" Height="30"/>
 
-        <TextBlock Style="{StaticResource ColoredText}" Grid.Column="0" Grid.Row="6">
+        <TextBlock Style="{DynamicResource ColoredText}" Grid.Column="0" Grid.Row="6">
             ISBN
         </TextBlock>
-        <TextBox Style="{StaticResource TextBox}" x:Name="txbISBN" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="6" MaxLength="30"/>
+        <TextBox Style="{DynamicResource TextBox}" x:Name="txbISBN" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="6" MaxLength="30"/>
 
-        <TextBlock Style="{StaticResource ColoredText}" Grid.Column="0" Grid.Row="7">
+        <TextBlock Style="{DynamicResource ColoredText}" Grid.Column="0" Grid.Row="7">
             Broj kopija
         </TextBlock>
-        <TextBox Style="{StaticResource TextBox}"  Name="txbBrojKopija" Grid.Column="1" Grid.Row="7"/>
+        <TextBox Style="{DynamicResource TextBox}"  Name="txbBrojKopija" Grid.Column="1" Grid.Row="7"/>
 
-        <TextBlock Style="{StaticResource ColoredText}" Grid.Column="0" Grid.Row="8">
+        <TextBlock Style="{DynamicResource ColoredText}" Grid.Column="0" Grid.Row="8">
             Broj stranica
         </TextBlock>
-        <TextBox Style="{StaticResource TextBox}"  Name="txbBrojStranica" Grid.Row="8" Grid.Column="1"/>
+        <TextBox Style="{DynamicResource TextBox}"  Name="txbBrojStranica" Grid.Row="8" Grid.Column="1"/>
 
-        <TextBlock Style="{StaticResource ColoredText}" Grid.Column="0" Grid.Row="9">
+        <TextBlock Style="{DynamicResource ColoredText}" Grid.Column="0" Grid.Row="9">
             Jezik
         </TextBlock>
-        <ComboBox Style="{StaticResource ComboBox}" Name="cbJezik" Grid.Column="1" Grid.Row="9" DropDownOpened="cbJezik_DropDownOpened"/>
+        <ComboBox Style="{DynamicResource ComboBox}" Name="cbJezik" Grid.Column="1" Grid.Row="9" DropDownOpened="cbJezik_DropDownOpened"/>
 
-        <TextBlock Style="{StaticResource ColoredText}" Grid.Column="0" Grid.Row="10">
+        <TextBlock Style="{DynamicResource ColoredText}" Grid.Column="0" Grid.Row="10">
             Opis
         </TextBlock>
-        <TextBox Style="{StaticResource TextBox}"  x:Name="txbOpis" Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="3" Grid.RowSpan="2" Height="75" TextWrapping="Wrap" MaxLength="500"/>
+        <TextBox Style="{DynamicResource TextBox}"  x:Name="txbOpis" Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="3" Grid.RowSpan="2" Height="75" TextWrapping="Wrap" MaxLength="500"/>
 
-        <Button Style="{StaticResource ColoredButton}" x:Name="btnSacuvaj" Grid.Row="12" Grid.Column="3" Grid.ColumnSpan="1" Height="30" Width="100" Click="btnSacuvaj_Click">
+        <Button Style="{DynamicResource ColoredButton}" x:Name="btnSacuvaj" Grid.Row="12" Grid.Column="3" Grid.ColumnSpan="1" Height="30" Width="100" Click="btnSacuvaj_Click">
             Sačuvaj
         </Button>
 

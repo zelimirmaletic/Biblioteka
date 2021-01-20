@@ -20,7 +20,7 @@ namespace Biblioteka
             MySqlTema mysqlTema = new MySqlTema();
             Tema tema = new Tema();
             tema = mysqlTema.GetTemaByOsobaId(MainWindow.IdBibliotekar);
-            ((App)Application.Current).setStyle(tema.Boja);
+            ((App)Application.Current).setStyle(tema.Stil);
 
 
             if (IdBibliotekar!=0)
