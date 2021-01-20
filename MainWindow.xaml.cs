@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Biblioteka.Data.DataAccess.MySql;
+using Biblioteka.Data.Model;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -15,7 +17,13 @@ namespace Biblioteka
             var window = new WelcomeWindow();
             window.ShowDialog();
 
-            if(IdBibliotekar!=0)
+            MySqlTema mysqlTema = new MySqlTema();
+            Tema tema = new Tema();
+            tema = mysqlTema.GetTemaByOsobaId(MainWindow.IdBibliotekar);
+            ((App)Application.Current).setStyle(tema.Boja);
+
+
+            if (IdBibliotekar!=0)
             {
                 InitializeComponent();
                 Loaded += MainMenuLoaded;

@@ -12,26 +12,6 @@
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         >
-    <Window.Resources>
-        <Style TargetType="TextBlock">
-            <Setter Property="FontWeight" Value="Medium"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="TextAlignment" Value="Right"/>
-            <Setter Property="Margin" Value="0 0 10 0"/>
-        </Style>
-        <Style TargetType="TextBox">
-            <Setter Property="FontWeight" Value="Medium"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="TextAlignment" Value="Left"/>
-            <Setter Property="Height" Value="22"/>
-            <Setter Property="Margin" Value="0 0 10 0"/>
-        </Style>
-        <Style TargetType="Button">
-            <Setter Property="Height" Value="22"/>
-            <Setter Property="Width" Value="80"/>
-            <Setter Property="FontWeight" Value="Medium"/>
-        </Style>
-    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"/>
@@ -47,41 +27,41 @@
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
-        <Image Source="Resources\Images\addPerson.ico" Height="35" Width="35" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="15 0 0 0"/>
+        <Image Source="Resources\Images\addPerson.ico" Height="35" Width="35" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="0 0 0 0"/>
 
-        <TextBlock x:Name="tbIme" Grid.Column="0" Grid.Row="0">
+        <TextBlock Style="{StaticResource ColoredText}" x:Name="tbIme" Grid.Column="0" Grid.Row="0">
             Ime
         </TextBlock>
 
-        <TextBlock x:Name="tbPrezime" Grid.Column="0" Grid.Row="1">
+        <TextBlock Style="{StaticResource ColoredText}" x:Name="tbPrezime" Grid.Column="0" Grid.Row="1">
             Prezime
         </TextBlock>
 
-        <TextBlock x:Name="tbMjesto" Grid.Column="0" Grid.Row="2">
+        <TextBlock Style="{StaticResource ColoredText}" x:Name="tbMjesto" Grid.Column="0" Grid.Row="2">
             Mjesto
         </TextBlock>
 
-        <TextBlock x:Name="tbDatumRodjenja" Grid.Column="0" Grid.Row="3">
+        <TextBlock Style="{StaticResource ColoredText}" FontSize="14" x:Name="tbDatumRodjenja" Grid.Column="0" Grid.Row="3">
             Datum rođenja
         </TextBlock>
 
-        <TextBox x:Name="txbIme" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" MaxLength="45"/>
+        <TextBox Style="{StaticResource TextBox}" x:Name="txbIme" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" MaxLength="45"/>
 
-        <TextBox x:Name="txbPrezime" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" MaxLength="45"/>
+        <TextBox Style="{StaticResource TextBox}" x:Name="txbPrezime" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" MaxLength="45"/>
 
-        <ComboBox Name="cbMjesto" Grid.Column="1" Grid.Row="2" Height="22" Width="auto" Grid.ColumnSpan="2" FontWeight="Medium" DropDownOpened="cbMjesto_DropDownOpened" />
+        <ComboBox Style="{StaticResource ComboBox}" Name="cbMjesto" Grid.Column="1" Grid.Row="2" Width="auto" Grid.ColumnSpan="2" FontWeight="Medium" DropDownOpened="cbMjesto_DropDownOpened" />
 
-        <Button x:Name="btnAdd" Grid.Column="3" Grid.Row="2" Click="btnAdd_Click">
+        <Button Style="{StaticResource ColoredButton}" Width="70" Height="30" x:Name="btnAdd" Grid.Column="3" Grid.Row="2" Click="btnAdd_Click">
             Dodaj
         </Button>
 
         <DatePicker x:Name="dpDatumRodjenja" Grid.Row="3" Grid.Column="1" Height="auto" Width="auto" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
 
-        <Button x:Name="btnSacuvaj" Grid.Column="2" Grid.Row="4" Click="btnSacuvaj_Click">
+        <Button Style="{StaticResource ColoredButton}" Width="70" Height="30" x:Name="btnSacuvaj" Grid.Column="2" Grid.Row="4" Click="btnSacuvaj_Click">
             Sačuvaj
         </Button>
 
-        <Button x:Name="btnOtkazi" Grid.Column="3" Grid.Row="4" Click="btnOtkazi_Click">
+        <Button Style="{StaticResource ColoredButton}" Width="70" Height="30" x:Name="btnOtkazi" Grid.Column="3" Grid.Row="4" Click="btnOtkazi_Click">
             Otkaži
         </Button>
 

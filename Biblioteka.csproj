@@ -159,6 +159,7 @@
     <Compile Include="Data\DataAccess\MySql\MySqlMjesto.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlObavjestenje.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlPozajmica.cs" />
+    <Compile Include="Data\DataAccess\MySql\MySqlTema.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlUtil.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlZanr.cs" />
     <Compile Include="Data\DataAccess\MySql\MySqlOsoba.cs" />
@@ -172,6 +173,7 @@
     <Compile Include="Data\Model\Obavjestenje.cs" />
     <Compile Include="Data\Model\Osoba.cs" />
     <Compile Include="Data\Model\Pozajmica.cs" />
+    <Compile Include="Data\Model\Tema.cs" />
     <Compile Include="Data\Model\Zanr.cs" />
     <Compile Include="DodajClanaPage.xaml.cs">
       <DependentUpon>DodajClanaPage.xaml</DependentUpon>
@@ -202,6 +204,9 @@
     </Compile>
     <Compile Include="PodesavanjaSubMenuPage.xaml.cs">
       <DependentUpon>PodesavanjaSubMenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PodesavanjaTemePage.xaml.cs">
+      <DependentUpon>PodesavanjaTemePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PomocSubMenuPage.xaml.cs">
       <DependentUpon>PomocSubMenuPage.xaml</DependentUpon>
@@ -326,6 +331,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PodesavanjaTemePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PomocSubMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -337,6 +346,26 @@
     <Page Include="RazduziKnjiguPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </Page>
+    <Page Include="Resources\Styles\2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </Page>
+    <Page Include="Resources\Styles\3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </Page>
+    <Page Include="Resources\Styles\4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </Page>
+    <Page Include="Resources\Styles\5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
     </Page>
     <Page Include="StaraObavjestenjaPage.xaml">
       <SubType>Designer</SubType>
@@ -490,6 +519,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\edit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\2.ico" />
+    <Resource Include="Resources\Images\3.ico" />
+    <Resource Include="Resources\Images\4.ico" />
+    <Resource Include="Resources\Images\5.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

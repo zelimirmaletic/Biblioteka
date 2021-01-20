@@ -30,5 +30,11 @@ namespace Biblioteka
             MainWindow parentWindow = Window.GetWindow(this) as MainWindow;
             parentWindow.setPageArea(new PodesavanjaProfilaPage());
         }
+
+        private void btnIzgled_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow parentWindow = Window.GetWindow(this) as MainWindow;
+            parentWindow.setPageArea(new PodesavanjaTemePage());
+        }
     }
 }

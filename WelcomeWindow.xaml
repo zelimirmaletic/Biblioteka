@@ -12,9 +12,6 @@
         ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen"
         >
-    <Window.Background>
-        <SolidColorBrush Color="#1261A0"/>
-    </Window.Background>
     <Window.Resources>
         <!--Button-->
         <Style TargetType="Button">
@@ -45,6 +42,8 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+
+        <Rectangle Grid.Column="0" Style="{StaticResource ResourceKey=ColoredRectangle}" Grid.RowSpan="7" Grid.ColumnSpan="9"/>
 
         <Image Grid.Column="1" Source="Resources\Images\logo.ico" VerticalAlignment="Top"  Height="80" Width="80" Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="0 5 0 0"/>
 

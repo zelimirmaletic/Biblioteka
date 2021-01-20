@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Biblioteka.Data.DataAccess.MySql;
+using Biblioteka.Data.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,18 +32,5 @@ namespace Biblioteka
         {
             mainFrame.NavigationService.Navigate(new PrijavaNaSistem());
         }
-        /*
-        private void btnBibliotekar_Click(object sender, RoutedEventArgs e)
-        {
-            BibliotekarLogin bibLogin = new BibliotekarLogin();
-            bibLogin.Show();
-        }
-
-        private void btnAdmin_Click(object sender, RoutedEventArgs e)
-        {
-            AdminLogin adminLogin = new AdminLogin();
-            adminLogin.Show();
-        }
-        */
     }
 }

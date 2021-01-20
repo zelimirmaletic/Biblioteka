@@ -31,10 +31,10 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <TextBlock Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="0" Height="80" Width="auto" FontSize="35" FontWeight="Light" Foreground="#1261a0" Margin="10 15 0 0" HorizontalAlignment="Left">
+        <TextBlock Style="{StaticResource ColoredTitle}" Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="0">
             Nova obavještenja
         </TextBlock>
-        <Separator Grid.Column="0" Grid.Row="0" Background="#1261a0" Grid.ColumnSpan="8" Margin="10 45 15 0"/>
+        <Separator Style="{StaticResource Separator}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8"/>
 
         <ListView x:Name="lvObavjestenja" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="8" Margin="10 10 10 10" ScrollViewer.CanContentScroll="True" Loaded="lvObavjestenja_Loaded"/>
 

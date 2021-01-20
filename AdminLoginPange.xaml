@@ -36,9 +36,9 @@
         </Grid.RowDefinitions>
 
 
-        <Rectangle Width="300" Height="275" Fill="#1261A0" Grid.ColumnSpan="3" Grid.RowSpan="5"/>
+        <Rectangle Style="{StaticResource ColoredRectangle}" Width="300" Height="275" Grid.ColumnSpan="3" Grid.RowSpan="5"/>
 
-        <Button x:Name="btnBack" Height="35" Width="35" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="5 5 0 0" Background="#1261A0" Click="btnBack_Click">
+        <Button x:Name="btnBack" Height="35" Width="35" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="5 5 0 0" Background="{StaticResource MainColor}" Click="btnBack_Click">
             <Image Source="Resources\Images\back.ico"/>
         </Button>
 
@@ -58,7 +58,7 @@
 
         <PasswordBox x:Name="txbLozinka" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Height="22" Width="150" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
 
-        <Button x:Name="btnPrijaviSe" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Click="btnPrijaviSe_Click">
+        <Button Style="{StaticResource ColoredButton}" Height="30" Width="150" x:Name="btnPrijaviSe" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Click="btnPrijaviSe_Click">
             Prijavi se
         </Button>
     </Grid>

@@ -163,6 +163,18 @@ create table Obavjestenje(
         on update cascade on delete restrict
 )engine=InnoDB;
 
+create table Tema (
+	IdTema int unsigned auto_increment,
+    IdOsoba int unsigned,
+    Boja int(2) unsigned zerofill default 1 not null,
+    Font varchar(45) not null,
+    -- KEYS
+    primary key (IdTema),
+    foreign key (IdOsoba)
+		references Osoba(IdOsoba)
+        on update cascade on delete restrict
+)engine=InnoDB;
+
 create table Pozajmica(
     IdPozajmica int zerofill unsigned auto_increment ,
     IdClan int unsigned not null ,

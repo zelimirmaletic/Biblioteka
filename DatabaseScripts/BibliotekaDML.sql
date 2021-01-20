@@ -69,6 +69,8 @@ insert into Clan (IdClan, DatumUclanjivanja, DatumObnavljanjaClanstva) VALUES
 -- Bibliotekar
 insert into Bibliotekar (IdBibliotekar, KorisnickoIme, Lozinka) VALUES
     (2,'jovan123','jovan123');
+-- Tema
+insert into Tema(IdOsoba, Boja, Font) values (2,1,'');
 
 -- Administrator
 insert into Administrator (IdAdministrator, KorisnickoIme, Lozinka) VALUES
@@ -79,9 +81,9 @@ insert into Pozajmica (IdClan, IdKnjiga, IdBibliotekar, DatumPozajmljivanja, JeR
     (1,1,2,'2021-01-01',false, 'Knjiga je u savršenom stanju i neoštećena');
 
 -- Obavjestenje
-insert into Obavjestenje (IdAdministrator,IdBibliotekar, Naslov,Datum,Tekst) values
-	(3,3,'Godisnji odmor','2021-01-01','Od 28.03.2021. Pocinje redovni godisnji odmor...',true);
-insert into Obavjestenje (IdAdministrator,IdBibliotekar, Naslov,Datum,Tekst) values
+insert into Obavjestenje (IdAdministrator,IdBibliotekar, Naslov,Datum,Tekst,ZaSve) values
+	(3,2,'Godisnji odmor','2021-01-01','Od 28.03.2021. Pocinje redovni godisnji odmor...',true);
+insert into Obavjestenje (IdAdministrator,IdBibliotekar, Naslov,Datum,Tekst,ZaSve) values
 	(3,2,'Bonus na platu','2021-01-01','Cestitamo vi ste radnik mjeseca, mozete preuzeti vasu nagradu od 150KM u kancelariji broj 15. kao i ...',false);
 
 

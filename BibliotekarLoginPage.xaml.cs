@@ -34,14 +34,13 @@ namespace Biblioteka
             }
             try
             {
-                var bibliotekar = new Bibliotekar();
-                var mysqlBibliotekar = new MySqlBibliotekar();
+                Bibliotekar bibliotekar = new Bibliotekar();
+                MySqlBibliotekar mysqlBibliotekar = new MySqlBibliotekar();
                 bibliotekar = mysqlBibliotekar.GetBibliotekarByUsername(txbKorisnickoIme.Text);
                 if (bibliotekar.Lozinka.Equals(txbLozinka.Password.ToString()))
                 {
                     //MessageBox.Show("Uspješno ste se prijavili!", "Informacija", MessageBoxButton.OK, MessageBoxImage.Information);
                     MainWindow.IdBibliotekar = bibliotekar.IdBibliotekar;
-                    //IMPLEMENT WINDOW OPENING!
                     Application.Current.MainWindow.Close();
 
                 }

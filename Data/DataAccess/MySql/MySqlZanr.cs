@@ -63,28 +63,6 @@ namespace Biblioteka.Data.DataAccess.MySql
             }
         }
 
-        public void DeleteZanrById(string naziv)
-        {
-            MySqlConnection conn = null;
-            MySqlCommand cmd;
-            try
-            {
-                conn = MySqlUtil.GetConnection();
-                cmd = conn.CreateCommand();
-                cmd.CommandText = DELETE;
-                cmd.Parameters.AddWithValue("@Naziv", naziv);
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                throw new DataAccessException("Exception in MySqlZanr", ex);
-            }
-            finally
-            {
-                MySqlUtil.CloseQuietly(conn);
-            }
-        }
-
         public List<Zanr> GetAllZanr()
         {
             List<Zanr> result = new List<Zanr>();

@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace Biblioteka
@@ -60,7 +61,7 @@ namespace Biblioteka
 
         private void btnOdjava_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
+            Environment.Exit(0);
         }
     }
 }

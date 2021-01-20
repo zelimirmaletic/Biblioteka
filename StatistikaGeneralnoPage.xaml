@@ -91,10 +91,10 @@
         </Rectangle>
 
 
-        <TextBlock Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="0" Height="80" Width="auto" FontSize="35" FontWeight="Light" Foreground="#1261a0" Margin="10 15 0 0" HorizontalAlignment="Left">
+        <TextBlock Style="{StaticResource ColoredTitle}" Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="0" Height="80" Width="auto" FontSize="35" FontWeight="Light" Margin="10 15 0 0" HorizontalAlignment="Left">
             Generalna statistika
         </TextBlock>
-        <Separator Grid.Column="0" Grid.Row="0" Background="#1261a0" Grid.ColumnSpan="8" Margin="10 30 15 0"/>
+        <Separator Style="{StaticResource Separator}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8" Margin="10 30 15 0"/>
 
 
         <TextBlock Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="100" Width="auto" Foreground="White" FontWeight="Medium" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Top" Margin="0 50 0 0">

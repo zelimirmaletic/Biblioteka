@@ -12,26 +12,6 @@
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         >
-    <Window.Resources>
-        <Style TargetType="TextBlock">
-            <Setter Property="FontWeight" Value="Medium"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="TextAlignment" Value="Right"/>
-            <Setter Property="Margin" Value="0 0 10 0"/>
-        </Style>
-        <Style TargetType="TextBox">
-            <Setter Property="FontWeight" Value="Medium"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="TextAlignment" Value="Left"/>
-            <Setter Property="Height" Value="22"/>
-            <Setter Property="Margin" Value="0 0 10 0"/>
-        </Style>
-        <Style TargetType="Button">
-            <Setter Property="Height" Value="22"/>
-            <Setter Property="Width" Value="80"/>
-            <Setter Property="FontWeight" Value="Medium"/>
-        </Style>
-    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"/>
@@ -46,25 +26,25 @@
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
-        <Image Source="Resources\Images\house.ico" Height="35" Width="35" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="15 0 0 0"/>
+        <Image Source="Resources\Images\house.ico" Height="35" Width="35" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="0 0 0 0"/>
 
-        <TextBlock x:Name="tbNaziv" Grid.Column="0" Grid.Row="0">
+        <TextBlock Style="{StaticResource ColoredText}" x:Name="tbNaziv" Grid.Column="0" Grid.Row="0">
             Naziv
         </TextBlock>
 
-        <TextBlock x:Name="tbPostanskiBroj" Grid.Column="0" Grid.Row="1">
+        <TextBlock Style="{StaticResource ColoredText}" FontSize="14" x:Name="tbPostanskiBroj" Grid.Column="0" Grid.Row="1">
             Poštanski broj
         </TextBlock>
 
-        <TextBox x:Name="txbNaziv" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" MaxLength="50"/>
+        <TextBox Style="{StaticResource TextBox}" x:Name="txbNaziv" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" MaxLength="50"/>
 
-        <TextBox x:Name="txbPostanskiBroj" Grid.Column="1" Grid.Row="1" MaxLength="10"/>
+        <TextBox Style="{StaticResource TextBox}" x:Name="txbPostanskiBroj" Grid.Column="1" Grid.Row="1" MaxLength="10"/>
 
-        <Button x:Name="btnSacuvaj" Grid.Column="2" Grid.Row="2" Click="btnSacuvaj_Click">
+        <Button Style="{StaticResource ColoredButton}" Height="30" Width="70" x:Name="btnSacuvaj" Grid.Column="2" Grid.Row="2" Click="btnSacuvaj_Click">
             Sačuvaj
         </Button>
 
-        <Button x:Name="btnOtkazi" Grid.Column="3" Grid.Row="2" Click="btnOtkazi_Click">
+        <Button Style="{StaticResource ColoredButton}" Height="30" Width="70" x:Name="btnOtkazi" Grid.Column="3" Grid.Row="2" Click="btnOtkazi_Click">
             Otkaži
         </Button>
 
