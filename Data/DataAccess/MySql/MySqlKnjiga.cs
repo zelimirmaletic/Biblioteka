@@ -155,6 +155,7 @@ namespace Biblioteka.Data.DataAccess.MySql
             var table = new DataTable();
             //Define columns
             var IdKnjiga = new DataColumn("Šifra", typeof(int));
+            var Dostupnost = new DataColumn("Dostupnih kopija", typeof(string));
             var Naslov = new DataColumn("Naslov", typeof(string));
             var NazivZanra = new DataColumn("Žanr", typeof(string));
             var Izdavac = new DataColumn("Izdavač", typeof(string));
@@ -167,6 +168,7 @@ namespace Biblioteka.Data.DataAccess.MySql
             var Jezik = new DataColumn("Jezik", typeof(string));
             //Add columns to a table
             table.Columns.Add(IdKnjiga);
+            table.Columns.Add(Dostupnost);
             table.Columns.Add(Naslov);
             table.Columns.Add(NazivZanra);
             table.Columns.Add(Izdavac);
@@ -194,20 +196,32 @@ namespace Biblioteka.Data.DataAccess.MySql
                 cmd.Parameters.AddWithValue("@Izdavac", izdavac + "%");
                 cmd.Parameters.AddWithValue("@Autor", autor + "%");
                 reader = cmd.ExecuteReader();
+
+                var mysqlPozajmica = new MySqlPozajmica();
+                var mysqlKnjiga = new MySqlKnjiga();
+
                 while (reader.Read())
                 {
+                    int brojPozajmica = mysqlPozajmica.GetUkupanBrojPozajmicaByKnjigaId(reader.GetInt32(0));
+                    int brojKopija = reader.GetInt32(8);
                     var row = table.NewRow();
+
                     row[0] = reader.GetInt32(0);
-                    row[1] = reader.GetString(1);
-                    row[2] = reader.GetString(2);
-                    row[3] = reader.GetString(3);
-                    row[4] = reader.GetString(4);
-                    row[5] = reader.GetString(5);
-                    row[6] = reader.GetDateTime(6).ToShortDateString();
-                    row[7] = reader.GetString(7);
-                    row[8] = reader.GetInt16(8);
-                    row[9] = reader.GetInt16(9);
-                    row[10] = reader.GetString(10);
+                    if (brojPozajmica < brojKopija)
+                        row[1] = (brojKopija-brojPozajmica);
+                    else
+                        row[1] = "NEDOSTUPNA";
+                    
+                    row[2] = reader.GetString(1);
+                    row[3] = reader.GetString(2);
+                    row[4] = reader.GetString(3);
+                    row[5] = reader.GetString(4);
+                    row[6] = reader.GetString(5);
+                    row[7] = reader.GetDateTime(6).ToShortDateString();
+                    row[8] = reader.GetString(7);
+                    row[9] = reader.GetInt16(8);
+                    row[10] = reader.GetInt16(9);
+                    row[11] = reader.GetString(10);
                     table.Rows.Add(row);
                 }
             }

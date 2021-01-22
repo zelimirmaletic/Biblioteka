@@ -17,10 +17,13 @@ namespace Biblioteka
             var window = new WelcomeWindow();
             window.ShowDialog();
 
-            MySqlTema mysqlTema = new MySqlTema();
-            Tema tema = new Tema();
-            tema = mysqlTema.GetTemaByOsobaId(MainWindow.IdBibliotekar);
-            ((App)Application.Current).setStyle(tema.Stil);
+            try
+            {
+                MySqlTema mysqlTema = new MySqlTema();
+                Tema tema = new Tema();
+                tema = mysqlTema.GetTemaByOsobaId(MainWindow.IdBibliotekar);
+                ((App)Application.Current).setStyle(tema.Stil);
+            }catch(Exception exc) { }
 
 
             if (IdBibliotekar!=0)

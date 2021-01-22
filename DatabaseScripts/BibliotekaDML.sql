@@ -50,9 +50,17 @@ insert into Knjiga (NazivZanra,IdAutor, IdIzdavac, Naslov, DatumObjavljivanja, I
 insert into Knjiga (NazivZanra,IdAutor, IdIzdavac, Naslov, DatumObjavljivanja, ISBN, UkupanBrojKopija, BrojStranica, Jezik, Opis) VALUES
     ('horor',2,2,'Smrt u Veneciji', '2010-08-07','546512321548456548754561252154', 80, 300, 'srpski', 'Smrt u Veneciji je...');
 insert into Knjiga (NazivZanra,IdAutor, IdIzdavac, Naslov, DatumObjavljivanja, ISBN, UkupanBrojKopija, BrojStranica, Jezik, Opis) VALUES
-    ('klasična književnost',6,3,'Braća Karamazovi', '1850-08-07','546512321548456888754561252154', 250, 1300, 'srpski', 'Kapitalno djelo slavnog pisca...');
+    ('klasična književnost',6,3,'Braća Karamazovi', '1850-08-07','546512321548453698754561252154', 250, 1300, 'srpski', 'Kapitalno djelo slavnog pisca...');
 insert into Knjiga (NazivZanra,IdAutor, IdIzdavac, Naslov, DatumObjavljivanja, ISBN, UkupanBrojKopija, BrojStranica, Jezik, Opis) VALUES
-    ('poezija',7,4,'Tražim pomilovanje', '1955-08-07','546512321333456548754561252154', 350, 150, 'srpski', 'Djelo protkano...');
+    ('klasična književnost',6,3,'Zločin i kazna', '1850-08-07','546512321167456888754561252154', 250, 1300, 'srpski', 'Kapitalno djelo slavnog pisca...');
+insert into Knjiga (NazivZanra,IdAutor, IdIzdavac, Naslov, DatumObjavljivanja, ISBN, UkupanBrojKopija, BrojStranica, Jezik, Opis) VALUES
+    ('klasična književnost',6,3,'Kockar', '1850-08-07','546512321548147888754561252154', 250, 1300, 'srpski', 'Kapitalno djelo slavnog pisca...');
+insert into Knjiga (NazivZanra,IdAutor, IdIzdavac, Naslov, DatumObjavljivanja, ISBN, UkupanBrojKopija, BrojStranica, Jezik, Opis) VALUES
+    ('poezija',7,4,'Tražim pomilovanje', '1955-08-07','546512321333456369754561252154', 350, 150, 'srpski', 'Djelo protkano...');
+insert into Knjiga (NazivZanra,IdAutor, IdIzdavac, Naslov, DatumObjavljivanja, ISBN, UkupanBrojKopija, BrojStranica, Jezik, Opis) VALUES
+    ('poezija',7,4,'Zeleni vitez', '1955-08-07','546512321333456548725861252154', 350, 150, 'srpski', 'Djelo protkano...');
+insert into Knjiga (NazivZanra,IdAutor, IdIzdavac, Naslov, DatumObjavljivanja, ISBN, UkupanBrojKopija, BrojStranica, Jezik, Opis) VALUES
+    ('istorija',3,4,'Julije Cezar - Biografija', '1995-08-07','546512321312556548754561252154', 80, 150, 'srpski', 'Djelo protkano...');
 
 -- Osoba
 insert into Osoba (NazivMjesta, Ime, Prezime, Adresa, BrojTelefona, Email, DatumRodjenja) VALUES

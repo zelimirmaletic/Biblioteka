@@ -74,7 +74,7 @@ namespace Biblioteka
             var mysqlClan = new MySqlClan();
             mysqlClan.SaveClan(noviClan, "insert");
 
-            MessageBox.Show("Uspjesno dodan član!", "Informacija", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Uspjesno dodan član!\nBroj članske karte novog člana je: "+novaOsoba.IdOsoba.ToString(), "Informacija", MessageBoxButton.OK, MessageBoxImage.Information);
 
             //Clear all fields
             MainWindow parentWindow = Window.GetWindow(this) as MainWindow;

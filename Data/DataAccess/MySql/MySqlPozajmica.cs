@@ -82,7 +82,7 @@ namespace Biblioteka.Data.DataAccess.MySql
             {
                 conn = MySqlUtil.GetConnection();
                 cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT COUNT(*) FROM `Pozajmica` WHERE IdKnjiga=@IdKnjiga";
+                cmd.CommandText = "SELECT COUNT(*) FROM `Pozajmica` WHERE IdKnjiga=@IdKnjiga AND JeRazduzena=0;";
                 cmd.Parameters.AddWithValue("@IdKnjiga", IdKnjiga);
                 reader = cmd.ExecuteReader();
                 reader.Read();

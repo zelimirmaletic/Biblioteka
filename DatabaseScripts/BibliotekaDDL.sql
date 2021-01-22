@@ -126,7 +126,7 @@ create table Administrator(
 create table Bibliotekar(
     IdBibliotekar int unsigned,
     KorisnickoIme varchar(45) not null unique ,
-    Lozinka varchar(45) not null ,
+    Lozinka varchar(260) not null ,
     -- KEYS
     primary key (IdBibliotekar),
     foreign key (IdBibliotekar)

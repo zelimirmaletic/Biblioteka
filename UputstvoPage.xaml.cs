@@ -10,7 +10,7 @@ namespace Biblioteka
         public UputstvoPage()
         {
             InitializeComponent();
-            PdfViewerControl.Load(@"..\..\Resources\Manual\manual.pdf.pdf");
+            PdfViewerControl.Load(@"..\..\Resources\Manual\manual.pdf");
         }
     }
 }

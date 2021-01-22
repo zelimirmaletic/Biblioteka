@@ -36,77 +36,92 @@ namespace Biblioteka
         private void btnBlue_Click(object sender, RoutedEventArgs e)
         {
             stil = 1;
+            btnSacuvaj_Click(sender, e);
         }
 
         private void btnGreen_Click(object sender, RoutedEventArgs e)
         {
             stil = 2;
+            btnSacuvaj_Click(sender, e);
         }
 
         private void btnPink_Click(object sender, RoutedEventArgs e)
         {
             stil = 3;
+            btnSacuvaj_Click(sender, e);
         }
 
         private void btnRed_Click(object sender, RoutedEventArgs e)
         {
             stil = 4;
+            btnSacuvaj_Click(sender, e);
         }
 
         private void btnDark_Click(object sender, RoutedEventArgs e)
         {
             stil = 5;
+            btnSacuvaj_Click(sender, e);
         }
 
 
         private void btnBlue1_Click(object sender, RoutedEventArgs e)
         {
             stil = 6;
+            btnSacuvaj_Click(sender, e);
         }
 
         private void btnGreen1_Click(object sender, RoutedEventArgs e)
         {
             stil = 7;
+            btnSacuvaj_Click(sender, e);
         }
 
         private void btnPink1_Click(object sender, RoutedEventArgs e)
         {
             stil = 8;
+            btnSacuvaj_Click(sender, e);
         }
 
         private void btnRed1_Click(object sender, RoutedEventArgs e)
         {
             stil = 9;
+            btnSacuvaj_Click(sender, e);
         }
 
         private void btnDark1_Click(object sender, RoutedEventArgs e)
         {
             stil = 10;
+            btnSacuvaj_Click(sender, e);
         }
 
         private void btnBlue2_Click(object sender, RoutedEventArgs e)
         {
             stil = 11;
+            btnSacuvaj_Click(sender, e);
         }
 
         private void btnPink2_Click(object sender, RoutedEventArgs e)
         {
             stil = 13;
+            btnSacuvaj_Click(sender, e);
         }
 
         private void btnGreen2_Click(object sender, RoutedEventArgs e)
         {
             stil = 12;
+            btnSacuvaj_Click(sender, e);
         }
 
         private void btnRed2_Click(object sender, RoutedEventArgs e)
         {
             stil = 14;
+            btnSacuvaj_Click(sender, e);
         }
 
         private void btnDark2_Click(object sender, RoutedEventArgs e)
         {
             stil = 15;
+            btnSacuvaj_Click(sender, e);
         }
 
 

@@ -151,6 +151,40 @@ namespace Biblioteka.Data.DataAccess.MySql
             return result;
         }
 
+        public Bibliotekar GetBibliotekarById(int id)
+        {
+            var result = new Bibliotekar();
+            MySqlConnection conn = null;
+            MySqlCommand cmd;
+            MySqlDataReader reader = null;
+
+            try
+            {
+                conn = MySqlUtil.GetConnection();
+                cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT * FROM `Bibliotekar` WHERE IdBibliotekar=@IdBibliotekar";
+                cmd.Parameters.AddWithValue("@IdBibliotekar", id);
+                reader = cmd.ExecuteReader();
+                reader.Read();
+                result = new Bibliotekar()
+                {
+                    IdBibliotekar = reader.GetInt32(0),
+                    KorisnickoIme = reader.GetString(1),
+                    Lozinka = reader.GetString(2)
+                };
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException("Exception in MySqlBibliotekar", ex);
+            }
+            finally
+            {
+                MySqlUtil.CloseQuietly(reader, conn);
+            }
+            return result;
+        }
+
+
         public void SaveBibliotekar(Bibliotekar bibliotekar, string action)
         {
             if (action.Equals("insert"))

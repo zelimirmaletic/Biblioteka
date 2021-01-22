@@ -43,7 +43,7 @@ namespace Biblioteka.Data.DataAccess.MySql
             }
             catch (Exception ex)
             {
-                throw new DataAccessException("Exception in MySqlZanr", ex);
+                throw new DataAccessException("Exception in MySqlTema", ex);
             }
             finally
             {
@@ -97,7 +97,7 @@ namespace Biblioteka.Data.DataAccess.MySql
             }
             catch (Exception ex)
             {
-                throw new DataAccessException("Exception in MySqlTema", ex);
+                 throw new DataAccessException("Exception in MySqlTema", ex);
             }
             finally
             {
