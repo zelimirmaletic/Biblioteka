@@ -143,6 +143,15 @@
     <Compile Include="AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ArhivaObavjestenjaPage.xaml.cs">
+      <DependentUpon>ArhivaObavjestenjaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BibliotekariPage.xaml.cs">
+      <DependentUpon>BibliotekariPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BibliotekariSubMenuPage.xaml.cs">
+      <DependentUpon>BibliotekariSubMenuPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BibliotekarLoginPage.xaml.cs">
       <DependentUpon>BibliotekarLoginPage.xaml</DependentUpon>
     </Compile>
@@ -178,6 +187,9 @@
     <Compile Include="Data\Model\Pozajmica.cs" />
     <Compile Include="Data\Model\Tema.cs" />
     <Compile Include="Data\Model\Zanr.cs" />
+    <Compile Include="DodajBibliotekaraPage.xaml.cs">
+      <DependentUpon>DodajBibliotekaraPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DodajClanaPage.xaml.cs">
       <DependentUpon>DodajClanaPage.xaml</DependentUpon>
     </Compile>
@@ -193,6 +205,9 @@
     <Compile Include="KontaktPage.xaml.cs">
       <DependentUpon>KontaktPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="KreirajObavjestenjePage.xaml.cs">
+      <DependentUpon>KreirajObavjestenjePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainMenuPage.xaml.cs">
       <DependentUpon>MainMenuPage.xaml</DependentUpon>
     </Compile>
@@ -201,6 +216,9 @@
     </Compile>
     <Compile Include="ObavjestenjaSubMenuPage.xaml.cs">
       <DependentUpon>ObavjestenjaSubMenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ObavjestenjeSubMenuAdminPage.xaml.cs">
+      <DependentUpon>ObavjestenjeSubMenuAdminPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PodesavanjaProfilaPage.xaml.cs">
       <DependentUpon>PodesavanjaProfilaPage.xaml</DependentUpon>
@@ -274,6 +292,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ArhivaObavjestenjaPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BibliotekariPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BibliotekariSubMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="BibliotekarLoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -283,6 +313,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ClanoviSubMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DodajBibliotekaraPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -303,6 +337,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="KontaktPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KreirajObavjestenjePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -327,6 +365,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ObavjestenjaSubMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ObavjestenjeSubMenuAdminPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

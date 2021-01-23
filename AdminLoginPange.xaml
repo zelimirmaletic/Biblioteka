@@ -58,7 +58,7 @@
 
         <PasswordBox x:Name="txbLozinka" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Height="22" Width="150" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
 
-        <Button Style="{StaticResource ColoredButton}" Height="30" Width="150" x:Name="btnPrijaviSe" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Click="btnPrijaviSe_Click">
+        <Button Style="{StaticResource ColoredButton}" Height="30" Width="100" x:Name="btnPrijaviSe" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Click="btnPrijaviSe_Click">
             Prijavi se
         </Button>
     </Grid>

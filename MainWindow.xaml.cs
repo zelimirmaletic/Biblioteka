@@ -12,6 +12,7 @@ namespace Biblioteka
     public partial class MainWindow : Window
     {
         public static int IdBibliotekar = 0;
+        public static bool isAdmin = false;
         public MainWindow()
         {
             var window = new WelcomeWindow();

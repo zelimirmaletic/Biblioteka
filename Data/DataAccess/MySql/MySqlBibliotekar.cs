@@ -3,6 +3,7 @@ using Biblioteka.Data.Model;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace Biblioteka.Data.DataAccess.MySql
 {
@@ -83,6 +84,73 @@ namespace Biblioteka.Data.DataAccess.MySql
             }
         }
 
+        public DataTable GetBibliotekarOsobaJoin(string ime, string prezime)
+        {
+            var table = new DataTable();
+            //Define columns
+            var IdClan = new DataColumn("Šifra", typeof(int));
+            var KorisnickoIme = new DataColumn("Korisničko ime", typeof(string));
+            var Ime = new DataColumn("Ime", typeof(string));
+            var Prezime = new DataColumn("Prezime", typeof(string));
+            var DatumRodjenja = new DataColumn("Datum rođenja", typeof(string));
+            var NazivMjesta = new DataColumn("Mjesto", typeof(string));
+            var Adresa = new DataColumn("Adresa", typeof(string));
+            var BrojTelefona = new DataColumn("Telefon", typeof(string));
+            var Email = new DataColumn("Email", typeof(string));
+            //Add columns to a table
+            table.Columns.Add(IdClan);
+            table.Columns.Add(KorisnickoIme);
+            table.Columns.Add(Ime);
+            table.Columns.Add(Prezime);
+            table.Columns.Add(DatumRodjenja);
+            table.Columns.Add(NazivMjesta);
+            table.Columns.Add(Adresa);
+            table.Columns.Add(BrojTelefona);
+            table.Columns.Add(Email);
+
+            MySqlConnection conn = null;
+            MySqlCommand cmd;
+            MySqlDataReader reader = null;
+
+            try
+            {
+                conn = MySqlUtil.GetConnection();
+                cmd = conn.CreateCommand();
+                string query = "select Bibliotekar.IdBibliotekar, Bibliotekar.KorisnickoIme, Osoba.Ime, Osoba.Prezime,Osoba.DatumRodjenja, Osoba.NazivMjesta, Osoba.Adresa, Osoba.BrojTelefona, Osoba.Email from Bibliotekar inner join Osoba on Osoba.IdOsoba=Bibliotekar.IdBibliotekar " +
+                    " WHERE Ime LIKE @Ime AND Prezime LIKE @Prezime ;";
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@Ime", ime + "%");
+                cmd.Parameters.AddWithValue("@Prezime", prezime + "%");
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (reader.GetInt16(0) == 1)
+                        continue;
+                    var row = table.NewRow();
+                    row[0] = reader.GetInt32(0);
+                    row[1] = reader.GetString(1);
+                    row[2] = reader.GetString(2);
+                    row[3] = reader.GetString(3);
+                    row[4] = reader.GetDateTime(4).ToString("dd/MM/yyyy");
+                    row[5] = reader.GetString(5);
+                    row[6] = reader.GetString(6);
+                    row[7] = reader.GetString(7);
+                    row[8] = reader.GetString(8);
+                    table.Rows.Add(row);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException("Exception in MySqlKnjiga", ex);
+            }
+            finally
+            {
+                MySqlUtil.CloseQuietly(reader, conn);
+            }
+            return table;
+        }
+
+
 
         public List<Bibliotekar> GetAllBibliotekar()
         {
@@ -103,7 +171,7 @@ namespace Biblioteka.Data.DataAccess.MySql
                     {
                         IdBibliotekar = reader.GetInt32(0),
                         KorisnickoIme = reader.GetString(1),
-                        Lozinka = reader.GetString(3),
+                        Lozinka = reader.GetString(2)
                     });
                 }
             }

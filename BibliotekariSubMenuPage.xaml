@@ -1,0 +1,48 @@
+﻿<Page x:Class="Biblioteka.BibliotekariSubMenuPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Biblioteka"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="200"
+      Title="BibliotekariSubMenuPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Rectangle Grid.Column="0" Grid.RowSpan="9" Grid.ColumnSpan="2">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#e3e3e3"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Button Style="{DynamicResource GreyButton}" x:Name="btnBibliotekari" Grid.Column="1" Grid.Row="1" Click="btnBibliotekari_Click">
+            <TextBlock Width="120" HorizontalAlignment="Left">
+                Bibliotekari
+            </TextBlock>
+        </Button>
+
+        <Button Style="{DynamicResource GreyButton}" x:Name="btnDodaj" Grid.Column="1" Grid.Row="2" Click="btnDodaj_Click">
+            <TextBlock Width="120" HorizontalAlignment="Left">
+                Dodaj
+            </TextBlock>
+        </Button>
+
+
+    </Grid>
+</Page>

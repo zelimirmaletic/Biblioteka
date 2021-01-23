@@ -72,26 +72,30 @@ insert into Osoba (NazivMjesta, Ime, Prezime, Adresa, BrojTelefona, Email, Datum
 
 -- Clan
 insert into Clan (IdClan, DatumUclanjivanja, DatumObnavljanjaClanstva) VALUES
-    (1,'2010-08-07','2021-08-07');
+    (3,'2010-08-07','2021-08-07');
 
 -- Bibliotekar
 insert into Bibliotekar (IdBibliotekar, KorisnickoIme, Lozinka) VALUES
     (2,'jovan123','jovan123');
+insert into Bibliotekar (IdBibliotekar, KorisnickoIme, Lozinka) VALUES
+    (1,'admin','admin');
+    
 -- Tema
 insert into Tema(IdOsoba, Stil) values (2,1);
+insert into Tema(IdOsoba, Stil) values (1,1);
 
 -- Administrator
 insert into Administrator (IdAdministrator, KorisnickoIme, Lozinka) VALUES
-    (3,'admin','admin');
+    (1,'admin','admin');
 
 -- Pozajmica
 insert into Pozajmica (IdClan, IdKnjiga, IdBibliotekar, DatumPozajmljivanja, JeRazduzena, Opis) VALUES
-    (1,1,2,'2021-01-01',false, 'Knjiga je u savršenom stanju i neoštećena');
+    (3,1,2,'2021-01-01',false, 'Knjiga je u savršenom stanju i neoštećena');
 
 -- Obavjestenje
 insert into Obavjestenje (IdAdministrator,IdBibliotekar, Naslov,Datum,Tekst,ZaSve) values
-	(3,2,'Godisnji odmor','2021-01-01','Od 28.03.2021. Pocinje redovni godisnji odmor...',true);
+	(1,2,'Godisnji odmor','2021-01-01','Od 28.03.2021. Pocinje redovni godisnji odmor...',true);
 insert into Obavjestenje (IdAdministrator,IdBibliotekar, Naslov,Datum,Tekst,ZaSve) values
-	(3,2,'Bonus na platu','2021-01-01','Cestitamo vi ste radnik mjeseca, mozete preuzeti vasu nagradu od 150KM u kancelariji broj 15. kao i ...',false);
+	(1,2,'Bonus na platu','2021-01-01','Cestitamo vi ste radnik mjeseca, mozete preuzeti vasu nagradu od 150KM u kancelariji broj 15. kao i ...',false);
 
 

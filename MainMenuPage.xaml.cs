@@ -12,6 +12,11 @@ namespace Biblioteka
         public MainMenuPage()
         {
             InitializeComponent();
+            if(!MainWindow.isAdmin)
+            {
+                btnBibliotekar.Visibility = Visibility.Hidden;
+                imgBibliotekari.Visibility = Visibility.Hidden;
+            }
         }
 
         private void btnStatistika_Click(object sender, RoutedEventArgs e)
@@ -39,9 +44,18 @@ namespace Biblioteka
 
         private void btnObavjestenja_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow parentWindow = Window.GetWindow(this) as MainWindow;
-            parentWindow.setSubmenuPage(new ObavjestenjaSubMenuPage());
-            parentWindow.frmPageArea.NavigationService.Navigate(new NovaObavjestenjaPage());
+            if(!MainWindow.isAdmin)
+            {
+                MainWindow parentWindow = Window.GetWindow(this) as MainWindow;
+                parentWindow.setSubmenuPage(new ObavjestenjaSubMenuPage());
+                parentWindow.frmPageArea.NavigationService.Navigate(new NovaObavjestenjaPage());
+            }
+            else
+            {
+                MainWindow parentWindow = Window.GetWindow(this) as MainWindow;
+                parentWindow.setSubmenuPage(new ObavjestenjeSubMenuAdminPage());
+                parentWindow.frmPageArea.NavigationService.Navigate(new KreirajObavjestenjePage());
+            }
 
         }
 
@@ -59,9 +73,18 @@ namespace Biblioteka
             parentWindow.frmPageArea.NavigationService.Navigate(new UputstvoPage());
         }
 
+        private void btnBibliotekar_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow parentWindow = Window.GetWindow(this) as MainWindow;
+            parentWindow.setSubmenuPage(new BibliotekariSubMenuPage());
+            parentWindow.frmPageArea.NavigationService.Navigate(new BibliotekariPage());
+        }
+
         private void btnOdjava_Click(object sender, RoutedEventArgs e)
         {
             Environment.Exit(0);
         }
+
+
     }
 }

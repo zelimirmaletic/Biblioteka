@@ -42,7 +42,6 @@ namespace Biblioteka
                     //MessageBox.Show("Uspješno ste se prijavili!", "Informacija", MessageBoxButton.OK, MessageBoxImage.Information);
                     MainWindow.IdBibliotekar = bibliotekar.IdBibliotekar;
                     Application.Current.MainWindow.Close();
-
                 }
                 else
                 {

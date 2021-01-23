@@ -26,7 +26,6 @@ namespace Biblioteka
     public partial class ZaduzivanjePage : Page
     {
         DataTable selectedItemsTable = new DataTable();
-        private object mysqlPozajmica;
 
         public ZaduzivanjePage()
         {

@@ -42,13 +42,15 @@ namespace Biblioteka
             try
             {
                 var admin = new Administrator();
-                var mysqlBibliotekar = new MySqlAdmin();
-                admin = mysqlBibliotekar.GetAdminrByUsername(txbKorisnickoIme.Text);
+                var mysqlAdmin = new MySqlAdmin();
+                admin = mysqlAdmin.GetAdminrByUsername(txbKorisnickoIme.Text);
                 if (admin.Lozinka.Equals(txbLozinka.Password.ToString()))
                 {
-                    MessageBox.Show("Uspješno ste se prijavili!", "Informacija", MessageBoxButton.OK, MessageBoxImage.Information);
+                    //MessageBox.Show("Uspješno ste se prijavili!", "Informacija", MessageBoxButton.OK, MessageBoxImage.Information);
                     //IMPLEMENT WINDOW OPENING!
-                    //this.Close();
+                    MainWindow.isAdmin = true;
+                    MainWindow.IdBibliotekar = admin.IdAdministrator;
+                    Application.Current.MainWindow.Close();
                 }
                 else
                 {

@@ -30,7 +30,7 @@
         <Image Source="Resources\Images\logo.ico" Height="90" Width="100" Grid.ColumnSpan="2"/>
         
         
-        <Image Grid.Column="0" Grid.Row="1" Height="20" Width="20" HorizontalAlignment="Center" Source="Resources\Images\stat.ico"/>
+        <Image x:Name="imgBibliotekar" Grid.Column="0" Grid.Row="1" Height="20" Width="20" HorizontalAlignment="Center" Source="Resources\Images\stat.ico"/>
         <Button Style="{DynamicResource ColoredButton}" x:Name="btnStatistika" Grid.Column="1" Grid.Row="1" Click="btnStatistika_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
                 Statistika
@@ -69,6 +69,13 @@
         <Button Style="{DynamicResource ColoredButton}" x:Name="btnPomoc" Grid.Column="1" Grid.Row="6" Click="btnPomoc_Click">
             <TextBlock Width="120" HorizontalAlignment="Left">
                 Pomoć
+            </TextBlock>
+        </Button>
+
+        <Image x:Name="imgBibliotekari" Grid.Column="0" Grid.Row="7" Height="20" Width="20" HorizontalAlignment="Center" Source="Resources\Images\man.ico"/>
+        <Button Style="{DynamicResource ColoredButton}" x:Name="btnBibliotekar" Grid.Column="1" Grid.Row="7" Click="btnBibliotekar_Click">
+            <TextBlock Width="120" HorizontalAlignment="Left">
+                Bibliotekari
             </TextBlock>
         </Button>
 
