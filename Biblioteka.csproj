@@ -119,9 +119,6 @@
     <Compile Include="AddAutorWindow.xaml.cs">
       <DependentUpon>AddAutorWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AddBibliotekarWindow.xaml.cs">
-      <DependentUpon>AddBibliotekarWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="AddClanWindow.xaml.cs">
       <DependentUpon>AddClanWindow.xaml</DependentUpon>
     </Compile>
@@ -133,9 +130,6 @@
     </Compile>
     <Compile Include="AddZanrWindow.xaml.cs">
       <DependentUpon>AddZanrWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="AdminLogin.xaml.cs">
-      <DependentUpon>AdminLogin.xaml</DependentUpon>
     </Compile>
     <Compile Include="AdminLoginPange.xaml.cs">
       <DependentUpon>AdminLoginPange.xaml</DependentUpon>
@@ -260,10 +254,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AddBibliotekarWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="AddClanWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -277,10 +267,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddZanrWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="AdminLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
